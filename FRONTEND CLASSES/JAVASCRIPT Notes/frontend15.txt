@@ -1,0 +1,667 @@
+JavaScript output statement
+===========================
+It is used to display variables, expressions or userdefined statements.
+
+There are two output statements in JavaScript.
+
+1) document.write()
+------------------
+It is used to display the output on browser.
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			document.write("First Output");
+		</script>
+	</body>	
+</html>
+
+2) console.log() 
+---------------
+It is used to display the output on browser console.
+To see the browser console we need to press F12 Function key.
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			console.log("Second Output");
+		</script>
+	</body>	
+</html>
+
+JavaScript variables 
+=====================
+A name given to a memory location is called variable.
+
+Purpose of variable is used to store the data.
+
+In JavaScript, variable is also known as identifier.
+
+We have same rules for variables as we have for identifiers.
+
+Rules to declare a variable 
+---------------------------
+Rule1:
+------
+	A variable name must and should starts with alphabet, underscore 
+	or dollar symbol but not with digit.
+	ex:
+		var a=10;
+		var _=20;
+		var $=30;
+
+Rule2:
+------
+	After first alphabet it can have any number of digits.
+	ex:
+		var a1234;
+
+Rule3:
+------
+	Every variable is a case sensitive.
+	ex:
+		var a;
+		var A;
+
+In JavaScript, we have two types of variables.
+
+1) Local variable
+
+2) Global variable 
+
+1) Local variable
+-----------------
+If we declare any variable inside a function or a block is called local variable.
+Local variable we can access with in the function.
+
+ex:1
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			function f1()
+			{
+				//local variable 
+				var i=10;
+				document.write(i);
+			}
+
+			f1();
+		</script>
+	</body>	
+</html>
+
+ex:2
+-----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			function f1()
+			{
+				//local variable 
+				var i=10;
+				document.write(i+"<br>");
+			}
+			function f2()
+			{
+				document.write(i+"<br>");
+			}
+
+			f1();
+			f2(); // Error 
+		</script>
+	</body>	
+</html>
+
+2) Global variable
+-------------------
+If we declare a variable outside a function or a block is called global variable.
+Global variable we can access within the function and outside the function.
+
+ex:1
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			//global variable 
+			var i = 20;
+
+			function f1()
+			{
+				document.write(i+"<br>");
+			}
+
+			f1();
+		</script>
+	</body>	
+</html>
+
+ex:2
+-----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			//global variable 
+			var i = 20;
+
+			function f1()
+			{
+				document.write(i+"<br>");
+			}
+			function f2()
+			{
+				document.write(i+"<br>");
+			}
+
+			f1();
+			f2();
+		</script>
+	</body>	
+</html>
+
+Types of JavaScript 
+===================
+We have two types of JavaScript.
+
+1) Internal JavaScript / Embedded JavaScript 
+
+2) External JavaScript / Seperate JavaScript 
+
+1) Internal JavaScript
+----------------------
+In internal JavaScript we will declare HTML code and JavaScript code in .html file.
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			document.write("Internal JavaScript");
+		</script>
+	</body>	
+</html>
+
+Advantages:
+
+> There is no confusion of multiple files.
+
+> We can understand HTML code and JavaScript code easily.
+
+Disadvantages:
+
+> If code is increase then it will increase the complexity.
+
+
+2) External JavaScript
+-----------------------
+In external JavaScript, we will declare HTML code in ".html" file and JavaScript code in ".js" file.
+
+ex:
+---
+
+index.html
+---------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+
+		<!-- add external javascript -->
+		<script lang="javascript" src="myscript.js"></script>
+		
+	</head>
+	<body>
+		<button onclick="f1()"> clickMe </button>
+	</body>	
+</html>
+
+myscript.js
+-----------
+function f1()
+{
+	document.write("External JavaScript");
+}
+
+Advantages:
+
+1) We can maintain HTML code and JavaScript code seperately.
+
+2) If code is increases then it won't increase the complexity.
+
+Disadvantages:
+
+1) There is a confusion of multiple files.
+
+JavaScript Datatypes 
+=====================
+JavaScript is a dynamically typed language so we don't need to define datatype at the time of variable declaration.
+
+To declare a variable we will use "var" keyword.
+
+JavaScript engine determines the datatype based on the assigned value.
+
+In JavaScript, datatypes are classified into two types.
+
+1) Primitive Datatypes 
+
+2) Non-Primitive Datatypes 
+
+
+1) Primitive Datatypes 
+-----------------------
+We have following list of primitive datatypes.
+ex:
+	Datatype	Description
+	--------	-----------
+	number 		It is used to represent number.
+	boolean 	It is used to represent boolean value.
+	string 		It is used to represent collection of characters.
+	null 		It is used to represent null.
+	undefined 	It is used to represent undefined.
+	bigInt		It is used to represent large number.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			var i = 10;
+			document.write(i+"<br>");
+
+			var j = 10.56;
+			document.write(j+"<br>");	
+		</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			var i = true;
+			document.write(i+"<br>");
+
+			var j = false;
+			document.write(j+"<br>");	
+		</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			var i = "Hi";
+			document.write(i+"<br>");
+
+			var j = 'Bye';
+			document.write(j+"<br>");	
+		</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			var i = null;
+			document.write(i+"<br>");
+
+			var j ;
+			document.write(j+"<br>");	
+		</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			var i = 99999999999999999n;
+			document.write(i);	
+		</script>
+	</body>	
+</html>
+
+
+
+
+
+2) Non-Primitive Datatypes
+--------------------------
+We have following list of non-primitive datatypes.
+
+ex:
+	Datatype	Description 
+	---------	----------
+	Object 		It is used to represent an instance through which we can 
+			access the members.
+
+	Array 		It is used to represent elements.
+		
+	RegEx 		It is used to represent regular expression.
+
+
+
+Q) What is the difference between null and undefined?
+
+null
+-----
+	It indicates a variable has been initialized as null.
+	ex:
+		var i = null;
+		document.write(i); 
+
+undefined 
+---------
+	It indicates a variable has not been initialized.
+	ex:
+		var i;
+		document.write(i);	
+
+Operators 
+=========
+Operator is a symbol which is used to perform some operations on operands.
+ex:
+	var c = a + b; 
+	
+	Here a, b and c are operands.
+	Here = and + are operators.
+
+We have following list of operators in JavaScript.
+
+1) Arithmetic operators 
+
+2) Conditional operators 
+
+3) Bitwise operators 
+
+4) Logical operators 
+
+5) Assignment operators 
+
+6) Special operators 
+
+1) Arithmetic operators 
+-----------------------
+We have following list of arithmetic operators.
+
+ex:
+	Operator	Description
+	--------	-----------
+	%		Modules 
+	/		Division 
+	*		Multiplication 
+	+		Addition
+	-		Subtraction 
+	++		Increment 
+	--		Decrement 
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			document.write((10%3)+"<br>"); // 1 
+
+			document.write((10%2)+"<br>"); // 0
+
+			document.write((10%20)+"<br>"); //10 
+		</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			document.write((10/3)+"<br>"); // 3.3
+
+			document.write((10/2)+"<br>"); // 5
+
+			document.write((10/20)+"<br>"); //0.5 
+		</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			document.write((10*3)+"<br>"); // 30
+
+			document.write((10+2)+"<br>"); // 12
+
+			document.write((10-20)+"<br>"); //-10
+		</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			var i = 5;
+
+			var j = i++ + i++; // 5 + 6 
+
+			document.write(i+" "+j); // 7  11
+		</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			var i = 5;
+
+			var j = ++i + ++i; //  6 + 7 
+
+			document.write(i+" "+j); // 7  13
+		</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			var i = 2;
+
+			var j = i-- + i--; // 2 + 1 
+
+			document.write(i+" "+j); // 0 3
+		</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			var i = 2;
+
+			var j = --i + --i; // 1 + 0 
+
+			document.write(i+" "+j); // 0 1 
+		</script>
+	</body>	
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

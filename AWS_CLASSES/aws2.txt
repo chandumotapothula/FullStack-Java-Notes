@@ -1,0 +1,187 @@
+How to create AWS Account 
+=========================
+We required following things to create AWS account.
+
+1) Gmail Id 
+
+2) Debit/Credit Card 
+
+3) Minimum 2 rupees must available in account
+
+Note:
+-----
+If we use debit card to create an account then it takes less then 24 hours to activate the account.
+
+If we use credit card to create an account then it takes less then 2 to 3 hours to activate the account.
+
+
+Operating Systems
+=================
+It is a mediator/interface between user and hardware components.
+
+We have two types of operating systems.
+
+1) GUI - Graphical User Interface
+-------------------------------
+	ex:
+		Windows 
+
+2) CLI - Command Line Interface 
+-------------------------------
+	ex:
+		Linux 
+
+Note:
+-----
+	In the space of operating system CLI is widely used.
+	90% of IT Environment is CLI and that too linux.
+
+
+
+Q) Who is the richest person in the world?
+
+	Elon Musk 
+
+
+Q) Who is the richest person for a long period of time?
+
+	Bill Gates 
+
+
+History of Linux 
+================
+Linux operating system developed by Linus Torvalds.
+
+The idea behind linux is why to go for licence to use any operating system.
+
+He has started one open source project called linux.
+
+He created linux kernel.
+
+Kernel is a first layer of operating system.
+
+Linux kernel is used to interact with hardware components.
+
+The main aspect to create linux are
+
+1) It create free CLI OS 
+
+2) It should be open source
+
+3) It should run on any hardware
+
+4) GNUX (Generally Not a Unix)
+
+Today we have 300+ distributions in linux.
+
+
+EC2
+====
+EC2 stands for Elastic Cloud Compute.
+
+It is a webservice provided by AWS to create virtual servers(instances) in a cloud. 
+
+EC2 comes in Infrastructure As a Service (IaaS).
+
+Linux provides two ways authentication.
+
+1) Username and password (Recommanded)
+
+2) Username with key (Not Recommanded)
+
+Steps to create Linux Server using username and password
+========================================================
+step1:
+------
+	Login to AWS Account.
+	ex:
+		Root User:
+			gmail :  ........
+			password : ........
+step2:
+------
+	Select the region.
+	ex:
+		N Virginia 	
+
+step3:
+------
+	Goto EC2 and create a security group.	
+	ex:
+		mySecurityGroupBatch54
+step4:
+------
+	Create a EC2 Instance.
+	ex:
+		AMI : DevOps-LabImage-Centos-8	
+		username : centos 
+		password : DevOps321
+	
+step5:
+-----
+	Download and install putty in your computer.
+	ex:
+		https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
+
+
+step6:
+-----
+	Copy public IP address and paste in putty to connect with linux server.
+	ex:
+		login as : centos 
+		password : DevOps321
+
+step7:
+------
+	Terminate the EC2 instance.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

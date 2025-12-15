@@ -1,0 +1,332 @@
+step21:
+-------
+	Change the logic inside AuthService.java file.
+
+AuthService.java
+----------------
+package com.ihub.www.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ihub.www.model.User;
+import com.ihub.www.repo.UserRepository;
+
+@Service
+public class AuthService 
+{
+	@Autowired
+	UserRepository userRepository;
+	
+	public boolean login(String username,String password)
+	{
+		User user = userRepository.findByUsername(username);
+		
+		if(user==null) return false;
+		
+		return user.getPassword().equals(password);
+	}
+	
+}
+
+step22:
+-------
+	Create a "services" folder inside "src" folder.
+
+step23:
+------
+	Create a AuthService.jsx file inside "services" folder.
+
+AuthService.jsx
+---------------
+import axios from 'axios';
+
+const AUTH_API = "http://localhost:9191/api/auth/login";
+
+class AuthService
+{
+    login(user)
+    {
+        return axios.post(AUTH_API,user);
+    }
+}
+export default new AuthService();
+
+step24:
+------
+	Change the background color.
+App.jsx 
+-------
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import Login from "./components/Login";
+import Footer from "./components/Footer";
+import './App.css';
+import EmployeeList from "./components/EmployeeList";
+
+function App() {
+  return (
+    <div className="bg-color">
+    <BrowserRouter>
+      <Header />
+
+      <Routes>
+
+        <Route exact path="/login" element={<Login />} />
+      
+      </Routes>
+
+      <Footer/>
+    </BrowserRouter>
+    </div>
+  );
+}
+
+export default App;
+
+App.css 
+------
+.footer
+{
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  background-color: #ecf0f1;
+  width: 100%;
+  height:35px;
+  line-height: 40px;
+}
+.bg-color
+{
+  height:100vh;
+  background: linear-gradient(cyan,blue);
+}
+
+
+
+step25:
+--------
+
+	Add the login page inside Login.jsx file.
+
+Login.jsx
+---------
+import React from 'react'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
+import AuthService from '../services/AuthService';
+
+
+function Login() 
+{
+  const [user,setUser] = useState({username:"",password:""});
+  const [error,setError] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit=(e)=>{
+      e.preventDefault();
+
+      AuthService.login(user).then(res=>{
+        if(res.data === true)
+        {
+            localStorage.setItem("logged","true");
+            navigate("/");
+        }
+        else
+        {
+          setError("Invalid Username or Password");
+        }
+      })
+  }
+
+  return (
+    <div className='mt-5 pt-5'>
+        <div className='card p-5 w-50 offset-3'>
+          <h3 className='text-center'> Login </h3>
+
+          <form>
+            <label>UserName:</label>
+            <input type="text" className='form-control' autoComplete='off'
+            value={user.username}
+            onChange={(e)=> setUser({...user,username:e.target.value})}/>
+
+            <label>Password:</label>
+            <input type="password" className='form-control'
+            value={user.password}
+            onChange={(e)=> setUser({...user,password:e.target.value})}/>
+
+            {error  && <small className="text-danger">{error}</small>}
+
+            <button className='btn btn-primary w-100 mt-4'
+            onClick={handleSubmit}> Login </button>
+          </form>
+        </div>
+    </div>
+  )
+}
+
+export default Login
+
+
+step26:
+------
+	Creat a EmployeeList.jsx file inside "components" folder.
+
+EmployeeList.jsx
+------------------
+import React from 'react'
+
+function EmployeeList() {
+  return (
+    <div className='mt-5'>
+        <h1 className='mt-5'>Employee List Component</h1> 
+    </div>
+  )
+}
+
+export default EmployeeList
+
+
+
+step27:
+--------
+	Goto App.jsx file and declare PrivateRoute 
+
+App.jsx
+---------
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Header from "./components/Header";
+import Login from "./components/Login";
+import Footer from "./components/Footer";
+import './App.css';
+import EmployeeList from "./components/EmployeeList";
+
+function PrivateRoute({ children }) 
+{
+  return localStorage.getItem("logged") ? children : <Navigate to="/login" />;
+}
+
+function App() {
+  return (
+    <div className="bg-color">
+    <BrowserRouter>
+      <Header />
+
+      <Routes>
+
+        <Route exact path="/login" element={<Login />} />
+        {/* protected pages */ }
+        <Route path="/" element={<PrivateRoute><EmployeeList/></PrivateRoute>}/>
+      </Routes>
+
+      <Footer/>
+    </BrowserRouter>
+    </div>
+  );
+}
+
+export default App;
+
+step28:
+------
+	Install react simple typewrite package.
+	ex:
+		npm install react-simple-typewriter 
+
+step29:
+-------
+	Add the logic inside EmployeeList.jsx file.
+
+EmployeeList.jsx file 
+----------------------
+import React from 'react'
+import {useTypewriter,Cursor} from 'react-simple-typewriter';
+import { useState } from 'react';
+function EmployeeList() 
+{
+  const [employees,setEmployees] = useState([]);
+
+  const [value] = useTypewriter({
+    words : ["Details","Information","List"],
+    loop: true,
+    typeSpeed : 80,
+    deleteSpeed : 120
+  })
+  return (
+    <div className='mt-5'>
+        <h3 className='mt-5 text-center pt-3'>Employee {value} <Cursor/> </h3> 
+        <div className='container mt-5'>
+        <table className='table table-bordered'>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Designation</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {
+                    employees.map(employees=>{
+                         <tr key={employee.id}>
+                                    <td>{employee.id}</td>
+                                    <td>{employee.name}</td>
+                                    <td>{employee.dept.deptName}</td>
+                                    <td>{employee.dept.designation}</td>
+                                </tr>
+                    })   
+                }
+            </tbody>
+        </table>
+        </div>
+    </div>
+  )
+}
+
+export default EmployeeList
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

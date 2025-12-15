@@ -1,0 +1,507 @@
+Vite
+=====
+It is a build tool that significantly speeds up the development process for modern web projects.
+
+Steps to develop react project using vite 
+------------------------------------------
+step1:
+------
+	Create a vite project.
+	ex:
+		npm create vite@latest
+			
+			> Project Name :  react-vite
+			> React
+			> JavaScript 
+			> Install npm (yes) 
+step2:
+-----
+	Switch to the project.
+	ex:
+		cd   react-vite
+
+step3:
+-----
+	Run vite project.
+	ex:
+		npm run dev
+
+step4:
+------
+	Test the application.
+	ex:
+		http://localhost:5173/
+
+
+
+
+React Router 
+============
+React router is a standard library system built on top of react to perform routing in react application using react-router package.
+
+Routing is a process in which a user is redirected to other pages based on the actions and requests.
+
+React router is used to develop Single Page Applications (SPA).
+
+React router is used to declare multiple routes in routing file.
+
+If user entered any url in browser address if given path matches to any route then that request will be forwarded to perticular route.
+
+There three packages to use react router.
+
+1) react-router 
+---------------
+	It provides core components and functions to perform react routing. 
+
+2) react-router-native 
+----------------------
+	It is used for mobile development.
+
+3) react-router-dom 
+------------------
+	It is used for web development.
+
+We have two component of react router.
+
+1) <BrowserRouter>
+---------------
+	It is used to handle dynamic url's.
+
+2) <HashRouter>
+----------------
+	It is used to handle static url's.
+
+Project Structure 
+-----------------
+myapp19
+|
+|----node_modules
+|
+|----public
+	|
+	|---index.html
+	|---manifest.json 
+	|---favicon.ico 
+|
+|-----src
+	|
+	|---components 
+		|
+		|---Home.jsx
+		|---About.jsx
+		|---Service.jsx
+		|---Error.jsx
+		
+	|---App.css
+	|---App.jsx 
+	|
+	|---main.jsx
+	|---index.css
+|
+|-----package.json 
+
+step1:
+------
+	Create a react project i.e myapp19.
+	ex:
+		npm create vite@latest
+
+step2:
+------
+	Open the new terminal by pressing (+) symbol.
+
+step3:
+------
+	Switch to the project.
+	ex:
+		cd  myapp19
+
+step4:
+------
+	Install react router package.
+	ex:
+		npm install react-router-dom 
+
+step5:
+------
+	Create a "components" folder inside "src" folder.
+step6:
+------
+	Create a Home.jsx file inside "components" folder.
+
+Home.jsx
+--------
+import React from 'react'
+
+function Home() {
+  return (
+    <div>
+      <h1 style={{textAlign:"center"}}> Home Page </h1>
+    </div>
+  )
+}
+
+export default Home
+
+
+
+
+step7:
+------
+	Create a About.jsx file inside "components" folder.
+About.jsx
+---------
+import React from 'react'
+
+function About() {
+  return (
+    <div>
+      <h1 style={{textAlign:"center"}}> About Page </h1>
+    </div>
+  )
+}
+
+export default About
+
+
+step8:
+------
+	Create a Service.jsx file inside "components" folder.
+
+Service.jsx
+------------
+import React from 'react'
+
+function Service() {
+  return (
+    <div>
+      <h1 style={{textAlign:"center"}}> Service Page </h1>
+    </div>
+  )
+}
+
+export default Service
+
+
+
+step9:
+------
+	Create a Error.jsx file inside "components" folder.
+
+Error.jsx 
+---------
+import React from 'react'
+
+function Error() {
+  return (
+    <div>
+      <h1 style={{textAlign:"center"}}> 404! Page Not Found </h1>
+    </div>
+  )
+}
+
+export default Error
+
+step10:
+-------
+	Goto routing file i.e App.jsx file.
+
+App.jsx
+-------
+import React from 'react'
+import {BrowserRouter,Routes,Route} from 'react-router';
+import Home from './components/Home';
+import About from './components/About';
+import Service from './components/Service';
+import Error from './components/Error';
+
+function App() {
+  return (
+    <div>
+        <BrowserRouter>
+          <Routes>
+              <Route exact path='/' element={<Home/>}></Route>
+              <Route path='/about' element={<About/>}></Route>
+              <Route path='/service' element={<Service/>}></Route>
+              <Route path='*' element={<Error/>}></Route>
+          </Routes>
+        </BrowserRouter>
+    </div>
+  )
+}
+
+export default App
+
+step11:
+-------
+	Test the application. 
+	ex:
+		http://localhost:5173
+		http://localhost:5173/about 
+		http://localhost:5173/service
+		http://localhost:5173/gallery
+	
+step12:
+-----
+	Add <Link> element inside routing file i.e App.jsx to create SPA.
+
+App.jsx
+-------
+import React from 'react'
+import {BrowserRouter,Routes,Route,Link} from 'react-router';
+import Home from './components/Home';
+import About from './components/About';
+import Service from './components/Service';
+import Error from './components/Error';
+
+function App() {
+  return (
+    <div>
+        <BrowserRouter>
+        <center>
+            <Link to='/' style={{margin:"0px 50px",textDecoration:"none"}}> Home </Link>
+            <Link to='/about' style={{margin:"0px 50px",textDecoration:"none"}}> About </Link>
+            <Link to='/service' style={{margin:"0px 50px",textDecoration:"none"}}> Service </Link>
+        </center>
+        <hr/>
+          <Routes>
+              <Route exact path='/' element={<Home/>}></Route>
+              <Route path='/about' element={<About/>}></Route>
+              <Route path='/service' element={<Service/>}></Route>
+              <Route path='*' element={<Error/>}></Route>
+          </Routes>
+        </BrowserRouter>
+    </div>
+  )
+}
+
+export default App
+
+
+
+
+React Forms 
+===========
+Forms are the integral part of every modern application.
+
+Form allows users to interact with application and gather the user inputs.
+
+Forms can be used for different purpose based on the nature of a business like registration form , order form , admission form and etc.
+
+React offers statefull, reactive approach to develop the react forms.
+
+In react forms are created by using controlled components.
+
+A component rather then DOM handles the form.
+
+
+Project Structure 
+-----------------
+myapp20
+|
+|----node_modules
+|
+|----public
+	|
+	|---index.html
+	|---manifest.json 
+	|---favicon.ico 
+|
+|-----src
+	|
+	|---App.css
+	|---App.jsx 
+	|
+	|---index.jsx
+	|---index.css
+|
+|-----package.json 
+
+step1:
+------
+	Create a react project i.e myapp20.
+	ex:
+		npm create vite@latest
+
+step2:
+------
+	Open the new terminal by pressing (+) symbol.
+
+step3:
+------
+	Switch to the project.
+	ex:
+		cd  myapp20
+
+step4:
+------
+	Install react router package.
+	ex:
+		npm install bootstrap
+
+step5:
+------
+	Import the bootstrap inside main.jsx.
+
+main.jsx
+---------
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import App from './App.jsx'
+import '../node_modules/bootstrap/dist/css/bootstrap.css';
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+)
+
+step6:
+-----	
+	Goto App.jsx file and create a form using validation.
+
+App.jsx
+---------
+import { useState } from "react";
+function App()
+{
+  const [registration,setRegistration]=useState({
+    username: "",
+    password:"",
+    date:"",
+    category:""
+  })
+
+  const [errors,setErrors]= useState({});
+
+
+  const handleClick=(e)=>{
+    e.preventDefault();
+    const {name,value} = e.target;
+    setRegistration({...registration,[name]:value});
+    setErrors({...errors,[name]:""})
+  }
+
+  const handleSubmit = (e)=>{
+    e.preventDefault();
+    const formErrors = validation();
+    if(Object.keys(formErrors).length>0)
+    {
+      setErrors(formErrors);
+      return;
+    }
+    setRegistration({username:"",password:"",date:"",category:""});
+    setErrors({});
+  }
+
+  const validation=()=>{
+    const formErrors = {};
+    if(!registration.username)
+    {
+        formErrors.username = "username is mandatory";
+    }
+    if(!registration.password)
+    {
+      formErrors.password = "Password is mandatory";
+    }
+    if(!registration.date)
+    {
+      formErrors.date = "Date is mandatory";
+    }
+    if(!registration.category)
+    {
+      formErrors.category="Category is mandatory";
+    }
+
+    return formErrors;
+  }
+
+  return (
+    <>
+      <div className="card w-50 p-3 bg-info mx-auto">
+        <h4 className="text-center"> User Details </h4>
+        <form onSubmit={handleSubmit}>
+            <label className="my-2">UserName:</label>
+            <input type="text" name="username" id="username" className="form-control"
+            value={registration.username}
+            onChange={handleClick}/>
+            {errors.username && <small className="text-danger">{errors.username}</small>}
+            <br/>
+
+            <label className="my-2">Password:</label>
+            <input type="password" name="password" id="password" className="form-control"
+            value={registration.password}
+            onChange={handleClick}/>
+            {errors.password && <small className="text-danger">{errors.password}</small>}
+            <br/>
+
+            <label className="my-2">DOJ:</label>
+            <input type="date" name="date" id="date" className="form-control"
+            value={registration.date}
+            onChange={handleClick}/>
+            {errors.date && <small className="text-danger">{errors.date}</small>}
+            <br/>
+
+            <label className="my-2">Category:</label>
+            <select name="category" id="category" className="form-select"
+            value={registration.category}
+            onChange={handleClick}>
+
+                <option value="">none</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="action"> Action </option>
+                <option value="drama"> Drama </option>
+            </select>
+            {errors.category && <small className="text-danger">{errors.category}</small>}
+            <br/>
+          <button className="btn btn-warning w-100 mt-4"> submit </button>
+        </form>
+      </div>
+    </>
+  )
+}
+export default App;
+
+
+
+
+step7:
+------
+	Test the application.
+	ex:
+		http://localhost:5173
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

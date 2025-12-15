@@ -1,0 +1,473 @@
+Steps to develop first react application 
+========================================
+step1:
+------
+	Create a "reactprojects" folder in any drive.
+
+step2:
+-----
+	Download and Install VSC Editor.
+	ex:
+		https://code.visualstudio.com/download
+
+step3:
+------
+	Open the command prompt from "reactprojects" folder.
+	
+step4:
+-------
+	Open the VSC editor.
+	ex:
+		reactprojects> code  . 
+	
+step5:
+------
+	Download node package by using npm command.
+	ex:
+		npm install -g  create-react-app 
+
+step6:
+------
+	Create a react application i.e myapp1.
+	ex:
+		npx create-react-app myapp1
+
+step7:
+-----
+	Switch to the project.
+	ex:
+		cd  myapp1
+
+step8:
+------
+	Run react application.
+	ex:
+		npm start 
+
+step9:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000
+
+
+React Project Structure 
+=======================
+myapp1
+|
+|-----node_modules
+|
+|-----public
+	|
+	|---index.html
+	|---manifest.json 
+	|---favicon.ico 
+
+|-----src 
+	|
+	|---index.js 
+	|---index.css
+	|
+	|---App.js 
+	|---App.css
+
+	|---App.test.js 
+
+|-----package.json 
+|-----REAMD.md
+
+> "myapp1" is a react project name. 
+
+> "node_modules" contains node packages and dependencies.
+
+> "index.html" is a main template.
+
+> "manifest.json" contains metadata that used when user installed the application in a 
+  user computer or laptop.
+
+> "favicon.ico" is a favourite icon.
+
+> "index.js" is a entry point.
+
+> "index.css" is related to index.js file and it is global.
+
+> "App.js" is a parent component.
+
+> "App.css" is related to App.js file and it is global.
+
+> "App.test.js" is a  unit testing file.
+
+> "package.json" contains project dependencies along with their versions.
+
+
+
+Steps to develop second react project 
+=====================================
+myapp2
+|
+|-----node_modules
+|
+|-----public
+	|
+	|---index.html
+	|---manifest.json 
+	|---favicon.ico 
+
+|-----src 
+	|
+	|---index.js 
+	|---index.css
+	|
+	|---App.js 
+	|---App.css
+
+	|---App.test.js 
+
+|-----package.json 
+|-----REAMD.md
+	
+step1:
+-----
+	Create a react project i.e myapp2.
+	ex:
+		npx  create-react-app myapp2 
+
+step2:
+-----
+	Open the VSC editor.
+	ex:	
+		reactprojects> code . 
+
+step3:
+-----
+	Use below commands to set background color of VSC editor.
+	ex:
+		CTRL + K  &  CTRL + T 
+
+step4:
+------
+	Switch to the project.
+	ex:
+		cd  myapp2 
+
+step5:
+------
+	Run react project.
+	ex:
+		npm start 
+
+step6:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000
+
+step7:
+------
+	Goto App.js file and write below code.
+
+App.js 
+------
+function App()
+{
+    return (
+      <h1> Welcome to React Development </h1>
+    )
+}
+export default App;
+
+
+
+React Fragments 
+================
+In react, a component can return only one element at a time.
+
+To return more then one element in a component we need to use react fragment.
+
+React fragment is a feature which allows us to group the elements without adding extra node to the DOM.
+
+
+ex:
+
+function App()
+{
+    return (
+      <div>
+          <h1> Welcome to React Development </h1>
+          <h1> This is React Tutorial </h1>
+      </div>
+    )
+}
+export default App;
+
+Note:
+-----
+	Here we have added "div" as extra node to the DOM.
+
+
+There are three ways to use react fragments.
+
+Approach1
+---------
+
+App.js 
+------
+import React from 'react';
+function App()
+{
+    return (
+      <React.Fragment>
+          <h1> Welcome to React Development </h1>
+          <h1> This is React Tutorial </h1>
+      </React.Fragment>
+    )
+}
+export default App;
+
+
+
+Approach2
+---------
+
+App.js 
+------
+import { Fragment } from 'react';
+
+function App()
+{
+    return (
+      <Fragment>
+          <h1> Welcome to React class </h1>
+          <h1> This is React Fragment </h1>
+      </Fragment>
+    )
+}
+export default App;
+
+
+Approach3
+---------
+
+App.js 
+------
+function App()
+{
+    return (
+      <>
+          <h1> Welcome to React class </h1>
+          <h1> React Fragment Tutorial </h1>
+      </>
+    )
+}
+export default App;
+
+Composing Component 
+===================
+If one component calls to another component such concept is called composing component.
+
+Diagram : react2.1
+
+
+React Project Structure 
+-------------------
+myapp3
+|
+|-----node_modules
+|
+|-----public
+	|
+	|---index.html
+	|---manifest.json 
+	|---favicon.ico 
+
+|-----src 
+	|
+	|---index.js 
+	|---index.css
+	|
+	|---App.js 
+	|---App.css
+	|---components
+		| 
+		|---Header.js 
+		|---Section.js 
+		|---Footer.js 
+
+	|---App.test.js 
+
+|-----package.json 
+|-----REAMD.md
+
+step1:
+------	
+	Create react project i.e myapp3.
+	ex:
+		npx create-react-app myapp3
+
+step2:
+-----
+	Open VSC Editor.	
+	ex:
+		reactprojects> code . 
+
+step3:
+-----
+	Switch to the project.
+	ex:
+		cd  myapp3	
+
+step4:
+------
+	Run react project.
+	ex:
+		npm start 
+
+step5:
+-----
+	Test the application by using below url.
+	ex:
+		http://localhost:3000
+
+step6:
+------
+	Create a "components" folder inside "src" folder.
+
+step7:
+-----
+	Create a Header.js file inside "components" folder.
+Header.js 
+---------
+function Header() 
+{
+  return (
+    <>
+        <h1> Header Component </h1> 
+    </>
+  )
+}
+export default Header;
+
+
+step8:
+-----
+	Create a Section.js file inside "components" folder.
+
+Section.js 
+---------
+function Section() 
+{
+  return (
+    <>
+        <h1> Section Component </h1> 
+    </>
+  )
+}
+export default Section;
+
+step9:
+-----
+	Create a Footer.js file inside "components" folder.
+
+Footer.js 
+---------
+function Footer() 
+{
+  return (
+    <>
+        <h1> Footer Component </h1> 
+    </>
+  )
+}
+export default Footer;
+
+step10:
+-------
+	Call Header, Section and Footer component from parent component.
+
+App.js 
+-------
+import Header from "./components/Header";
+import Section from "./components/Section";
+import Footer from "./components/Footer";
+
+function App()
+{
+  return (
+    <>
+      <Header/>
+      <Section/>
+      <Footer/>
+    </>
+  )
+}
+export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

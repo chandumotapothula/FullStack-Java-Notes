@@ -1,0 +1,883 @@
+state 
+======
+It is similar to props but it is private and fully controlled by a component.
+
+A state can be updatable or modified where as props is read only.
+
+There are two ways to initialize the state in react.
+
+1) Inside a class 
+
+2) Inside a constructor 
+
+1) Inside a class
+=================
+We can intialize the state inside a class as follow.
+ex:
+
+import {Component} from 'react';
+class App extends Component
+{
+	state = 
+	{
+		-
+		-
+	}
+	render()
+	{
+		return ()
+	}
+}
+export default App;
+
+
+project structure 
+-----------------
+myapp8
+|
+|-----node_modules
+|
+|-----public 
+	|
+	|---index.html
+	|---fevicon.ico
+	|---manifest.json 
+|
+|-----src
+	|
+	|---index.js
+	|---index.css
+	|---App.js
+	|---App.css
+	|---App.test.js
+|
+|-----package.json
+|-----README.md
+
+step1:
+------
+	Open VSC Editor from "reactprojects" folder.
+	ex:
+		reactprojects> code . 
+
+step2:
+------
+	ADD below extension in VSC Editor.
+	ex:
+		ES7 React/Redux/GraphQL/React-Native snippets
+	
+	
+step3:
+-----
+	Create a react project i.e myapp8 in VSC terminal.
+	ex:
+		npx  create-react-app myapp8
+
+step4:
+-----
+	Switch the project.
+	ex:
+		cd myapp8
+
+step5:
+------
+	Run react project.
+	ex:	
+		npm start 
+
+step6:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000
+
+step7:
+-----
+	Goto App.js and create a class component using ES7 Extension.
+	ex:	
+		rcc - react class component 
+
+App.js 
+------
+import React, { Component } from 'react'
+
+export default class App extends Component 
+{
+    state = 
+    {
+        rollno: 101,
+        name : "Kelvin"
+    }
+    render() 
+    {
+      return (
+        <>
+            <h1>Roll No : {this.state.rollno} </h1>
+            <h1>Name : {this.state.name} </h1>
+        </>
+      )
+    }
+}
+
+
+2) Inside a constructor
+-----------------------
+We can intialize the state inside a constructor as follow.
+
+ex:
+
+import {Component} from 'react';
+class App extends Component
+{
+	constructor()
+	{	
+		this.state = 
+		{
+			-
+			-
+		}
+	}
+	
+	render()
+	{	
+		return ()
+	}
+}
+export default App;
+
+
+
+
+project structure 
+-----------------
+myapp8
+|
+|-----node_modules
+|
+|-----public 
+	|
+	|---index.html
+	|---fevicon.ico
+	|---manifest.json 
+|
+|-----src
+	|
+	|---index.js
+	|---index.css
+	|---App.js
+	|---App.css
+	|---App.test.js
+|
+|-----package.json
+|-----README.md
+
+step1:
+------
+	Open VSC Editor from "reactprojects" folder.
+	ex:
+		reactprojects> code . 
+
+step2:
+------
+	ADD below extension in VSC Editor.
+	ex:
+		ES7 React/Redux/GraphQL/React-Native snippets
+	
+	
+step3:
+-----
+	Create a react project i.e myapp8 in VSC terminal.
+	ex:
+		npx  create-react-app myapp8
+
+step4:
+-----
+	Switch the project.
+	ex:
+		cd myapp8
+
+step5:
+------
+	Run react project.
+	ex:	
+		npm start 
+
+step6:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000
+
+step7:
+-----
+	Goto App.js and create a class component using ES7 Extension.
+	ex:	
+		rcc - react class component 
+
+App.js 
+-------
+import React, { Component } from 'react'
+
+export default class App extends Component 
+{
+    constructor()
+    {
+        super();
+        this.state = 
+        {
+            rollno: 201,
+            name : "Nancy"
+        }
+    }
+    render() 
+    {
+      return (
+        <>
+            <h1>Roll No : {this.state.rollno} </h1>
+            <h1>Name : {this.state.name} </h1>
+        </>
+      )
+    }
+}
+
+state with props 
+================
+props is read only , we can't perform any modification. In order to overcome that limitation we need to pass props to state. 
+
+project structure 
+-----------------
+myapp8
+|
+|-----node_modules
+|
+|-----public 
+	|
+	|---index.html
+	|---fevicon.ico
+	|---manifest.json 
+|
+|-----src
+	|
+	|---index.js
+	|---index.css
+	|---App.js
+	|---App.css
+	|---App.test.js
+|
+|-----package.json
+|-----README.md
+
+step1:
+------
+	Open VSC Editor from "reactprojects" folder.
+	ex:
+		reactprojects> code . 
+
+step2:
+------
+	ADD below extension in VSC Editor.
+	ex:
+		ES7 React/Redux/GraphQL/React-Native snippets
+	
+	
+step3:
+-----
+	Create a react project i.e myapp8 in VSC terminal.
+	ex:
+		npx  create-react-app myapp8
+
+step4:
+-----
+	Switch the project.
+	ex:
+		cd myapp8
+
+step5:
+------
+	Run react project.
+	ex:	
+		npm start 
+
+step6:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000
+
+step7:
+-----
+	Goto index.js and write below code.
+
+index.js 
+---------
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App name={"Lara"}/>
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+
+
+step8:
+-------
+	Goto App.js and create a class component using ES7 Extension.
+	ex:	
+		rcc - react class component 
+
+App.js 
+------
+import React, { Component } from 'react'
+
+export default class App extends Component 
+{
+   state = 
+   {
+      rollno : 501,
+      name :  this.props.name
+   }
+    render() 
+    {
+      return (
+        <>
+            <h1>Roll No : {this.state.rollno} </h1>
+            <h1>Name : {this.state.name} </h1>
+        </>
+      )
+    }
+}
+
+or 
+--
+import React, { Component } from 'react'
+
+export default class App extends Component 
+{
+  constructor(props)
+  {
+      super(props);
+      this.state = 
+      {
+        rollno : 501,
+        name :  this.props.name
+      }
+  }
+    render() 
+    {
+      return (
+        <>
+            <h1>Roll No : {this.state.rollno} </h1>
+            <h1>Name : {this.state.name} </h1>
+        </>
+      )
+    }
+}
+
+Q) What is the difference between props and state ?
+
+props					state 
+------					------
+It is immutable.			It is mutable.
+
+It is read only.			It is updatable.
+
+Stateless component can have props.	Statefull component can have state.
+
+We can share props from one component	It is controlled by a component itself.
+to another component as an argument.
+
+A child component can access props.	It is private.  
+					
+Event Handling in React 
+========================
+Event handling for react elements is similar to event handling of DOM elements.
+
+Action to which javscript response is called event.
+
+ex:
+	JavaScript 
+	----------
+		<button onclick="f1()"> clickme </button>
+	ReactJS 
+	--------
+	function component 
+		ex:
+			<button onClick={handleClick}> clickme </button>
+	class component 
+		ex:
+			<button onClick={this.handleClick}> clickme </button>
+
+
+Event Handling using Function component 
+========================================
+
+project structure 
+-----------------
+myapp9
+|
+|-----node_modules
+|
+|-----public 
+	|
+	|---index.html
+	|---fevicon.ico
+	|---manifest.json 
+|
+|-----src
+	|
+	|---index.js
+	|---index.css
+	|---App.js
+	|---App.css
+	|---App.test.js
+|
+|-----package.json
+|-----README.md
+
+step1:
+------
+	Open VSC Editor from "reactprojects" folder.
+	ex:
+		reactprojects> code . 
+
+step2:
+------
+	ADD below extension in VSC Editor.
+	ex:
+		ES7 React/Redux/GraphQL/React-Native snippets
+	
+	
+step3:
+-----
+	Create a react project i.e myapp8 in VSC terminal.
+	ex:
+		npx  create-react-app myapp9
+
+step4:
+-----
+	Switch the project.
+	ex:
+		cd myapp9
+
+step5:
+------
+	Run react project.
+	ex:	
+		npm start 
+
+step6:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000
+
+step7:
+------
+	Goto App.js file and create function component using ES7 extension.
+	ex:
+		rfce - Named function 		
+		rafce - Arrow function 
+		imr - import 
+
+App.js 
+------
+import React from 'react'
+
+function App() 
+{
+  const handleClick = (e)=>{
+    e.preventDefault();
+    console.log("You have clicked!!!!");
+  }
+  
+
+
+  return (
+    <>
+        <button onClick={handleClick}> clickme </button>
+    </>
+  )
+}
+export default App
+
+
+
+
+Event Handling using class component 
+========================================
+
+project structure 
+-----------------
+myapp9
+|
+|-----node_modules
+|
+|-----public 
+	|
+	|---index.html
+	|---fevicon.ico
+	|---manifest.json 
+|
+|-----src
+	|
+	|---index.js
+	|---index.css
+	|---App.js
+	|---App.css
+	|---App.test.js
+|
+|-----package.json
+|-----README.md
+
+step1:
+------
+	Open VSC Editor from "reactprojects" folder.
+	ex:
+		reactprojects> code . 
+
+step2:
+------
+	ADD below extension in VSC Editor.
+	ex:
+		ES7 React/Redux/GraphQL/React-Native snippets
+	
+	
+step3:
+-----
+	Create a react project i.e myapp8 in VSC terminal.
+	ex:
+		npx  create-react-app myapp9
+
+step4:
+-----
+	Switch the project.
+	ex:
+		cd myapp9
+
+step5:
+------
+	Run react project.
+	ex:	
+		npm start 
+
+step6:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000
+
+step7:
+------
+	Goto App.js file and create class component using ES7 extension.
+	ex:
+		rcc - class component 
+		imr - import 
+App.js 
+------
+import React, { Component } from 'react'
+
+export default class App extends Component
+{
+  handleClick = (e)=>{
+      e.preventDefault();
+      console.log("You have clicked once again!!!!");
+  }
+
+  render() 
+  {
+    return (
+      <>
+          <button onClick={this.handleClick}> clickme </button>
+      </>
+    )
+  }
+}
+
+
+
+
+
+Updating the state 
+===================
+In order to update the state we need to use setState() method.
+
+
+project structure 
+-----------------
+myapp10
+|
+|-----node_modules
+|
+|-----public 
+	|
+	|---index.html
+	|---fevicon.ico
+	|---manifest.json 
+|
+|-----src
+	|
+	|---index.js
+	|---index.css
+	|---App.js
+	|---App.css
+	|---App.test.js
+|
+|-----package.json
+|-----README.md
+
+step1:
+------
+	Open VSC Editor from "reactprojects" folder.
+	ex:
+		reactprojects> code . 
+
+step2:
+------
+	ADD below extension in VSC Editor.
+	ex:
+		ES7 React/Redux/GraphQL/React-Native snippets
+	
+	
+step3:
+-----
+	Create a react project i.e myapp8 in VSC terminal.
+	ex:
+		npx  create-react-app myapp10
+
+step4:
+-----
+	Switch the project.
+	ex:
+		cd myapp10
+
+step5:
+------
+	Run react project.
+	ex:	
+		npm start 
+
+step6:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000
+
+step7:
+------
+	Goto App.js file and create class component using ES7 extension.
+	ex:
+		rcc - class component 
+		imr - import 
+
+App.js 
+-------
+import React, { Component } from 'react'
+
+export default class App extends Component 
+{
+  state = 
+  {
+      rollno : 101,
+      name : "Alan"
+  }
+
+  buttonStyle=
+  {
+    padding: "8px",
+    width:"200px",
+    backgroundColor:"red",
+    border:"none",
+    borderRadius:"15px"
+  }
+
+  handleClick = (e)=>{
+    e.preventDefault();
+    this.setState({rollno:601,name:"Nelson"});
+  }
+
+    render() 
+    {
+      return (
+        <>
+           <center>
+                <h1>Roll No : {this.state.rollno} </h1>
+                <h1>Name : {this.state.name} </h1>
+                <button style={this.buttonStyle} onClick={this.handleClick}> clickme </button>
+           </center>
+        </>
+    )
+  }
+}
+
+approach2
+--------
+
+index.js 
+---------
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App fname={"Kelvin"}/>
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+App.js 
+--------
+import React, { Component } from 'react'
+
+export default class App extends Component 
+{
+  state = 
+  {
+      rollno : 101,
+      name :  this.props.fname
+  }
+
+  buttonStyle=
+  {
+    padding: "8px",
+    width:"200px",
+    backgroundColor:"red",
+    border:"none",
+    borderRadius:"15px"
+  }
+
+  handleClick = (e)=>{
+    e.preventDefault();
+    this.setState({rollno:601,name:"Nelson"});
+  }
+
+    render() 
+    {
+      return (
+        <>
+           <center>
+                <h1>Roll No : {this.state.rollno} </h1>
+                <h1>Name : {this.state.name} </h1>
+                <button style={this.buttonStyle} onClick={this.handleClick}> clickme </button>
+           </center>
+        </>
+    )
+  }
+}
+
+
+Sealed class in Java (17 version)
+==================================
+sealed class Parent permits Child1,Child2 
+{
+	public void property()
+	{
+		System.out.println("property-method");
+	}
+}
+non-sealed class Child1 extends Parent 
+{
+	public void profession()
+	{
+		System.out.println("Doctor");
+	}
+}
+non-sealed class Child2 extends Parent 
+{
+	public void profession()
+	{
+		System.out.println("Jobless");
+	}	
+}
+class Test 
+{
+	public static void main(String[] args)
+	{
+		Child1 c1 = new Child1();
+		c1.property();
+		c1.profession();
+		
+		
+		Child2 c2 = new Child2();
+		c2.property();
+		c2.profession();
+	
+		
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

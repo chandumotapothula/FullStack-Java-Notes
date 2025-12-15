@@ -1,0 +1,685 @@
+JavaScript hoisting
+====================
+Hoisting is a default behavior of JavaScript where all the variable and function declarations are moved on top. This means that irrespective of where the variables and functions are declared, they are moved on top of the scope. The scope can be both local and global.
+
+ex:
+	i=10;				var i;
+	document.write(i);  	==>  	i=10;	
+	var i;				document.write(i);
+
+
+ex:
+
+	f1();					function f1()
+	function f1()				{
+	{				==>	document.writeln("Function");
+	document.writeln("Function");		}
+	}					f1();
+
+
+JavaScript Set 
+===============
+A JavaScript Set is a collection of unique values. 
+Each value can only occur once in a Set. 
+The values can be of any type, primitive values or objects.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			
+			var set = new Set();
+			set.add(10);
+			set.add(20);
+			set.add(30);
+			set.forEach((ele)=> {document.writeln(ele);});	
+
+		</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			
+			var set = new Set([1,7,3,9,4,4]);
+			set.forEach((ele)=> {document.writeln(ele);});	
+
+		</script>
+	</body>	
+</html>
+
+Q) Write a javascript program to display unique elements from given array?
+
+input:
+	5 9 2 3 9 6 1 1 7 3 
+output:
+	5 9 2 3 6 1 7 
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			
+			var arr = [5,9,2,3,9,6,1,1,7,3];
+			var set = new Set();
+			for(var i=0;i<arr.length;i++)
+			{
+				set.add(arr[i]);
+			}	
+			set.forEach((ele)=>{document.writeln(ele);});
+		</script>
+	</body>	
+</html>
+
+
+Map 
+=====
+Map is used to store the data in the form of key and value pair where key can hold any datatype.
+
+Map remembers original insertion order.
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			var map = new Map();
+			map.set(1,"one");
+			map.set(2,"two");
+			map.set(3,"three");
+			map.set(4,"four");
+		map.forEach((key,value)=> {document.writeln(value+"="+key+"<br>");})
+		</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			var map = new Map([[1,"one"],[2,"two"],[3,"three"]]);
+			
+		map.forEach((key,value)=> {document.writeln(value+"="+key+"<br>");})
+		</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			var map = new Map([[1,"one"],[2,"two"],[3,"three"]]);
+			
+			for(var m of map.keys())
+			{
+				document.writeln(m);
+			}
+		</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			var map = new Map([[1,"one"],[2,"two"],[3,"three"]]);
+			
+			for(var m of map.values())
+			{
+				document.writeln(m);
+			}
+		</script>
+	</body>	
+</html>
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			var map = new Map([[1,"one"],[2,"two"],[3,"three"]]);
+			
+			for(var m of map)
+			{
+				document.writeln(m);
+			}
+		</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			var map = new Map([[1,"one"],[2,"two"],[3,"three"]]);
+			
+			document.writeln(map.size+"<br>");
+			document.writeln(map.get(1)+"<br>");
+			map.delete(3);
+			document.writeln(map.get(3)+"<br>");
+		</script>
+	</body>	
+</html>
+
+
+JavaScript Math
+===============
+JavaScript Math object is used to perform mathematical operations.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			document.writeln((Math.ceil(10.5))+"<br>"); // 11 
+
+			document.writeln((Math.floor(10.5))+"<br>"); // 10
+
+			document.writeln((Math.round(10.8))+"<br>"); // 11
+
+			document.writeln((Math.trunc(10.57))+"<br>"); // 10 
+
+		</script>
+	</body>	
+</html>
+
+Q) Write a javascript program to find out cube of a given number?
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			var n=5;
+			var cube = Math.pow(n,3);
+			document.writeln(cube);	
+
+		</script>
+	</body>	
+</html>
+
+Q) Write a javascript program to find out greatest of three numbers?
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			var a=7;
+			var b=13;
+			var c=19;
+			var max = Math.max(Math.max(a,b),c);
+			document.writeln(max);
+		</script>
+	</body>	
+</html>
+
+
+JavaScript Promises 
+==================
+JavaScript run on single thread. It means JavaScript can execute only one line at a time.
+
+In JavaScript, Promises are used to perform Asynchronous operations.
+
+JavaScript promises is used to check our operations done or not.
+
+In real world scenario JavaScript promises are used to 
+
+ex:	
+	Call the API's 
+	Handling Files and Network Input/Output 
+	Waiting for animation and transition 
+	and etc.	
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			var promise = new Promise((resolve,reject)=>{
+					resolve();
+			})
+
+			promise.then((success) => {
+				document.writeln("It is a positive response");
+			})
+
+
+		</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			var promise = new Promise((resolve,reject)=>{
+					reject();
+			})
+
+			promise.then((success) => {
+				document.writeln("It is a positive response");
+			})
+			.catch((error)=>{
+				document.writeln("It is error response");
+			})
+
+
+		</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			var promise = new Promise((resolve,reject)=>{
+					var flag=true;
+					if(flag==true)
+					{
+						resolve();
+					}
+					else
+					{
+						reject();
+					}
+			})
+
+			promise.then((success) => {
+				console.log("It is a positive response");
+			})
+			.catch((error)=>{
+				console.log("It is error response");
+			})
+
+
+		</script>
+	</body>	
+</html>
+
+
+JavaScript Regular Expression
+================================
+A regular expression is a sequence of characters that forms a search pattern.
+
+Regular expressions can be used to perform all types of text search and text replace operations.
+
+In JavaScript, regular expressions are also objects.
+
+
+JavaScript Form validation using RegularExpression
+=====================================================
+
+To generate proper regular expression we can login to below url.
+
+ex:
+	https://regex101.com/
+
+
+ex:
+<!DOCTYPE html>
+<html>
+<style>
+input[type=text],input[type=password], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  width:500px;
+  position: relative;
+  left:400px;
+  top:20px;
+}
+</style>
+
+<script type="text/javascript">
+  
+  function validate()
+  {
+    var name=document.getElementById('name').value;
+    var pwd=document.getElementById('pwd').value;
+    var phone=document.getElementById('phone').value;
+    var email=document.getElementById('email').value;
+    var country=document.getElementById('country').value;
+
+
+    var namecheck=/[A-Za-z. ]{6,20}$/;
+    
+    var pwdcheck=/(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[A-Z])[a-zA-Z0-9!@#$%^&*]{6,15}$/;
+
+    var phonecheck=/[6789][0-9]{9}$/;
+
+    var emailcheck=/[A-Za-z.]{1,}@[A-Za-z]{2,15}[.][A-Za-z]{3,}$/;
+    
+    if(!(namecheck.test(name)))
+    {
+        alert("UserName must be 6 characters without numbers & special characters");
+        document.getElementById('name').value="";
+        document.getElementById('name').focus();
+        return false;
+    }
+
+    if(!(pwdcheck.test(pwd)))
+    {
+      alert("password must have 1 uppercase, 1 special symbol and 1 digit with 6 letters");
+      document.getElementById('pwd').value="";
+      document.getElementById('pwd').focus();
+       return false;
+    }
+
+    if(!(phonecheck.test(phone)))
+    {
+      alert("Phone must start with 6,7,8,9 series with  10 digits");
+      document.getElementById('phone').value="";
+      document.getElementById('phone').focus();
+       return false;
+    }
+
+    if(!(emailcheck.test(email)))
+    {
+      alert("Please insert valid email");
+      document.getElementById('email').value="";
+      document.getElementById('email').focus();
+       return false;
+    }
+
+    if(country=="")
+    {
+      alert("Please select the country option ");
+      return false;
+    }
+    return true;
+}
+
+</script>
+
+<body>
+
+
+<div>
+  <form action="/test" onsubmit="validate()">
+
+    <label for="name">UserName</label>
+    <input type="text" id="name" name="name" placeholder="Your username.."/>
+
+    <label for="pwd">Password</label>
+    <input type="text" id="pwd" name="pwd" placeholder="Your password.."/>
+
+    <label for="phone">Phone</label>
+    <input type="text" id="phone" name="phone" placeholder="Your phone.."/>
+
+     <label for="email">Email</label>
+    <input type="text" id="email" name="email" placeholder="Your email.."/>
+
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="">none</option>
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+  
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+</body>
+</html>
+
+
+JavaScript OOPS 
+================
+OOPS stands for Object Oriented Programming System.
+
+OOPS concept introduced to deal with real world entities using programming language.
+
+JavaScript is not a object oriented programming. It is a object based programming language because we don't need to declare a class in order to create an object.
+
+A programming language is known as "object-based" when it provides fundamental constructs for working with objects, but it may not fully implement all the core principles of Object-Oriented Programming (OOP), particularly inheritance and polymorphism.
+
+We have following OOPS features.
+
+ex:
+	class 
+	object
+	abstraction 
+	encapsulation 
+	inheritance 
+	polymorphism 
+
+ 
+class 
+=======
+It is a template of a object.
+
+To declare a class we will use class keyword.
+
+According JavaScript naming convention a class name must starts with uppercase.
+
+ex:
+	class Example
+	{
+		
+	}
+
+
+constructor
+===========
+It is a special function which is used to initialized an object.
+
+A constructor is called when object is created.
+
+To declare a constructor we required constructor keyword.
+
+A class can have only one constructor.
+
+ex:
+	class Example
+	{
+		constructor()
+		{
+			-
+			-
+		}
+	}
+
+object
+=======
+It is a entity having states and behaviours.
+
+It general, object is a collection of variables and functions.
+
+To create an object we need to use new operator.
+
+ex:
+	class Example
+	{
+		constructor()
+		{
+		
+		}
+	}
+	var e = new Example();
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			class Example
+			{
+				constructor()
+				{
+					document.writeln("0-arg const");
+				}
+			}
+			var e = new Example();
+		</script>
+	</body>	
+</html>
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			class Example
+			{
+				constructor()
+				{
+					document.writeln("0-arg const<br>");
+				}
+			}
+			var e1 = new Example();
+			var e2 = new Example();
+		</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			class Example
+			{
+				constructor(arg1,arg2)
+				{
+					document.writeln(arg1+arg2);
+				}
+			}
+			var e = new Example(10,20);
+			
+		</script>
+	</body>	
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

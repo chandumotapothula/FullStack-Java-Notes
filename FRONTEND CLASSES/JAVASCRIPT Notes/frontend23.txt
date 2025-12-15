@@ -1,0 +1,429 @@
+How to convert Feet to Inches in JavaScript 
+===========================================
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			h3
+			{
+				text-align: center;
+				text-decoration: underline;
+			}
+		</style>
+	</head>
+	<body>
+			<h3> Convertion Application</h3>	
+			<table align="center">
+				<tr>
+					<td>Feet</td>
+					<td>&nbsp;</td>
+					<td>Inches</td>
+				</tr>
+				<tr>
+					<td><input type="text" id="feet"/></td>
+					<td><big>=</big></td>
+					<td><input type="text" id="inches"/></td>
+				</tr>
+			</table>
+			<script>
+					var feet = document.getElementById('feet');
+					var inches = document.getElementById('inches');
+
+					feet.addEventListener('input',function(){
+						var f = this.value;
+						var i = f * 12;
+						inches.value=i;
+					});	
+
+					inches.addEventListener('input',function(){
+						var i = this.value;
+						var f = i/12;
+						if(!Number.isInteger(f))
+						{
+							f = f.toFixed(2);
+						}
+						feet.value=f;
+					})
+
+
+			</script>
+	</body>	
+</html>
+
+8) document.removeEventListener()
+=================================
+It is used to remove the event listener from HTML elements.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+			<h2 id="hover"> Mouse Over and Out Here </h2>
+			<button onclick="f2()">stop</button>
+
+			<div id="result"></div>
+
+			<script>
+				var x = document.getElementById('hover');
+				x.addEventListener('mouseover',f1);
+
+				function f1()
+				{
+		document.getElementById('result').innerHTML+="<p>Mouse Over</p>"
+				}
+				function f2()
+				{
+					x.removeEventListener('mouseover',f1);	
+		document.getElementById('result').innerHTML+="<p>Mouse Out</p>"
+				}
+			</script>
+	</body>	
+</html>
+
+JavaScript Date 
+================
+JavaScript Date is an object which is used to display date and time.
+
+Using JavaScript Date we can display timer on the web page.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+			<script>
+				var date = new Date();	
+				var d = date.getDate();
+				var m = date.getMonth()+1;
+				var y = date.getFullYear();
+				document.writeln(d+"/"+m+"/"+y);
+			</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+			<script>
+				var date = new Date();	
+				var h = date.getHours();
+				var m = date.getMinutes();
+				var s = date.getSeconds();
+				document.writeln(h+":"+m+":"+s);
+			</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background: linear-gradient(red,yellow);
+			}
+			span
+			{
+				font-size:35px;
+				border:1px solid #FFF;
+				padding:10px;
+				border-radius: 5px;
+				color:#FFF;
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	<body>
+			<span id="result">  <span>
+
+			<script>
+				window.onload=function(){getTime();}
+
+				function getTime()
+				{
+					var date = new Date();
+					var h = date.getHours();
+					var m = date.getMinutes();
+					var s = date.getSeconds();
+					m = check(m);
+					s = check(s);
+
+				document.getElementById('result').innerHTML=h+":"+m+":"+s;
+					setInterval(getTime,1000);
+				}
+				function check(i)
+				{
+					if(i<10)
+					{
+						i = "0"+i;
+					}
+					return i;
+				}
+			</script>
+	</body>	
+</html>
+
+
+Interview Questions 
+====================
+
+Q) What is the difference between innerText and innerHTML property?
+
+innerText
+---------
+It is used to display simple text in javascript dynamically.
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+			 <button onclick="f1()"> click </button>
+			 <div id="result"></div>
+
+			 <script>
+			 	function f1()
+			 	{
+	document.getElementById('result').innerText="<p>Inner Text Property</p>";
+			 	}
+			 </script>
+	</body>	
+</html>
+
+innerHTML
+---------
+It is used to display simple text and HTML code in javascript dynamically.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+			 <button onclick="f1()"> click </button>
+			 <div id="result"></div>
+
+			 <script>
+			 	function f1()
+			 	{
+	document.getElementById('result').innerHTML="<p style='color:red'>Inner HTML Property</p>";
+			 	}
+			 </script>
+	</body>	
+</html>
+
+
+Q) What is higher order function in javascript?
+
+Function which operates by another function by taking as an argument or by returing a function is called higher order function.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+			<script>
+				function f1(f2)
+				{
+					f2();	
+				}
+
+				f1(function(){document.write("Higher Order Function");});
+			</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+			<script>
+				function f1()
+				{
+					return function()
+							{ 
+							document.writeln("Higher Order Function 2");
+							}
+				}
+
+				var f2=f1();
+				f2();
+			</script>
+	</body>	
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- fontawesome icon cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

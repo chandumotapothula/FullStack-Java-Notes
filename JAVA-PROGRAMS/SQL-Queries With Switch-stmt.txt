@@ -1,0 +1,124 @@
+Q) Write a java program to find out given alphabet is a vowel or consonent?
+
+Approach1:
+----------
+import java.util.Scanner;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the alphabet :");
+		char ch = sc.next().charAt(0);
+		
+		switch(ch)
+		{
+			case 'a','e','i','o','u' -> 
+				{System.out.println("It is a vowel");}
+			default -> 
+				{System.out.println("It is a consonent");}
+		}
+	}
+}
+
+Approach2
+---------
+import java.util.Scanner;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the alphabet :");
+		char ch = sc.next().charAt(0);
+		
+		String result = switch(ch)
+		{
+			case 'a','e','i','o','u' -> { yield "It is a vowel"; }
+			default -> { yield "It is a consonent"; }
+		};
+		
+		System.out.println("Your Result : "+result);
+	}
+}
+
+
+A var keyword introduced in Java 10
+In java, we can declare variables using var keyword.
+A var variable must and should initialized.
+
+ex:
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		var a = 10;
+		System.out.println(a); 
+	}
+}
+
+
+
+Q) Program to check three numbers in sequence or not?
+
+class Main {
+    public static void main(String[] args) 
+    {
+        int a=3,b=2,c=1;
+        if(b==a+1 && c==b+1)
+        System.out.println("TRUE");
+        else
+        System.out.println("FALSE");
+    }
+}
+
+
+
+
+
+
+
+Product table 
+--------------
+pid		pname		pprice
+----		------		-------
+101		SUGAR		45
+102		BISCUIT		35
+103		Egg		7
+102		BISCUIT		35
+101		SUGAR		45
+103		Egg		7
+
+
+Q) Write a query to display distinct records from product table?
+ans)  select distinct * from product order by pid; 
+
+
+output:
+	pid		pname		pprice
+	----		-----		-------
+	101		SUGAR		45
+	102		BISCUIT		35
+	103		Egg		7
+
+
+
+Q) Write a query to display duplicates records from product table?
+
+select * from product group by pid,pname,pprice having count(*)>1 order by pid;
+
+
+Q) Write a query to remove duplicate records from product table?
+
+	delete from product where rowid  NOT IN 
+	(select min(rowid) from product group by pid,pname,pprice);
+
+
+Q) Write a query to display highest price product from product table?
+
+	select * from product where pprice = (select max(pprice) from product);
+
+
+
+

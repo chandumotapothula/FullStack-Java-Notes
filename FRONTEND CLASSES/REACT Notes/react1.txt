@@ -1,0 +1,264 @@
+ReactJS 
+========
+It is a declarative, efficient and flexible javascript frontend library which is used to develop web applications and User interfaces.
+
+It is an open source, component based frontend library responsible only for view layer of the application.
+
+It is developed by Jordan Walke a popular scientist of Facebook.
+
+It is intially developed by Facebook and later it is used in their own products like whatsapp and instagram.
+
+It is released to the public in the month of May,2013.
+
+The official website of reactjs is https://react.dev . 
+
+The latest version of react i.e v19.2
+
+The main objective of react is used to develop reusable components.
+
+A component is a building block of react application.
+
+
+Advantages
+===========
+1) It is easy to learn and easy to use.
+
+2) It is used to develop reusable components.
+
+3) It uses virtual DOM.
+
+4) It supports one way data binding.
+
+5) Good documentation and community support.
+
+
+Q) What is the difference between Angular and React?
+
+Angular					React
+--------				-------
+It is a product of Google.		It is a product of Facebook.
+
+It is developed in the year of 		It is developed in the year of 
+Sep,2016.				May,2013.
+
+It is a open source javascript 		It is a open source javascript frontend  
+framework which is used develop		library responsible only for view layer 
+web applications and mobile 		of the application.
+applications.
+
+Typescript language is used.		JSX language is used.
+
+It contains real DOM.			It contains virtual DOM.
+
+It supports two way data binding.	It supports one way data binding.
+
+It is used to develop rich featured 	It is used to develop SPA (Single Page
+applications.				Applications).
+
+Jasmine and Karma is used as a 		Jest and Enzyme is used as a testing 
+testing framework.			framework.
+
+List of companies are using angular 	List of companies are using reactjs are 
+are Mcdonalds , samsung, the guardian,	whatsapp, instagram, facabook , airbnb
+nike and etc.				and etc.
+
+
+
+
+
+How React works internally
+==========================
+React internally uses virtual DOM that is tree node representation.
+
+Whenever we insert or delete the elements in DOM , react uses virtual DOM.
+
+React uses/find out efficient way to perform the changes in the real DOM.
+
+Assume we have some components and consistently we are performance the changes so we need to check how react acts or performs.
+
+Diagram: react1.1
+
+
+JSX 
+====
+JSX stands for JavaScript XML.
+
+JSX allows us to write HTML code in JavaScript.
+
+JSX elements contain tags, attributes and childrens.
+
+JSX is not neccessity to develop react application instead we can use babel.
+
+JSX makes our code simple and elegant.
+
+Ultimately JSX transpiled to pure javascript which is understand by a browser.
+
+JSX Elements 
+============
+JSX allows us to declare HTML elements and insert in a DOM without using createElement() method and appendChild() method.
+
+ex:
+---
+	JSX
+	----	
+		<h1> Heading Tag </h1>
+	Babel 
+	----	
+		React.createElement("h1",null,"Heading Tag");
+
+		Here 
+		"h1" is a tag name 
+		"null" is a optional attribute 
+		"Heading Tag" is a children 
+
+ex:
+---
+	JSX
+	---
+		<div>
+			<h1> Heading Tag </h1>
+		</div>
+	Babel
+	-----
+		React.createElement("div",null,
+			React.createElement("h1",null,"Heading Tag"));
+		
+ex:
+---
+	JSX
+	---
+		<h1 id="myId"> Heading Tag </h1>
+
+	Babel
+	-----
+		React.createElement("h1",{id:"myId"},"Heading Tag");
+
+
+ex:
+---
+	JSX
+	---
+		<h1 className="myClass"> Heading Tag </h1>
+
+	Babel
+	-----
+		React.createElement("h1",{class:"myClass"},"Heading Tag");
+
+
+JSX Expression 
+==============
+JSX contains expression in curly braces i.e {}.
+
+JSX expression can be variable, property or any valid javascript expression.
+
+ex:
+	var a=10;
+	{a}
+
+	`the value is = ${a}`
+
+	{Math.ceil(10.6);}
+
+	var a=10,b=20;
+	{a+b}
+
+
+NPM 
+=====
+NPM stands for Node Package Manager.
+
+It is a integrated tool for nodejs.
+
+NPM is used to install node packages.
+
+To install node packages we need to use below command.
+
+ex:
+	npm install -g <package_name>
+
+All node packages installed in "node_modules" folder.
+
+
+Environmental Setup for ReactJS 
+===============================
+step1:
+-----
+	Download and Install NodeJS software.
+	ex:
+		https://nodejs.org/en/download
+
+step2:
+-----
+	Copy the below directories.
+	ex:
+		C:\Program Files\nodejs
+		C:\Users\Quality Thought\AppData\Roaming\npm
+step3:
+------
+	Paste NodeJS and NPM directory in environmental variables.
+	ex:
+		Right click to This PC --> properties --> Advanced System Settings -->
+		Environmental variables --> user variables --> click to Path --> 
+		click to edit ---> new  --> copy C:\Program Files\nodejs and 
+		C:\Users\Quality Thought\AppData\Roaming\npm --> ok --> ok --> ok.
+
+step4:
+-----
+	Check environmental setup done perfectly or not.
+	ex:
+		cmd> node -v 
+		cmd> npm -v 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

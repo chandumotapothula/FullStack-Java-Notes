@@ -1,0 +1,488 @@
+React Phases 
+============
+React phases collectively known as component life cycle.
+
+We have four phases in react.
+
+Diagram: react5.1
+
+1) Mounting 
+
+2) Updating
+
+3) Error Handling 
+
+4) Unmounting 
+
+1) Mounting 
+-----------
+	The process of creating react components and inserting in a DOM is called mounting. 
+	Mounting phase is used to reserve the memory.
+	Mounting phase contains following four life cycle methods.
+	ex:
+		constructor() 
+		getDerivedStateFromProps()
+		render() 
+		componentDidMount() 
+
+	All the above life cycle methods we can declare inside class component.
+
+2) Updating
+-----------
+	The process of changing state and props of a component which already exist 
+	in a DOM is called updating.
+
+	Updating phase contains following five life cycle methods.
+	ex:
+		getDerivedStateFromProps()
+		shouldComponentUpdate()
+		render()
+		getSnapshotBeforeUpdate()
+		componentDidUpdate()	
+
+	All the above life cycle methods we can declare inside class component.
+
+
+3) Error Handling 
+----------------
+	This phase executes automatically when there is a problem in rendering, react life 
+	cycle methods, child class constructor and etc.
+
+
+4) Unmounting 
+-------------
+	The process of removing the components from DOM is called unmounting.
+	It is used to release the reverse memory.
+	Unmounting phase contains following one life cycle method.
+	ex:
+		componentWillUnmount() 
+
+	All the above life cycle methods we can declare inside class component.
+
+Project Structure 
+==================
+myapp11
+|
+|----node_modules
+|
+|----public 
+|	|
+	|---index.html
+	|---favicon.ico
+	|---manifest.json 
+
+|------src
+	|
+	|---index.js
+	|---index.css
+	|
+	|---App.js 
+	|---App.css
+	|---App.test.js 
+
+|----package.json
+
+step1:
+-----
+	create react application i.e myapp11
+	ex:
+		npx  create-react-app myapp11
+
+step2:
+------
+	Switch to the project.
+	ex:
+		cd myapp11
+
+step3:
+-----
+	Run react application.
+	ex:
+		npm start 
+
+
+step4:
+-----
+	Goto App.js file and declare class component.
+
+App.js 
+-------
+
+import React, { Component } from 'react'
+
+export default class App extends Component 
+{
+   componentDidMount()
+  {
+    console.log('componentDidMount');
+  }
+  
+  constructor()
+  {
+      super();
+      this.state={
+
+      }
+      console.log("constructor");
+  }
+
+  static getDerivedStateFromProps(props,state)
+  {
+      console.log('getDerivedStateFromProps');
+      return null;
+  }
+
+  render() 
+  {
+    console.log('render')
+    return (
+      <>
+          <h1> Goto brower console to see the result </h1>
+      </>
+    )
+  }
+
+ 
+}
+
+
+
+
+React Hooks 
+===========
+Hooks are new addition to react 16v.
+
+It allows us to access state, react life cycle methods and other react features.
+
+React hooks we can declare only in function component.
+
+We have following list of built-in hooks.
+ex:
+	useState()
+	useEffect()
+	useReducer()
+	useRef() 
+	and etc.
+
+It is possible to create custom hook in react.
+
+All react hooks we need to declare top of the function.
+
+
+useState()
+==========
+A useState() hook is a built-in hook which allows a function component to manage or update internal state.
+
+
+Project Structure 
+==================
+myapp12
+|
+|----node_modules
+|
+|----public 
+|	|
+	|---index.html
+	|---favicon.ico
+	|---manifest.json 
+
+|------src
+	|
+	|---index.js
+	|---index.css
+	|
+	|---App.js 
+	|---App.css
+	|---App.test.js 
+
+|----package.json
+
+step1:
+-----
+	create react application i.e myapp12
+	ex:
+		npx  create-react-app myapp12
+
+step2:
+------
+	Switch to the project.
+	ex:
+		cd myapp12
+
+step3:
+-----
+	Run react application.
+	ex:
+		npm start 
+
+
+step4:
+-----
+	Goto App.js file and declare function component.
+
+App.js 
+------
+import { useState } from "react";
+
+function App() 
+{
+  const [name,setName] = useState("Alan");
+  
+  const handleClick=(e)=>{
+    e.preventDefault();
+    setName("Jose");
+  }
+
+  return (
+    <>
+        <h1> Name : {name} </h1>
+        <button onClick={handleClick}> click Me </button>
+    </>
+  )
+}
+export default App
+
+
+useEffect()
+===========
+A useEffect() hook is a built-in hook which allows a function component to perform side effects.
+
+Changing the document title, fetching the data from API, directly changing the DOM, performing subscription and etc are called side effects in react.
+
+A useEffect() hook takes two parameters.
+
+syntax:
+	useEffect(function,dependency-array);
+
+ex:
+	useEffect(function()
+	{
+
+	},[])
+
+	Here dependency array is optional.
+
+
+Project Structure 
+==================
+myapp12
+|
+|----node_modules
+|
+|----public 
+|	|
+	|---index.html
+	|---favicon.ico
+	|---manifest.json 
+
+|------src
+	|
+	|---index.js
+	|---index.css
+	|
+	|---App.js 
+	|---App.css
+	|---App.test.js 
+
+|----package.json
+
+step1:
+-----
+	create react application i.e myapp12
+	ex:
+		npx  create-react-app myapp12
+
+step2:
+------
+	Switch to the project.
+	ex:
+		cd myapp12
+
+step3:
+-----
+	Run react application.
+	ex:
+		npm start 
+
+
+step4:
+-----
+	Goto App.js file and declare function component.
+
+App.js 
+--------
+import { useState,useEffect } from "react";
+function App()
+{
+  const [count,setCount]= useState(0);
+
+  useEffect(function(){
+    document.title = `You clicked ${count} Times`;
+  })
+
+  const handleClick = (e)=>{
+      e.preventDefault();
+      setCount(count+1);
+  }
+
+
+
+  return (
+    <>
+        <h1> Count : {count} </h1>
+        <button onClick={handleClick}> Increment </button>
+    </>
+  )
+}
+export default App;
+
+
+
+useReducer()
+============
+It is similar to useState() hook but it allows custom state logic.
+
+A useReducer() hooks takes two parameters.
+ex:
+	useReducer(reducer,initialState);
+
+A userReducer hook returns current state and dispatch method.
+ex:
+	const [state,dispatch] = useReducer(reducer,initialState); 
+
+
+Project Structure 
+==================
+myapp13
+|
+|----node_modules
+|
+|----public 
+|	|
+	|---index.html
+	|---favicon.ico
+	|---manifest.json 
+
+|------src
+	|
+	|---index.js
+	|---index.css
+	|
+	|---App.js 
+	|---App.css
+	|---App.test.js 
+
+|----package.json
+
+step1:
+-----
+	create react application i.e myapp13
+	ex:
+		npx  create-react-app myapp13
+
+step2:
+------
+	Switch to the project.
+	ex:
+		cd myapp13
+
+step3:
+-----
+	Run react application.
+	ex:
+		npm start 
+
+
+step4:
+-----
+	Goto App.js file and declare function component.
+
+App.js 
+------
+
+import { useReducer } from "react";
+
+const initialState=0;
+const reducer = (state,action) => {
+  switch(action)
+  {
+      case 'increment' : return state+1;
+      case 'decrement' : return state-1;
+      case 'reset' : return initialState;
+      default : return state;
+  }
+}
+function App()
+{
+  const [count, dispatch] = useReducer(reducer,initialState) 
+   return (
+        <>
+            <center>
+                <h1> Count  : {count} </h1>
+                <button onClick={()=> dispatch('increment')}> Increment </button>
+                <button onClick={()=> dispatch('reset')}> Reset </button>
+                <button onClick={()=> dispatch('decrement')}> Decrement </button>
+            </center>
+        </>
+  )
+}
+export default App;
+
+
+Spring boot project 
+===================
+
+HomeController.java
+--------------------
+package com.ihub.www.controller;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class HomeController 
+{
+	@Value("${spring.application.name}")
+	private String name;
+	
+	@Value("${server.port}")
+	private String port;
+	
+	@GetMapping("/details")
+	public String  printDetails()
+	{
+		return "Application Name : "+name+" "+"Port No :"+port;
+	}
+}
+
+application.properties 
+----------------------
+spring.application.name=demo-project
+server.port= 9191
+
+
+Request url
+-----------
+	http://localhost:9191/details
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

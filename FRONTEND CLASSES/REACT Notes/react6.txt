@@ -1,0 +1,727 @@
+useRef() hook 
+=============
+The useRef hook is one of the built-in hooks in React. We can use it to persist or preserve values between re-renders. The useRef hook takes an initial value of any type as argument and returns an object with a single current property.
+
+
+Project Structure 
+-----------------
+myapp14
+|
+|----node_modules
+|
+|----public
+	|
+	|---index.html
+	|---favicon.ico
+	|---manifest.json 
+|
+|-----src
+	|
+	|---index.js 
+	|---index.css
+	|
+	|---App.js
+	|---App.css
+	|---App.test.js 
+|
+|-----package.json 
+|-----README.md 
+
+step1:
+------
+	Create a react project i.e myapp14.
+	ex:
+		npx create-react-app myapp14
+
+step2:
+-----
+	switch to the project.
+	ex:
+		cd myapp14
+
+step3:
+------
+	run react project.
+	ex:
+		npm start 
+
+step4:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000
+
+step5:
+-----
+	Goto App.js file and write below code.
+
+App.js 
+------
+import { useEffect, useRef } from "react";
+function App()
+{
+    const inputRef = useRef(null);
+
+    useEffect(function(){
+      inputRef.current.focus();
+    },[])
+
+
+    return (
+      <>
+        <br></br>
+        Name : <input type="text" ref={inputRef}/>
+      </>
+    )
+}
+export default App;
+
+
+Example2
+--------
+
+App.js 
+-------
+import { useState,useEffect, useRef } from "react";
+function App()
+{
+    const [name,setName] = useState("");
+    const count = useRef(-1);
+   
+
+    useEffect(function(){
+
+        count.current = count.current + 1;
+    })
+
+
+    return (
+      <>
+        <br></br>
+        Name : <input type="text" value={name} 
+        onChange={(e)=> setName(e.target.value) }/>     
+      
+        <h1> Counting the Words : {count.current} </h1>
+      </>
+    )
+}
+export default App;
+
+Q) What is difference between function component and class component ?
+
+function component			class component 
+------------------			-----------------
+It is a stateless component.		It is a statefull component.
+
+It supports hooks.			It does not support of hooks.
+
+Constructor can't be used.		Constructor can be used.
+
+It contains return stmt.		It contains render() method.
+
+
+Custom Hooks 
+============
+Hooks which are created by the user based on the application requirements are called custom hooks.
+
+ex:
+	useStudent()
+	useTrainer()
+	useJavaBatch() 
+	and etc.
+
+
+
+
+Project Structure 
+-----------------
+myapp15
+|
+|----node_modules
+|
+|----public
+	|
+	|---index.html
+	|---favicon.ico
+	|---manifest.json 
+|
+|-----src
+	|
+	|---index.js 
+	|---index.css
+	|
+	|---App.js
+	|---App.css
+	|---App.test.js 
+	|---CustomHook.js
+|
+|-----package.json 
+|-----README.md 
+
+step1:
+------
+	Create a react project i.e myapp15.
+	ex:
+		npx create-react-app myapp15
+
+step2:
+-----
+	switch to the project.
+	ex:
+		cd myapp15
+
+step3:
+------
+	run react project.
+	ex:
+		npm start 
+
+step4:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000
+
+step5:
+-----
+	Create a CustomHook.js file inside "src" folder.
+
+CustomHook.js 
+-------------
+import { use, useState } from "react";
+function CustomHook()
+{
+    const [count,setCount] = useState(0);
+
+    const handleClick = (e)=>{
+        e.preventDefault();
+        setCount(count + 1);
+    }
+
+    return (
+         {
+            count,
+            handleClick
+         }
+        )   
+}
+export default CustomHook;
+
+step6:
+------
+	Goto App.js file and write below code.
+
+App.js 
+------
+import CustomHook from './CustomHook';
+function App()
+{
+   const data = CustomHook();
+
+  return (
+      <>
+          <h1> Count  : {data.count} </h1>
+          <button onClick={data.handleClick}> Increment </button>
+      </>
+  )
+}
+export default App;
+
+
+
+Context API 
+============
+Context API in React is used to share data across the components without passing the props manually through every level.This addresses a common issue known as "prop drilling".
+
+
+Diagram: react6.1
+
+
+
+Project Structure 
+-----------------
+myapp16
+|
+|----node_modules
+|
+|----public
+	|
+	|---index.html
+	|---favicon.ico
+	|---manifest.json 
+|
+|-----src
+	|
+	|---index.js 
+	|---index.css
+	|
+	|---App.js
+	|---AComponent.js 
+	|---BComponent.js 
+	|---CComponent.js 
+	|---App.css
+	|---App.test.js 
+		
+|
+|-----package.json 
+|-----README.md 
+
+step1:
+------
+	Create a react project i.e myapp16.
+	ex:
+		npx create-react-app myapp16
+
+step2:
+-----
+	switch to the project.
+	ex:
+		cd myapp16
+
+step3:
+------
+	run react project.
+	ex:
+		npm start 
+
+step4:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000
+
+step5:
+-------
+	Create a AComponent.js file inside "src" folder.
+
+AComponent.js
+---------------
+import React from 'react'
+import BComponent from './BComponent'
+
+function AComponent() {
+  return (
+    <div>
+        <BComponent/>
+    </div>
+  )
+}
+
+export default AComponent
+
+
+
+
+step6:
+-------
+	Create a BComponent.js file inside "src" folder.
+
+BComponent.js
+--------------
+import React from 'react'
+import CComponent from './CComponent'
+
+function BComponent() {
+  return (
+    <div>
+     <CComponent/>
+    </div>
+  )
+}
+
+export default BComponent
+
+
+
+step7:
+-------
+	Create a CComponent.js file inside "src" folder.
+
+CComponent.js
+-------------
+import React from 'react'
+import { UseContext } from './App';
+
+function CComponent() {
+  return (
+    <div>
+        <UseContext.Consumer>
+            {
+                data => {
+                    return <h1> The value is = {data} </h1>
+                }
+            }
+        </UseContext.Consumer>
+    </div>
+  )
+}
+
+export default CComponent
+
+
+step8:
+-----
+	Goto App.js file and write below code.
+
+App.js 
+-----
+import React from "react";
+import AComponent from "./AComponent";
+export const UseContext = React.createContext();
+function App()
+{
+  return (
+    <>
+      <UseContext.Provider value={"IHUB"}>
+        <AComponent/>
+      </UseContext.Provider>
+    </>
+  )
+}
+export default App;
+
+
+Assets/Images in React
+======================
+There are two ways to print the images in react.
+
+1) Inside the public folder
+
+2) Inside the src folder 
+
+1) Inside the public folder
+----------------------------
+Project Structure 
+-----------------
+myapp17
+|
+|----node_modules
+|
+|----public
+	|
+	|---index.html
+	|---favicon.ico
+	|---manifest.json 
+	|---images
+		|
+		|---thumbnail1.jpg 
+		|---thumbnail2.jpg
+		|---thumbnail3.jpg
+		
+|
+|-----src
+	|
+	|---index.js 
+	|---index.css
+	|
+	|---App.js
+	|---App.css
+	|---App.test.js 
+		
+|
+|-----package.json 
+|-----README.md 
+
+step1:
+------
+	Create a react project i.e myapp17.
+	ex:
+		npx create-react-app myapp17
+
+step2:
+-----
+	switch to the project.
+	ex:
+		cd myapp17
+
+step3:
+------
+	run react project.
+	ex:
+		npm start 
+
+step4:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000
+
+
+step5:
+-----
+	Create a "images" folder inside "public" folder.
+
+step6:
+------
+	Copy three images inside "images" folder.
+
+step7:
+------
+	Goto App.js file and write below code.
+
+App.js 
+-------
+import React from 'react'
+
+function App() {
+  return (
+    <div>
+        <img src="images/thumbnail1.jpg" width={200} height={200} style={{margin:"10px"}}/>
+        <img src="images/thumbnail2.jpg" width={200} height={200} style={{margin:"10px"}}/>
+        <img src="images/thumbnail3.jpg" width={200} height={200} style={{margin:"10px"}}/>
+    </div>
+  )
+}
+
+export default App
+
+
+
+2) Inside the src folder
+----------------------------
+
+Project Structure 
+-----------------
+myapp17
+|
+|----node_modules
+|
+|----public
+	|
+	|---index.html
+	|---favicon.ico
+	|---manifest.json
+		
+|
+|-----src
+	|
+	|---index.js 
+	|---index.css
+	|
+	|---App.js
+	|---App.css
+	|---App.test.js 
+	|
+	|---images
+		|
+		|---thumbnail1.jpg 
+		|---thumbnail2.jpg
+		|---thumbnail3.jpg
+		
+|
+|-----package.json 
+|-----README.md 
+
+step1:
+------
+	Create a react project i.e myapp17.
+	ex:
+		npx create-react-app myapp17
+
+step2:
+-----
+	switch to the project.
+	ex:
+		cd myapp17
+
+step3:
+------
+	run react project.
+	ex:
+		npm start 
+
+step4:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000
+
+
+step5:
+-----
+	Create a "images" folder inside "public" folder.
+
+step6:
+------
+	Copy three images inside "images" folder.
+
+step7:
+------
+	Goto App.js file and write below code.
+
+App.js 
+-------
+import pic1 from './images/thumbnail1.jpg';
+import pic2 from './images/thumbnail2.jpg';
+import pic3 from './images/thumbnail3.jpg';
+
+function App() {
+  return (
+    <div>
+        <img src={pic1} width={200} height={200} style={{margin:"10px"}}/>
+        <img src={pic2} width={200} height={200} style={{margin:"10px"}}/>
+        <img src={pic3} width={200} height={200} style={{margin:"10px"}}/>
+    </div>
+  )
+}
+
+export default App
+
+
+
+Bootstrap in React 
+==================
+Single Page Applications gain lot of popularity from past few years and many frontend frameworks introduced spring page applications like Angular, VueJS, Ember and etc. 
+
+React became most popular javascript frontend library and bootstrap became most popular CSS framework.
+
+To use bootstrap in react we need to install bootstrap package.
+ex:
+	npm install bootstrap 
+
+To use bootstrap in project we need to import the bootstrap in index.js file. 
+
+Project Structure 
+-----------------
+myapp18
+|
+|----node_modules
+|
+|----public
+	|
+	|---index.html
+	|---favicon.ico
+	|---manifest.json
+		
+|
+|-----src
+	|
+	|---index.js 
+	|---index.css
+	|
+	|---App.js
+	|---App.css
+	|---App.test.js 
+			
+|
+|-----package.json 
+|-----README.md 
+
+step1:
+------
+	Create a react project i.e myapp18.
+	ex:
+		npx create-react-app myapp18
+
+step2:
+-----
+	switch to the project.
+	ex:
+		cd myapp18
+
+step3:
+-----
+	Install bootstrap using npm command.
+	ex:
+		npm install bootstrap
+
+step4:
+------
+	run react project.
+	ex:
+		npm start 
+
+step5:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000
+
+step6:
+------
+	import bootstrap inside index.js file.
+
+index.js 
+----------
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import '../node_modules/bootstrap/dist/css/bootstrap.css';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+
+
+step7:
+------
+	Goto App.js file and write below code.
+
+App.js 
+-------
+import React from 'react'
+
+function App() {
+  return (
+    <div className='container mt-5'>
+        <h1 className='text-center'> Welcome to React Bootstrap </h1>
+       <p className='text-primary bg-warning'> This is React class</p>
+    </div>
+  )
+}
+
+export default App
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

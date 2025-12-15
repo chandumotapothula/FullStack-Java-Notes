@@ -1,0 +1,193 @@
+Eureka Server 
+=============
+Eureka server is a service registry that plays central role in automatic detection of machines or services on network.
+
+In short, eureka server is also known Discovery Server.
+
+Eureka server is used to register client service applications (Microservices).
+
+The default port number for eureka server is 8761.
+
+Diagram: sb8.1
+
+step1:
+------
+	Create a spring boot starter project i.e service-registry.
+	ex:
+		starter:
+				Spring Web 
+				Eureka Server 
+
+step2:
+------
+	Add @EnableEurekaServer annotation on spring boot application main class.
+
+ServiceRegistryApplication.java
+-------------------------------
+package com.ihub.www;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
+
+@SpringBootApplication
+@EnableEurekaServer
+public class ServiceRegistryApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ServiceRegistryApplication.class, args);
+	}
+
+}
+
+step3:
+------
+	Configure following properties inside application.yml file.
+
+application.yml 
+---------------
+
+server:
+  port: 8761
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+	
+step4:
+-----
+	Run spring boot starter project.
+
+step5:
+-----
+	Test the application by using below request url.
+	ex:
+		http://localhost:8761
+step6:
+----
+	Keep ready "customer-service"  existing project.
+
+step7:
+------
+	Add the Eureka client dependency to "customer-service" project.
+	ex:
+		Right click to project --> spring --> Add starters--> select Eureka Discovery
+ 		client --> Next --> select pom.xml file --> Finish.
+step8:
+------
+	Add following properties to register customer-service in eureka server. 	
+
+application.yml
+---------------
+server:
+  port: 9191
+
+spring:
+  application:
+    name: CUSTOMER-SERVICE
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/batch46
+    username: root 
+    password: root 
+
+  jpa:
+    hibernate.ddl-auto: update 
+    generate-ddl: true 
+    show-sql: true  
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone : http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+
+step9:
+-----
+	Run customer-service project.
+
+step10:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:8761	
+
+		
+Spring Cloud API Gateway
+==========================
+Spring Cloud Gateway aims to provide a simple, effective way to 
+route to API's and provide cross cutting concerns to them such as 
+security,monitoring/metrics , authentication, autherization ,adaptor and etc.
+
+
+Diagram: sb8.2
+
+
+step1:
+-------
+	Create a "cloud-apigateway" project in STS.
+	starters:
+		eureka Discovery client
+		Spring boot Actuator
+		spring reactive web
+
+step2:
+--------
+	Add spring cloud dependency in pom.xml file.
+	ex:
+		
+	<dependency>
+    		<groupId>org.springframework.cloud</groupId>
+    		<artifactId>spring-cloud-starter-gateway</artifactId>
+    	</dependency>
+
+
+step3:
+-------
+
+	Register port number, set application name,and configure 
+	all microservices for routing in application.yml file.
+
+application.yml
+-------------------
+server:
+  port: 7171
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+  
+spring:
+  application:
+    name: API-GATEWAY   
+  cloud:
+    gateway:
+      routes:
+        - id: CUSTOMER-SERVICE
+          uri: lb://CUSTOMER-SERVICE
+          predicates: 
+            - Path=/customer/**
+
+
+step4:
+--------
+	Now Run the following applications sequentially.
+	"service-registry"
+	"customer-service"
+	"cloud-apigateway".
+
+
+step5:
+-------
+	Test the applications by using below urls.
+	ex:
+		http://localhost:9191/customer/fetch --> Request to customer 
+		http://localhost:7171/customer/fetch --> Request to API gateway

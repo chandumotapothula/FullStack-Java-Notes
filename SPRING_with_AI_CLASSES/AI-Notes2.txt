@@ -1,0 +1,292 @@
+Text to Image 
+=============
+Spring AI prefered OpenAiImageModel for text to image.
+
+
+Steps to develop text to image application 
+------------------------------------------
+step1:
+------
+	Keep Open API key ready. 	
+	ex:	
+		https://platform.openai.com/api-keys
+step2:
+------
+	Create a spring boot starter project i.e texttoimage-backend.
+	ex:
+		starters:
+				Spring Web
+				Spring DevTools 
+				OpenAI
+project structure 
+---------------
+texttoimage-backend 
+|
+|---src/main/java
+	|
+	|---com.ihub.www
+	|
+	|---ImageGeneratorController.java
+
+|---src/main/resources
+	|
+	|---application.properties 
+
+|---src/test/java
+|
+|---pom.xml 
+
+step3:
+------
+	Create a ImageGeneratorController.java file inside "com.ihub.www.controller"
+ 	package.
+
+ImageGeneratorController.java
+-----------------------------
+package com.ihub.www.controller;
+
+import org.springframework.ai.image.ImagePrompt;
+import org.springframework.ai.image.ImageResponse;
+import org.springframework.ai.openai.OpenAiImageModel;
+import org.springframework.ai.openai.OpenAiImageOptions;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@CrossOrigin(origins = "http://localhost:5173")
+@RestController
+public class ImageGeneratorController 
+{
+
+	@Autowired
+	private OpenAiImageModel openAiImageModel;
+	
+	@PostMapping("/image/{imagePrompt}")
+	public String getImage(@PathVariable String imagePrompt)
+	{
+		ImageResponse response =openAiImageModel.call(
+					new ImagePrompt(imagePrompt,
+						OpenAiImageOptions.builder()
+						.quality("hd")
+						.N(1)
+						.width(1024)
+						.height(1024)
+						.build())
+				);
+		return response.getResult().getOutput().getUrl();
+	}
+}
+
+
+
+step4:
+-----
+	Configure server port, application name and open api key inside 
+	application.properties file.
+
+application.properties 
+-----------------------
+spring.application.name=textoimage-backend
+server.port = 9191
+spring.ai.openai.api-key= YOUR_API_KEY
+
+step5:
+-----
+	Run spring boot starter project.
+
+step6:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:9191/image/dog
+
+
+step7:
+------
+	Create a react project i.e texttoimage-frontend.
+	ex:
+		npm create vite@latest 
+
+step8:
+------
+	Open a new terminal to install bootstrap and axios package.
+	ex:
+		npm install bootstrap 
+		npm install axios 
+
+step9:
+------
+	Import bootstrap inside main.jsx file.
+
+main.jsx
+---------
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import App from './App.jsx'
+import '../node_modules/bootstrap/dist/css/bootstrap.css';
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+)
+
+step10:
+------
+	Remove the code from index.css file.
+
+step11:
+------
+	Goto App.jsx file and write below code.
+
+App.jsx
+-------
+import { useState } from "react";
+import axios from 'axios';
+function App()
+{
+    const [prompt,setPrompt] = useState('');
+    const [image,setImage] = useState([]);
+    const [loading,setLoading] = useState(false);
+    const [error,setError] = useState('');
+
+    const handleGenerateImage = async ()=>{
+
+      if(!prompt.trim())
+      {
+          setError("Please Enter the Prompt");
+          return;
+      }
+      setLoading(true);
+      setError('');
+      setImage([]);
+
+      try
+      {
+         const response = await axios.post(`http://localhost:9191/image/${encodeURIComponent(prompt)}`);
+          setImage([response.data]);
+      } 
+      catch(error)
+      {
+          setError('Failed to generate the image');
+      } 
+
+       setLoading(false);
+    }
+
+    return(
+       <div className="container mt-5">
+          <h3 className="text-center"> Text To Image </h3>
+
+          <input type="text" autoComplete="off" className="form-control"
+          value={prompt}
+          onChange={(e)=> setPrompt(e.target.value)}/>
+
+          <button className="btn btn-outline-primary mt-3 d-block mx-auto"
+            onClick={handleGenerateImage}>
+             Generate Image 
+          </button>
+
+          {loading && <p className="text-primary text-center"> Image Generating.. </p>}
+          {error  && <p className="text-danger text-center">{error}</p> }
+
+          <div className="container mt-3">
+              <center>
+                  {
+                     image.map((image,index)=>(
+                          <img key={index} src={image} width={300} height={300}/>
+                     ))
+                  }
+              </center>
+          </div>
+       </div> 
+    )
+}
+export default App;
+
+
+
+step12:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:5173
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+

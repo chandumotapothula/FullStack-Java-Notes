@@ -1,0 +1,92 @@
+Interview Questions 
+====================
+
+Q) What is the difference between JDK , JRE and JVM ? 
+
+JDK 
+-----
+JDK stands for Java Development Kit.
+
+JDK is a installable software which consist Java Runtime Environment (JRE), Java Virtual Machine (JVM), compiler (javac), interpreter (java), an archiever (.jar), document generator (javadoc) and other tools needed for java application development.
+
+Diagram: class9.1
+
+JRE 
+----
+JRE stands for Java Runtime Environment.
+JRE is a part of a JDK that provides very good environment to run java applications only.
+
+JVM 
+----
+JVM stands for Java Virtual Machine.
+JVM is a part of a JRE which is used to execute our program line by line procedure and it converts byte code to machine code.
+
+
+
+Q) Is Java platform dependent or independent?
+
+Java consider as platform independent at byte code level.
+Hence java is also known as WORA (Write Once Run Anywhere).
+
+Diagram: class9.2
+
+
+
+Q) Is JVM platform dependent or independent?
+
+	JVM consider as platform dependent.
+
+
+Q) What are the features of java?
+
+We have following important features in java.
+
+1) Simple 
+
+2) Object oriented 
+
+3) Platform independent 
+
+4) Portable 
+
+5) Architecture Neutral 
+
+6) Robust 
+
+7) Multithreaded 
+
+8) Highly secured
+
+9) Dynamic 
+
+10) Distributed 
+
+and etc.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

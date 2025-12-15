@@ -1,0 +1,589 @@
+2) while loop 
+===========
+It evalutes the code how long our condition is true.
+
+syntax:
+-------
+	while(condition)
+	{
+		-
+		- // code to be execute 
+		-	
+	}
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			var i=1;
+			while(i<=10)
+			{
+				document.write(i+" ");//1 2 3 4 5 6 7 8 9 10
+				i++;
+			}
+		</script>
+	</body>	
+</html>
+
+Q) Write a program to display reverse of a given number?
+
+input:
+	123
+output:
+	321
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			var n = parseInt(prompt("Enter the number "));
+			var rem,rev=0;
+			while(n>0)
+			{
+				rem = n%10;
+				rev = rev*10+rem;
+				n = parseInt(n/10);	
+			}
+			document.write(rev);
+		</script>
+	</body>	
+</html>
+
+3) for loop 
+===========
+It evaluates the code how long our condition is true.
+
+syntax:
+-------
+	for(initialization;condition;increment/decrement)
+	{
+		-
+		- //code to be execute
+		-
+	}
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			for(var i=1;i<=10;i++)
+			{
+				document.write(i+" ");
+			}
+		</script>
+	</body>	
+</html>
+
+Q) Write a program to find out factorial of a given number?
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			var n = parseInt(prompt("Enter the number :")); // 5
+			var fact = 1;
+			for(var i=n;i>=1;i--)
+			{
+				fact *=i;
+			}
+			document.write(fact);
+		</script>
+	</body>	
+</html>
+
+4) for IN loop 
+================
+It is used to iterate the elements from array.
+
+syntax:
+-------
+	for (var var_name in array_name)
+	{
+		-
+		- // code to be execute 
+		-
+	}
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			var arr  = [10,20,30];
+
+			for(var i in arr)
+			{
+				document.write(arr[i]+" ");
+			}
+		</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			var arr  = ["hi","hello","bye"];
+
+			for(var i in arr)
+			{
+				document.write(arr[i]+" ");
+			}
+		</script>
+	</body>	
+</html>
+
+Loop Patterns
+=============
+1)
+* * * * 
+* * * * 
+* * * * 
+* * * * 
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			//rows
+			for(var i=1;i<=4;i++)
+			{
+				//cols
+				for(var j=1;j<=4;j++)
+				{
+					document.write("* ");
+				}
+				//new line 
+				document.write("<br>");
+			}
+		</script>
+	</body>	
+</html>
+
+2)
+*
+* *
+* * * 
+* * * * 
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			//rows
+			for(var i=1;i<=4;i++)
+			{
+				//cols
+				for(var j=1;j<=i;j++)
+				{
+					document.write("* ");
+				}
+				//new line 
+				document.write("<br>");
+			}
+		</script>
+	</body>	
+</html>
+
+3)
+      * 
+    * * 
+  * * * 
+* * * * 
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			//rows
+			for(var i=1;i<=4;i++)
+			{
+				//space 
+				for(var j=4;j>i;j--)
+				{
+					document.write("&nbsp;&nbsp; ");
+				}
+				//cols
+				for(var j=1;j<=i;j++)
+				{
+					document.write("* ");
+				}
+				//new line 
+				document.write("<br>");
+			}
+		</script>
+	</body>	
+</html>
+
+4)
+      *
+    * * * 
+  * * * * * 
+* * * * * * * 
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			//rows
+			for(var i=1;i<=4;i++)
+			{
+				//space 
+				for(var j=4;j>i;j--)
+				{
+					document.write("&nbsp;&nbsp; ");
+				}
+				//cols
+				for(var j=1;j<=i;j++)
+				{
+					document.write("* ");
+				}
+				//cols
+				for(var j=i-1;j>=1;j--)
+				{
+					document.write("* ");
+				}
+				//new line 
+				document.write("<br>");
+			}
+		</script>
+	</body>	
+</html>
+
+JavaScript Functions 
+====================
+A function is a block of code which is enclosed in a curly braces i.e {}.
+
+To declare a function in JavaScript we will use function keyword followed by a name and paranetheses i.e ().
+
+JavaScript function name can have alphabets, underscore or dollar symbol as we have same rules for identifiers.
+
+JavaScript function is executed in following ways.
+
+1) When it is called 
+
+2) When event is occured 
+
+3) Self invocation
+
+1) When it is called 
+--------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			function f1()
+			{
+				document.write("F1-Function");
+			}
+
+			//calling 
+			f1();
+		</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			function f1()
+			{
+				document.bgColor="#FFFF00";
+			}
+
+			//calling 
+			f1();
+		</script>
+	</body>	
+</html>
+
+2) When event is occured 
+------------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<button onclick="f1()"> click me </button>
+		<script>
+			function f1()
+			{
+				document.write("F1-Function");
+			}
+		</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<script>
+			function f1()
+			{
+				document.write("F1-Function");
+			}
+		</script>
+	</head>
+	<body>
+		<button onclick="f1()"> click me </button>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<script>
+			function f1()
+			{
+				document.bgColor="#FFFF00";
+			}
+		</script>
+	</head>
+	<body>
+		<button onclick="f1()"> click me </button>
+	</body>	
+</html>
+
+In JavaScript , every function is a case sensitve.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		<script>
+			function f1()
+			{
+				document.write("F1-Function");
+			}
+			//calling 
+			f1();
+			F1();
+		</script>
+	</body>	
+</html>
+
+In JavaScript, one function can called to another function.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		<script>
+			function f1()
+			{
+				document.write("F1-Function <br>");
+				f2();
+			}
+			function f2()
+			{
+				document.write("F2-Function <br>");
+			}
+
+			//calling 
+			f1();
+
+		</script>
+	</body>	
+</html>
+
+There are four ways to declare JavaScript functions.
+
+1) No returntype with No argument function 
+
+2) No returntype with argument function 
+
+3) With returntype with No argument function
+
+4) With returntype with argument function 
+
+1) No returntype with No argument function
+-------------------------------------------
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		<script>
+			
+			function f1()
+			{
+				document.write("Function1");
+			}
+			f1();
+		</script>
+	</body>	
+</html>
+
+2) No returntype with argument function 
+--------------------------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		<script>
+			
+			function f2(a,b)
+			{
+				document.write(a+b);
+			}
+			f2(10,20);
+		</script>
+	</body>	
+</html>
+
+3) With returntype with No argument function
+-------------------------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		<script>
+			
+			function f3()
+			{
+				return "Welcome to JavaScript";
+			}
+			document.write(f3());
+		</script>
+	</body>	
+</html>
+
+4) With returntype with argument function 
+------------------------------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		<script>
+			
+			function f3(a,b)
+			{
+				return a+b;
+			}
+			document.write(f3(10,20));
+		</script>
+	</body>	
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

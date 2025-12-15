@@ -1,0 +1,858 @@
+Bootstrap Border
+================
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+		<!-- add bootstrap plugins -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" ></script>
+	</head>
+	<body>
+			<br><br>
+			<span class="border">Span1</span>
+			<span class="border-top">Span2</span>
+			<span class="border-start">Span3</span>
+			<span class="border-bottom">Span4</span>
+			<span class="border-end">Span5</span>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+		<!-- add bootstrap plugins -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" ></script>
+	</head>
+	<body>
+			<br><br>
+			<span class="border border-primary">Span1</span>
+			<span class="border-top border-info">Span2</span>
+			<span class="border-start border-danger">Span3</span>
+			<span class="border-bottom border-warning">Span4</span>
+			<span class="border-end border-success">Span5</span>
+	</body>	
+</html>
+
+Bootstrap Border-Radius 
+=======================
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+		<!-- add bootstrap plugins -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" ></script>
+	</head>
+	<body>
+			<br><br>
+			<span class="border border-primary rounded">Span1</span>
+			<span class="border border-info rounded-start">Span2</span>
+			<span class="border border-danger rounded-end">Span3</span>
+			<span class="border border-warning rounded-top">Span4</span>
+			<span class="border border-success rounded-bottom">Span5</span>
+	</body>	
+</html>
+
+Bootstrap Sizing 
+================
+w-25 , w-50 , w-75 , w-100
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+		<!-- add bootstrap plugins -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" ></script>
+		<style>
+			.w-60
+			{
+				width:60%;
+			}
+		</style>
+	</head>
+	<body>
+			<div class="bg-primary w-25">25%</div>
+			<div class="bg-secondary w-50">50%</div>
+			<div class="bg-info w-75">75%</div>
+			<div class="bg-danger w-100">100%</div>
+			<div class="bg-warning w-60">60%</div>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+		<!-- add bootstrap plugins -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" ></script>
+	</head>
+	<body>
+			<img src="images/rock.jpg" class="w-25 h-25"/> <br>
+			<img src="images/rock.jpg" class="w-50 h-50"/> <br>
+			<img src="images/rock.jpg" class="w-75 h-75"/> <br>
+			<img src="images/rock.jpg" class="w-100 h-100"/> <br>
+	</body>	
+</html>
+
+Bootstrap containers
+====================
+Bootstrap containers are fundamental building blocks for creating responsive layouts in Bootstrap. They are primarily used to contain, pad, and align content within a webpage, ensuring a consistent and organized presentation across different screen sizes.
+
+We have two types of containers.
+
+1) container-fluid 
+
+2) container 
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+		<!-- add bootstrap plugins -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" ></script>
+	</head>
+	<body>
+			<div class="container-fluid bg-info">
+				<h1> Welcome to Bootstrap Containers </h1>
+				<p> Bootstrap is a most popular CSS framework</p>
+			</div>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+		<!-- add bootstrap plugins -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" ></script>
+	</head>
+	<body>
+			<div class="container bg-warning">
+				<h1> Welcome to Bootstrap Containers </h1>
+				<p> Bootstrap is a most popular CSS framework</p>
+			</div>
+	</body>	
+</html>
+
+Bootstrap display 
+=================
+It is used to change the behaviour of elements.
+
+We have following list of utility classes.
+
+ex:
+	d-none 
+	d-block
+	d-inline
+	d-inline-block 
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+		<!-- add bootstrap plugins -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" ></script>
+	</head>
+	<body>
+			<div class="container">
+				<h1 class="d-none"> Welcome to Bootstrap Containers </h1>
+				<p> Bootstrap is a most popular CSS framework</p>
+			</div>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+		<!-- add bootstrap plugins -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" ></script>
+	</head>
+	<body>
+			<div class="container-fluid">
+				<span class="d-block bg-info"> span1 </span>
+				<span class="d-block bg-secondary"> span2 </span>
+				<span class="d-block bg-primary"> span3 </span>
+			</div>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+		<!-- add bootstrap plugins -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" ></script>
+	</head>
+	<body>
+			<div class="container-fluid">
+				<div class="bg-primary d-inline"> division1 </div>
+				<div class="bg-success d-inline"> division2 </div>
+				<div class="bg-info d-inline"> division3 </div>
+			</div>
+	</body>	
+</html>
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+		<!-- add bootstrap plugins -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" ></script>
+	</head>
+	<body>
+			<div class="container-fluid">
+				<div class="bg-primary d-inline-block w-25"> division1 </div>
+				<div class="bg-success d-inline-block w-50"> division2 </div>
+				<div class="bg-info d-inline-block w-75"> division3 </div>
+			</div>
+	</body>	
+</html>
+
+Bootstrap margin
+======================
+m - for classes that set margin
+
+Where sides is one of:
+
+t - for classes that set margin-top or padding-top
+b - for classes that set margin-bottom or padding-bottom
+s - (start) for classes that set margin-left or padding-left in LTR, margin-right or padding-right in RTL
+e - (end) for classes that set margin-right or padding-right in LTR, margin-left or padding-left in RTL
+x - for classes that set both *-left and *-right
+y - for classes that set both *-top and *-bottom
+blank - for classes that set a margin or padding on all 4 sides of the element
+Where size is one of:
+
+0 - for classes that eliminate the margin or padding by setting it to 0
+1 - (by default) for classes that set the margin or padding to $spacer * .25
+2 - (by default) for classes that set the margin or padding to $spacer * .5
+3 - (by default) for classes that set the margin or padding to $spacer
+4 - (by default) for classes that set the margin or padding to $spacer * 1.5
+5 - (by default) for classes that set the margin or padding to $spacer * 3
+auto - for classes that set the margin to auto
+
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+		<!-- add bootstrap plugins -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" ></script>
+	</head>
+	<body>
+			<div class="border border-primary m-1"> Div1 </div>
+			<div class="border border-info m-2"> Div2 </div>
+			<div class="border border-warning m-3"> Div3 </div>
+			<div class="border border-danger m-4"> Div4 </div>
+			<div class="border border-success m-5"> Div5 </div>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+		<!-- add bootstrap plugins -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" ></script>
+	</head>
+	<body>
+			<div class="border border-primary mt-5"> Div1 </div>
+			<div class="border border-info ms-5"> Div2 </div>
+			<div class="border border-warning me-5"> Div3 </div>
+			<div class="border border-danger mb-5"> Div4 </div>
+			<div class="border border-success mx-5"> Div5 </div>
+			<div class="border border-success my-5"> Div6 </div>
+	</body>	
+</html>
+
+
+
+Bootstrap Padding 
+-------------------
+p - for classes that set padding
+
+Where sides is one of:
+
+t - for classes that set margin-top or padding-top
+b - for classes that set margin-bottom or padding-bottom
+s - (start) for classes that set margin-left or padding-left in LTR, margin-right or padding-right in RTL
+e - (end) for classes that set margin-right or padding-right in LTR, margin-left or padding-left in RTL
+x - for classes that set both *-left and *-right
+y - for classes that set both *-top and *-bottom
+blank - for classes that set a margin or padding on all 4 sides of the element
+Where size is one of:
+
+0 - for classes that eliminate the margin or padding by setting it to 0
+1 - (by default) for classes that set the margin or padding to $spacer * .25
+2 - (by default) for classes that set the margin or padding to $spacer * .5
+3 - (by default) for classes that set the margin or padding to $spacer
+4 - (by default) for classes that set the margin or padding to $spacer * 1.5
+5 - (by default) for classes that set the margin or padding to $spacer * 3
+auto - for classes that set the padding to auto
+
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+		<!-- add bootstrap plugins -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" ></script>
+	</head>
+	<body>
+			<div class="border border-primary p-1"> Div1 </div>
+			<div class="border border-info p-2"> Div2 </div>
+			<div class="border border-warning p-3"> Div3 </div>
+			<div class="border border-danger p-4"> Div4 </div>
+			<div class="border border-success p-5"> Div5 </div>
+			
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+		<!-- add bootstrap plugins -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" ></script>
+	</head>
+	<body>
+			<div class="border border-primary pt-5"> Div1 </div>
+			<div class="border border-info pb-5"> Div2 </div>
+			<div class="border border-warning ps-5"> Div3 </div>
+			<div class="border border-danger pe-5"> Div4 </div>
+			<div class="border border-success px-5"> Div5 </div>
+			<div class="border border-success py-5"> Div6 </div>
+	</body>	
+</html>
+
+
+Bootstrap Images
+=================
+We have three types of images in bootstrap
+
+1) Rounded image 
+
+2) Circle image 
+
+3) Thumbnail image 
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+		<!-- add bootstrap plugins -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" ></script>
+	</head>
+	<body>
+			<div class="container mt-5">
+			
+				<img src="images/rock.jpg" width="200px" height="200px"
+					class="d-block mx-auto rounded" />
+			</div>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+		<!-- add bootstrap plugins -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" ></script>
+	</head>
+	<body>
+			<div class="container mt-5">
+			
+				<img src="images/rock.jpg" width="200px" height="200px"
+					class="d-block mx-auto rounded-circle" />
+			</div>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+		<!-- add bootstrap plugins -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" ></script>
+	</head>
+	<body>
+			<div class="container mt-5">
+			
+				<img src="images/rock.jpg" width="200px" height="200px"
+					class="d-block mx-auto img-thumbnail" />
+			</div>
+	</body>	
+</html>
+
+Bootstrap 5 Grid System
+========================
+Bootstrap's grid system is built with flexboxes.
+
+To create a row in a grid system we need to use "row" class.
+
+It  allows to create 12 columns in a single row and It is not required that we 
+must use all 12 columns.
+
+The Grid system is responsive and the column will rearrange automatically
+dependent upon the screen size.
+
+According Bootstrap5 ,A grid system contains 6 classes.
+
+col-		- extra small device
+
+col-sm- 	- small devices
+
+col-md-	 	- medium devices
+
+col-lg- 	- large devices
+
+col-xl- 	- xlarge devices. 
+
+col-xxl-        - too xlarge dev
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+		<!-- add bootstrap plugins -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" ></script>
+	</head>
+	<body>
+			<div class="container-fluid mt-5">
+			
+				<div class="row">
+					<div class="col bg-primary">Column1</div>
+				</div>
+				
+			</div>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+		<!-- add bootstrap plugins -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" ></script>
+	</head>
+	<body>
+			<div class="container-fluid mt-5">
+			
+				<div class="row">
+					<div class="col bg-primary">Column1</div>
+					<div class="col bg-info">Column2</div>
+				</div>
+				
+			</div>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+		<!-- add bootstrap plugins -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" ></script>
+	</head>
+	<body>
+			<div class="container-fluid mt-5">
+			
+				<div class="row">
+					<div class="col bg-primary">Column1</div>
+					<div class="col bg-info">Column2</div>
+					<div class="col bg-secondary">Column3</div>
+				</div>
+				
+			</div>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+		<!-- add bootstrap plugins -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" ></script>
+	</head>
+	<body>
+			<div class="container-fluid mt-5">
+			
+				<div class="row">
+					<div class="col bg-primary">Column1</div>
+					<div class="col bg-info">Column2</div>
+					<div class="col bg-secondary">Column3</div>
+					<div class="col bg-success">Column4</div>
+				</div>
+				
+			</div>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+		<!-- add bootstrap plugins -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" ></script>
+	</head>
+	<body>
+			<div class="container-fluid mt-5">
+			
+				<div class="row">
+					<div class="col-2 bg-primary">Column1</div>
+					<div class="col-4 bg-info">Column2</div>
+					<div class="col-6 bg-secondary">Column3</div>
+				</div>
+				
+			</div>
+	</body>	
+</html>
+
+
+Bootstrap design using Bootstrap Grid system and bootstrap images
+=================================================================
+BOOT1 
+|
+|------css
+|	|
+	|----mystyles.css
+
+|------images
+	|
+	|----image1.jpg 
+	|----image2.jpg
+	|----image3.jpg
+|
+|------index.html 
+
+index.html
+----------
+<!DOCTYPE html>
+<html>
+<head>
+		<title>MyPage!</title>
+		
+		<!-- add external css -->
+		<link rel="stylesheet" type="text/css" href="css/mystyles.css">
+
+		<!-- add bootstrap plugins -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" ></script>
+</head>
+<body class="bg">
+		<div class="container-fluid">
+
+			<div class="row">
+				<div class="col-lg-4 col-md-4 col-sm-6 col-12">
+					<img src="images/image1.jpg" 
+					class="w-100 h-100 img-thumbnail" />
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-6 col-12">
+					<img src="images/image2.jpg" 
+					class="w-100 h-100 img-thumbnail"/>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-6 col-12">
+					<img src="images/image3.jpg" 
+					class="w-100 h-100 img-thumbnail"/>
+				</div>
+			</div>
+
+		</div>
+</body>
+</html>
+
+mystyles.css
+------------
+*
+{
+	margin:0;
+	padding:0;
+}
+.bg
+{
+	height: 100vh;
+	background-color: cyan;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

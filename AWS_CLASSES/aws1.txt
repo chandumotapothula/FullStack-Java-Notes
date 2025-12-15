@@ -1,0 +1,168 @@
+Types of applications 
+=====================
+We have two types of applications.
+
+1) Client Based Applications 
+
+2) Web Based Applications 
+
+
+1) Client Based Applications
+----------------------------
+Applications which need to be install in a user's computer are called client based applications.
+
+Applications which are running in a user's computer are called client based applications.
+
+All client based applications are ruled out.
+
+ex:
+	VLC Media Player 
+
+
+2) Web Based Applications
+-------------------------
+Applications which can be access from where every over the network are called web based applications.
+ex:
+	Facebook
+	Instagram
+	Amazon 
+	and etc.
+
+
+Q) How can we develop an application accessible by thousands for users?
+
+First we need to develop our application and later we need to host our application on top of the server.
+
+Diagram: aws1.1
+
+
+Q) What is the difference between PC and Server?
+
+PC						Server
+------						-------
+It is specially designed for perticular		It is designed to operate multiple 
+user.						user's.
+
+It contains simple structure.			It contains complex structure.
+
+It contains less storage from gegabytes to 	It contains large storage from 
+terabytes.					terabytes to petabytes.
+
+Low network capability.				High network capability.
+
+It contains single processor.			It contains multiple processors.		
+
+Q) Will company use one server or multiple servers?
+
+It depends on the scale of a company and companies revenue is completely depend upon servers so they must ensure that these servers are operating all the times.
+
+To host any application on top of the server we need infrastructure.
+
+Every It company having their own data center.
+
+Data center is a place where we can host our servers.
+
+Diagram: aws1.2
+
+
+Q) Is it easy to maintain the data center?
+
+No, It is not easy to maintain the data center specially to startup's because it is capital intensive.
+
+We required following things to build the data center.
+
+1) Server Maintainence Team 
+
+2) Private and Secure place.
+
+3) Dual Power supply 
+
+4) Dual Network (ISP)
+
+5) Need to follow geographical standards to secure customer data over the network and 
+   physically.
+
+6) Hardware Refresh 
+
+and etc.
+
+To overcome above limitation we need to use cloud concepts.
+
+
+Cloud Computing 
+===============
+Cloud computing is a on demand delivery of IT resources with pay-as-you-go model.
+
+Cloud concept started in the year of 2004.
+
+We have following list of cloud providers.
+
+ex:
+	Cloud Provider		Cloud
+	--------------		--------
+	Oracle			OCI - Oracle Cloud Infrastructure 
+	Amazon			AWS - Amazon Web Services
+	Microsoft		Azure
+	Google			GCP - Google Cloud Platform 
+	IBM			IBM Cloud 
+	Alibaba 		Alibaba Cloud 
+	and etc.	
+
+AWS 
+====
+AWS stands for Amazon Web Services.
+
+It is on-demand cloud computing platform, offering over 200 services like storage, databases, servers, AI, and analytics over the internet.
+
+AWS was developed in the year of 2004.
+
+It was monopoly almost for 10 years. 
+
+In short AWS was the leader for 10 years.
+
+
+Cloud Business Models/Service Models 
+=====================================
+Every cloud provider supports three cloud business models.
+
+1) IaaS (Infrastructure As a Service)
+
+2) PaaS (Platform As a Service)
+
+3) SaaS (Software As a Service)
+
+They comes with and ends with shared responsibility model.
+
+Some group of expertise engineers in a company decide which business model is best for their business.
+
+Diagram: aws1.3
+
+
+
+
+ 
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

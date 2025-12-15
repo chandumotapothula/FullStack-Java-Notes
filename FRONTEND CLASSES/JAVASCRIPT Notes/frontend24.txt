@@ -1,0 +1,489 @@
+How to hide and show password in JavaScript 
+===========================================
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+
+		 <!-- fontawesome icon cdn link -->
+    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    	<style>
+    		#iconId
+    		{
+    			position: relative;
+    			right:25px;	
+    			cursor: pointer;
+    		}
+    		.pclass
+    		{
+    			padding-right:25px;
+    		}
+    	</style>
+
+	</head>
+	<body>
+			Password: <input type="password" id="pid" class="pclass"/>
+			<span class="fa fa-eye" id="iconId" onclick="f1()"></span>
+
+			<script>
+				function f1()
+				{
+					var x = document.getElementById('pid');
+					if(x.type=="password")
+					{
+						x.type="text"
+					}
+					else
+					{
+						x.type="password";
+					}
+				}
+			</script>
+	</body>	
+</html>
+
+Q) What is the difference between var , let and const ?
+
+var			let			const
+------			------			-------
+It is a function scope.	It is a block scope.	It is a block scope.
+
+We can declare without	We can declare without	We can't declare without   
+initialization.	 	initialization.		initialization.
+	
+It can be updatable.	It can be updatable.	It can't be updatable.
+
+It can be redeclared.	It can't be redeclared.	It can't be redeclared.
+
+We can access without 	We can access without 	We can't access without
+initialization but 	initialization but 	initialization.
+default value is 	default value is 
+undefined.		undefined.
+
+scopes
+-------
+1) 
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			document.writeln(i); // undefined
+			i=10;
+			var i;
+		</script>
+	</body>	
+</html>
+
+2)
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			document.writeln(i); // can't access lexical declaration
+			i=10;
+			let i;
+		</script>
+	</body>	
+</html>
+
+3)
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			document.writeln(i); // can't access lexical declaration
+			i=10;
+			const i;
+		</script>
+	</body>	
+</html>
+
+
+
+Initialization
+---------------
+1) 
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			var i;
+			document.writeln(i); // undefine 
+		</script>
+	</body>	
+</html>
+2)
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			let i;
+			document.writeln(i); // undefine 
+		</script>
+	</body>	
+</html>
+
+3)
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			const i;
+			document.writeln(i); // invalid
+		</script>
+	</body>	
+</html>
+
+updatable
+----------
+1) 
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			var i=10;
+			i=20;
+			document.writeln(i); // 20
+		</script>
+	</body>	
+</html>
+
+2)
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			let i=10;
+			i=20;
+			document.writeln(i); // 20
+		</script>
+	</body>	
+</html>
+
+3)
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			const i=10;
+			i=20;
+			document.writeln(i); // 20
+		</script>
+	</body>	
+</html>
+
+Redeclared
+----------
+1) 
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			var i =10;
+			var i = 20;
+			document.writeln(i); // 20
+		</script>
+	</body>	
+</html>
+
+2)
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			let i =10;
+			let i = 20;
+			document.writeln(i); // invalid
+		</script>
+	</body>	
+</html>
+
+3) 
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			const i =10;
+			const i = 20;
+			document.writeln(i); // invalid
+		</script>
+	</body>	
+</html>
+
+JavaScript Spread Operator 
+=========================
+The JavaScript spread operator ( ... ) allows to spread the array, to copy array/object to modify array/object and to merge array/object.
+
+ex:1
+-----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			function f1(arg1,arg2,arg3)
+			{
+				document.writeln(arg1+arg2+arg3);
+			}
+			var arr = [10,20,30];
+			f1(...arr);
+		</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			var arr = [10,20,30];
+			var newArr = [...arr];
+			for(var i in newArr)
+			{
+				document.writeln(newArr[i]);
+			}
+		</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			var arr = [10,20,30];
+			var newArr = [...arr,40];
+			for(var i in newArr)
+			{
+				document.writeln(newArr[i]);
+			}
+		</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			var arr1 = [10,20,30];
+			var arr2 = [40,50,60];
+			var newArr = [...arr1,...arr2];
+			for(var i in newArr)
+			{
+				document.writeln(newArr[i]);
+			}
+		</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			var emp = 
+			{
+				"eid":101,
+				"ename":"Alan",
+				"esal":1000	
+			}
+			var newEmp = {...emp};
+			document.writeln(newEmp.eid+"<br>");
+			document.writeln(newEmp.ename+"<br>");
+			document.writeln(newEmp.esal+"<br>");
+		</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			var emp = 
+			{
+				"eid":101,
+				"ename":"Alan",
+				"esal":1000	
+			}
+			var newEmp = {...emp,"ename":"Alina"};
+			document.writeln(newEmp.eid+"<br>");
+			document.writeln(newEmp.ename+"<br>");
+			document.writeln(newEmp.esal+"<br>");
+		</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			var emp = 
+			{
+				"eid":101,
+				"ename":"Alan",
+				"esal":1000	
+			}
+			var newEmp = {...emp,"dept":"IT"};
+			document.writeln(newEmp.eid+"<br>");
+			document.writeln(newEmp.ename+"<br>");
+			document.writeln(newEmp.esal+"<br>");
+			document.writeln(newEmp.dept+"<br>");
+		</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			var emp1 = 
+			{
+				"eid":101,
+				"ename":"Alan"
+			}
+			var emp2 = 
+			{
+				"esal":1000	
+			}
+			var newEmp = {...emp1,...emp2};
+			document.writeln(newEmp.eid+"<br>");
+			document.writeln(newEmp.ename+"<br>");
+			document.writeln(newEmp.esal+"<br>");
+		</script>
+	</body>	
+</html>
+
+
+
+Q) Explain Synchronous and Asynchronous in JavaScript?
+
+
+Synchronous
+------------
+Synchronous JavaScript is a programming approach that enables the blocking execution of tasks, allowing sequence operations, degrading responsiveness, and non-efficient handling of time-consuming operations in web applications.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			document.writeln("First Stmt");
+			document.writeln("<br>");
+			document.writeln("Second Stmt");
+			document.writeln("<br>");
+			document.writeln("Third Stmt");
+		</script>
+	</body>	
+</html>
+
+Asynchronous 
+------------
+Asynchronous JavaScript is a programming approach that enables the non-blocking execution of tasks, allowing concurrent operations, improved responsiveness, and efficient handling of time-consuming operations in web applications.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+			document.writeln("First Stmt");
+			document.writeln("<br>");
+			setTimeout(function(){
+				document.writeln("Second Stmt");
+			},3000);
+			document.writeln("<br>");
+			document.writeln("Third Stmt");
+		</script>
+	</body>	
+</html>
+
+
+
+

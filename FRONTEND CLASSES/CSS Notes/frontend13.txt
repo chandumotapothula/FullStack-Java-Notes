@@ -1,0 +1,624 @@
+CSS animation property 
+======================
+CSS Animation property is used to create animation on the webpage.
+
+CSS animation property is used to change the bhaviour of elements.
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			div
+			{
+				height:200px;
+				width:200px;
+				background-color: red;
+				margin: 100px auto;
+				border-radius: 50%;
+				animation-name: circle;
+				animation-duration: 9s;
+				animation-iteration-count: infinite;
+			}	
+			@keyframes circle
+			{
+					30%
+					{
+						background-color: yellow;	
+					}
+					70%
+					{
+						background-color: blue;
+					}
+			}
+
+		</style>
+	</head>
+	<body>
+			<div> </div>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		<style>
+			.fa-bell
+			{
+				font-size:90px;
+				color:#833471;
+				margin:100px 350px;
+				animation-name: swing;
+				animation-duration: 3s;
+				animation-iteration-count: infinite;
+			}
+			@keyframes swing
+			{
+				35%
+				{
+					transform: rotate(45deg);	
+				}	
+				75%
+				{
+					transform: rotate(-45deg);
+				}
+			}
+		</style>
+
+	</head>
+	<body>
+			<span class="fa fa-bell"> </span>	
+	</body>	
+</html>
+
+CSS Grid layout
+===============
+The CSS grid layout module offers a grid-based layout system with rows and columns.
+
+Grid layout makes easier to design web pages without having a use of floats and positioning tag.
+
+A grid layout consists of a parent element , with one or more child elements. 
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.container
+			{
+				width:950px;
+				height:450px;
+				border:2px solid black;
+				box-sizing: border-box;
+			}
+			.box1{background-color: #FFC312;}
+			.box2{background-color: #C4E538;}
+			.box3{background-color: #12CBC4;}
+			.box4{background-color: #FDA7DF;}
+			.box5{background-color: #ED4C67;}
+			.box6{background-color: #B53471;}
+
+		</style>
+
+	</head>
+	<body>
+			<div class="container">
+				<div class="box1">box1</div>
+				<div class="box2">box2</div>
+				<div class="box3">box3</div>
+				<div class="box4">box4</div>
+				<div class="box5">box5</div>
+				<div class="box6">box6</div>			
+			</div>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.container
+			{
+				width:950px;
+				height:450px;
+				border:2px solid black;
+				box-sizing: border-box;
+				display: grid;
+				grid-template-rows: 150px 150px;
+				grid-template-columns: 150px 150px 150px;
+			}
+			.box1{background-color: #FFC312;}
+			.box2{background-color: #C4E538;}
+			.box3{background-color: #12CBC4;}
+			.box4{background-color: #FDA7DF;}
+			.box5{background-color: #ED4C67;}
+			.box6{background-color: #B53471;}
+
+		</style>
+
+	</head>
+	<body>
+			<div class="container">
+				<div class="box1">box1</div>
+				<div class="box2">box2</div>
+				<div class="box3">box3</div>
+				<div class="box4">box4</div>
+				<div class="box5">box5</div>
+				<div class="box6">box6</div>			
+			</div>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.container
+			{
+				width:950px;
+				height:450px;
+				border:2px solid black;
+				box-sizing: border-box;
+				display: grid;
+				grid-template-rows: 150px 150px;
+				grid-template-columns: 150px 150px 1fr;
+			}
+			.box1{background-color: #FFC312;}
+			.box2{background-color: #C4E538;}
+			.box3{background-color: #12CBC4;}
+			.box4{background-color: #FDA7DF;}
+			.box5{background-color: #ED4C67;}
+			.box6{background-color: #B53471;}
+
+		</style>
+
+	</head>
+	<body>
+			<div class="container">
+				<div class="box1">box1</div>
+				<div class="box2">box2</div>
+				<div class="box3">box3</div>
+				<div class="box4">box4</div>
+				<div class="box5">box5</div>
+				<div class="box6">box6</div>			
+			</div>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.container
+			{
+				width:950px;
+				height:450px;
+				border:2px solid black;
+				box-sizing: border-box;
+				display: grid;
+				grid-template-rows: 150px 150px;
+				grid-template-columns: 1fr 1fr 1fr;
+			}
+			.box1{background-color: #FFC312;}
+			.box2{background-color: #C4E538;}
+			.box3{background-color: #12CBC4;}
+			.box4{background-color: #FDA7DF;}
+			.box5{background-color: #ED4C67;}
+			.box6{background-color: #B53471;}
+
+		</style>
+
+	</head>
+	<body>
+			<div class="container">
+				<div class="box1">box1</div>
+				<div class="box2">box2</div>
+				<div class="box3">box3</div>
+				<div class="box4">box4</div>
+				<div class="box5">box5</div>
+				<div class="box6">box6</div>			
+			</div>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.container
+			{
+				width:950px;
+				height:450px;
+				border:2px solid black;
+				box-sizing: border-box;
+				display: grid;
+				grid-template-rows: repeat(2, 150px);
+				grid-template-columns: repeat(3, 1fr);
+			}
+			.box1{background-color: #FFC312;}
+			.box2{background-color: #C4E538;}
+			.box3{background-color: #12CBC4;}
+			.box4{background-color: #FDA7DF;}
+			.box5{background-color: #ED4C67;}
+			.box6{background-color: #B53471;}
+
+		</style>
+
+	</head>
+	<body>
+			<div class="container">
+				<div class="box1">box1</div>
+				<div class="box2">box2</div>
+				<div class="box3">box3</div>
+				<div class="box4">box4</div>
+				<div class="box5">box5</div>
+				<div class="box6">box6</div>			
+			</div>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.container
+			{
+				width:950px;
+				height:450px;
+				border:2px solid black;
+				box-sizing: border-box;
+				display: grid;
+				grid-template-rows: repeat(2, 150px);
+				grid-template-columns: repeat(3, 1fr);
+				grid-row-gap: 10px;
+				grid-column-gap: 10px;
+			}
+			.box1{background-color: #FFC312;}
+			.box2{background-color: #C4E538;}
+			.box3{background-color: #12CBC4;}
+			.box4{background-color: #FDA7DF;}
+			.box5{background-color: #ED4C67;}
+			.box6{background-color: #B53471;}
+
+		</style>
+
+	</head>
+	<body>
+			<div class="container">
+				<div class="box1">box1</div>
+				<div class="box2">box2</div>
+				<div class="box3">box3</div>
+				<div class="box4">box4</div>
+				<div class="box5">box5</div>
+				<div class="box6">box6</div>			
+			</div>
+	</body>	
+</html>
+
+CSS symantic elements Design 
+============================
+index.html 
+----------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<!-- add external css -->
+		<link rel="stylesheet" type="text/css" href="mystyles.css">
+	</head>
+	<body>
+		<div class="box">
+			<header class="header">
+			</header>
+
+			<nav class="nav">
+			</nav>
+
+			<div class="inbox">
+					<aside class="aside"></aside>
+					<main class="main">
+						<article class="article">
+							
+							<figure class="figure"></figure>
+							<p class="para"></p>
+
+						</article>
+						<section class="section"></section>
+					</main>
+			</div>
+
+			<footer class="footer">
+			</footer>
+		</div>
+	</body>	
+</html>
+
+mystyles.css
+-------------
+*
+{
+	margin: 0;
+	padding: 0;
+}
+.box
+{
+	margin: 20px auto;
+	height:600px;
+	width:500px;
+	background-color:#dfe4ea;
+	padding:10px;
+}
+.box .header
+{
+	background-color: #ff6b81;
+	width:100%;
+	height:80px;
+}
+.box .nav
+{
+	background-color: #2ed573;
+	width:100%;
+	height: 40px;
+	margin:10px 0;	
+}
+.box .inbox
+{
+	width:100%;
+	height:400px;
+	/*background-color: yellow;*/
+}
+.box .inbox .aside
+{
+	height: 100%;
+	width:30%;
+	background-color: #FDA7DF;
+	float:left;
+}
+.box .inbox .main
+{
+	height:100%;
+	width:68%;
+	background-color: #dff9fb;
+	float:right;
+	padding:10px;
+	box-sizing: border-box;
+}
+
+.box .inbox .main .article
+{
+	width: 100%;
+	height:70%;
+	background-color: #7ed6df;
+	padding: 10px;
+	box-sizing: border-box;
+}
+.box .inbox .main .article .figure
+{
+	width:100%;
+	height:48%;
+	background-color: #f6e58d;
+}
+.box .inbox .main .article .para
+{
+	margin-top:10px;
+	width:100%;
+	height:48%;
+	background-color: #fffa65;
+}
+.box .inbox .main .section
+{
+	margin-top:10px;
+	width:100%;
+	height:28%;
+	background-color: #22a6b3;
+}
+
+.box .footer
+{
+	margin-top:10px;
+	background-color: #be2edd;
+	width:100%;
+	height:50px;
+}
+
+
+CSS Form 
+========
+Form are used to accept the data from enduser. 
+It sends the data to server or database for processing.
+
+Diagram: frontend13.1
+
+Form 
+|
+|------css
+	|
+	|---mystyles.css
+
+|------images
+	|
+	|---micky.png
+|
+|------index.html 
+
+
+index.html
+----------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS Form</title>
+
+	<!-- add external css -->
+	<link rel="stylesheet" type="text/css" href="css/mystyles.css">
+</head>
+<body>
+		<div class="container">
+			<div class="box1"></div>
+			<div class="box2">
+				<img src="images/micky.png"/>
+			</div>
+		</div>
+</body>
+</html>
+
+mystyles.css
+-------------
+*
+{
+	margin: 0;
+	padding: 0;
+}
+body
+{
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.container
+{
+	width:800px;
+	height: 400px;
+	box-sizing: border-box;
+}
+.container .box1
+{
+	width:400px;
+	height: 400px;
+	float:left;
+	background-color: #ffcccc;
+}
+.container .box2
+{
+	width:400px;
+	height: 400px;
+	float:right;
+	background-color: #cd84f1;
+	box-sizing: border-box;
+	padding: 10px;
+}
+.container .box2 img
+{
+	width:100%;
+	height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		 
+
+
+
+
+
+
+
+
+
+
+		 
+
+
+
+
+
+		 
+
+
+
+
+
+		 
+
+
+
+
+
+		 
+
+
+
+
+
+		 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		 
+
+
+
+

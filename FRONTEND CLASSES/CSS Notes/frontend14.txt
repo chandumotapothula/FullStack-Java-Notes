@@ -1,0 +1,470 @@
+CSS form continuation
+=====================
+
+index.html
+-----------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS Form</title>
+
+	<!-- add external css -->
+	<link rel="stylesheet" type="text/css" href="css/mystyles.css">
+
+	<!-- add google fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+</head>
+<body>
+		<div class="container">
+			<div class="box1">
+				<img src="images/profile.jpg"/>
+				<h2>Login Here</h2>
+
+				<form class="form-style">
+					<input type="text" name="t1" autocomplete="off"  placeholder="username"required/> <br>
+					<input type="password" name="t2" placeholder="password" required/> <br>
+					<input type="submit" value="signin"/>
+				</form>
+
+			</div>
+			<div class="box2">
+				<img src="images/micky.png"/>
+			</div>
+		</div>
+</body>
+</html>
+
+
+
+mystyles.css
+-----------
+*
+{
+	margin: 0;
+	padding: 0;
+}
+body
+{
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: linear-gradient(#a29bfe, #81ecec);
+}
+.container
+{
+	width:800px;
+	height: 400px;
+	box-sizing: border-box;
+}
+.container .box1
+{
+	width:400px;
+	height: 400px;
+	float:left;
+	background-color: #ffcccc;
+}
+.container .box1 img
+{
+	width:80px;
+	height:80px;
+	display: block;
+	margin:20px auto;
+	border-radius: 50%;
+	border:2px solid black;
+}
+.container .box1 h2
+{
+	text-align: center;
+	font-family: "Lobster", sans-serif;	
+}
+.container .box1 .form-style
+{
+	margin-top:20px;
+	text-align: center;
+}
+
+.container .box1 .form-style input[type="text"],input[type="password"]
+{
+	margin:10px 0;
+	width:300px;
+	height:34px;
+}
+.container .box1 .form-style input[placeholder]
+{
+	text-align: center;
+	font-size: 16px;
+	border:2px solid black;
+	background: none;
+	border-radius: 10px;
+}
+.container .box1 .form-style input[type="submit"]
+{
+	width:150px;
+	margin-top:10px;
+	padding:8px;
+	transition: 1s all linear;
+}
+.container .box1 .form-style input[type="submit"]:hover
+{
+	width:300px;
+	background-color: #000;
+	border:none;
+	color:#FFF;
+}
+
+.container .box2
+{
+	width:400px;
+	height: 400px;
+	float:right;
+	background-color: #cd84f1;
+	box-sizing: border-box;
+	padding: 10px;
+}
+.container .box2 img
+{
+	width:100%;
+	height: 100%;
+}
+
+CSS Pseudo Elements ::before ::after 
+================================
+A CSS pseudo-element is used to style specific parts of an element. 
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style>
+		h1
+		{
+			text-align: center;
+			margin: 100px auto;
+		}
+		h1::before
+		{
+			content: "Ihub";
+			color:red;
+		}
+		h1::after
+		{
+			content: "Institute";
+			color:blue;
+		}
+	</style>
+</head>
+<body>
+		<h1> Talent </h1>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style>
+		button
+		{
+			display: block;
+			margin:150px auto;
+			padding:10px;
+			width:200px;
+			position: relative;
+		}
+		button::before
+		{
+			content:"";
+			width:50px;
+			height:50px;
+			background-color: red;
+			position: absolute;
+			top:-28px;
+			left:70px;
+			transform: rotate(45deg);
+			z-index: -1;
+		}
+		button::after
+		{
+			content:"";
+			width:50px;
+			height:50px;
+			background-color:blue;
+			position: absolute;
+			top:13px;
+			left:70px;
+			transform: rotate(45deg);
+			z-index: -1;
+		}
+	</style>
+</head>
+<body>
+		<button> Click Me </button>
+</body>
+</html>
+
+
+JavaScript 
+======================
+
+Q) What is the difference between Java and JavaScript?
+
+Java						JavaScript
+-------------					---------------
+It is a non-scripting language.			It is a scripting language.
+
+It is a strongly typed checking language.	It is a weakly typed checking language.
+
+We can run individually.			We can't run invidually.
+
+It is a object oriented programming language.	It is a object based programming language.
+
+It does not required browser window for 	It requires browser window for execution.
+execution.
+
+It is a complex language.			It is a simple language.
+
+
+
+History of JavaScript 
+=====================
+Original name JavaScript is LiveScript.
+
+LiveScript was developed by Netscape Corporation in the year of 1991.
+
+In 1995,Branden Eich a popular scientist of Netscape Corporation  renamed LiveScript to JavaScript.
+
+The official name of JavaScript is ECMA Script.
+
+ECMA stands for Europeon Company Manufacturer Association.
+
+
+
+
+Advantages of JavaScript 
+========================
+1) It is used to develop interactive web pages.
+
+2) It is used to display dialog boxes and pop-up boxes.
+
+3) It is used to perform client side form validation.
+
+4) It is used to add dynamic content in our web page.
+
+5) It supports objects like Arrays, Strings, RegularExpression, Date and etc.
+
+6) It supports cookies.
+
+7) It is easy to learn and use.
+
+8) Rich User Interfaces.
+
+9) Asynchronous operations.
+
+and etc.
+
+
+
+JavaScript Syntax
+================
+<script type="text/javascript"   lang="javascript">
+	-
+	- // set of statements 
+	-
+</script>
+
+Note:
+-----
+	Here type and lang attributes are optional.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script type="text/javascript" lang="javascript">
+			
+			document.write("Welcome to JavaScript");
+
+		</script>
+</body>
+</html>
+
+Note:
+-----
+	Markup language we can't use in scripting language directly. 
+	To overcome that limitation we need to use below code.
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+			document.write("Welcome to JavaScript")
+			document.write("<br>");
+			document.write("This is Niyaz sir class")
+
+		</script>
+</body>
+</html>
+
+Note:
+-----
+	We can declare HTML and CSS code inside Javascript as given below.
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+		document.write("<h1 style='text-align:center'>Welcome to JavaScript</h1>")
+			document.write("<br>");
+			document.write("<p style='font-size:50px;'>This is Niyaz sir class</p>")
+
+		</script>
+</body>
+</html>
+
+Note:
+----
+	If we keep HTML, CSS and JavaScript is a single place then it is called DHTML.
+	DHTML stands for Dynamic Hypertext Markup Language.
+
+
+
+
+JavaScript Engine 
+=================
+It allows to execute JavaScript code in a browser window.
+
+It is used to convert user understandable scripting language to machine understandable scripting language.
+
+Every browser contains javascript engine.
+
+We have following list of javaScript engines.
+
+ex:
+	Browser 	JavaScript Engine 
+	-------		-----------------
+	Chrome		V8 Engine 
+	Mozilla 	SpiderMonkey 
+	Edge		Chakra 
+	and etc.	 		
+
+
+
+
+Comments in JavaScript 
+======================
+Comments are created for documentation purpose.
+
+Comments are used to improve readability of our code.
+
+JavaScript engine does not display comments in a web page or a browser.
+
+We have two types of comments in JavaScript.
+
+1) Single Line Comment 
+---------------------
+	It is used to comment a single line.
+	ex:
+		// comment here 
+
+2) Multiple Line Comment 
+--------------------
+	It is more convenient because we can comment a single line as well as multiple lines.
+	ex:
+		/*
+			-
+			-  comment here 
+			-
+		*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

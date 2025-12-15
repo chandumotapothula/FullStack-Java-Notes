@@ -1,0 +1,216 @@
+2) Static variables 
+====================
+A value of a variable which is not waried from object to object is called static variable.
+
+Static variable will be created at the time of classloading and it will destroy at the time of class unloading. Hence scope of static variable is same as scope of .class file.
+
+Static variables will store in method area.
+
+Static variable must and should declare immediately after the class using static keyword but not inside methods,blocks and constructors.
+
+Static variable we can access directly from instance area and static area.
+
+Static variable we can access by using object reference and class name.
+
+ex:1
+----
+class Test 
+{
+	//static variable 
+	static int i = 10;
+	
+	public static void main(String[] args)
+	{
+		System.out.println(i);	// 10
+
+		Test t = new Test();
+		System.out.println(t.i); //10
+
+		System.out.println(Test.i); //10
+	}
+}
+
+Note:
+----
+If we won't initialize any value to static variable then JVM will initialized default values.
+
+ex:2
+----
+class Test 
+{
+	//static variable 
+	static String s;
+	
+	public static void main(String[] args)
+	{
+		System.out.println(s);	// null 
+
+		Test t = new Test();
+		System.out.println(t.s); // null
+
+		System.out.println(Test.s); // null 
+	}
+}
+
+In java, one copy of static variable be created and shared to multiple objects.
+
+ex:3
+----
+class Test 
+{
+	//static variable 
+	static int i=10;
+	
+	public static void main(String[] args)
+	{
+		Test t1=new Test();
+		Test t2=new Test();
+
+		System.out.println(t1.i); // 10
+		System.out.println(t2.i); // 10
+
+		t1.i=100;
+
+		System.out.println(t1.i); // 100
+		System.out.println(t2.i); // 100
+	}
+}
+
+ex:4
+-----
+class Test 
+{
+	public static void main(String[] args)
+	{
+		methodOne();
+
+		Test t = new Test();
+		t.methodOne();
+
+		Test.methodOne();
+	}
+	//static method 
+	public static void methodOne()
+	{
+		System.out.println("static-method");
+	}
+}
+
+3) Local variables 
+===================
+To meet temperory requirements a programmer will declare some variables inside methods, blocks and constructors such type of variables are called local variables.
+
+Local variable will be created at the time of execution block and it will destroy at the time of execution block is executed. Hence scope of local variable is same as scope of execution block where it is declared.
+
+Local variables will store in java stack.
+
+ex:1
+----
+class Test 
+{
+	public static void main(String[] args)
+	{
+		//local variable 
+		int i = 10;
+		System.out.println(i); // 10	
+	}
+}	
+
+Note:
+-----
+If we won't initialize any value to local variable then JVM will not initialized default value.
+
+ex:2
+-----
+class Test 
+{
+	public static void main(String[] args)
+	{
+		//local variable 
+		int i;
+		System.out.println(i); // C.T.E 
+	}
+}
+
+A local variable will accept only one modifier i.e final.
+
+ex:3
+----
+class Test 
+{
+	public static void main(String[] args)
+	{
+		//local variable 
+		final int i=10;
+		System.out.println(i); // 10
+	}
+}
+
+
+Interview Question 
+==================
+Q) Is java purely object oriented or not?
+
+No, java will not consider as purely object oriented programming language because it does not support many OOPS concepts like Multiple Inheritance, Operator Overloading and more ever we depends upon primitive datatypes which are non-objects.
+
+
+
+Q) 
+
+Jack and John both are best friends in a town.One day while going to school they saw one beggar. Both have decided to help that needy person. Jack gave 100 rupees of his school fee and John gave 50 rupees from his pocket money. Write a java program to find out total contribution they have done to assist a poor guy?
+
+class Test 
+{
+	public static void main(String[] args)
+	{
+		contribution();
+	}
+	//static method 
+	public static void contribution()
+	{
+		int a = 100;
+		int b = 50;
+		int c = a + b;
+		System.out.println(c);	
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

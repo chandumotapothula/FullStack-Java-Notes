@@ -1,0 +1,279 @@
+Limitations with Spring Framework 
+=================================
+In spring framework , a programmer is responsible for following things.
+
+1) Adding the dependencies or jar files.
+
+2) Performing configurations inside applicationContext.xml file.
+
+3) Arranging physical server like Tomcat.
+
+4) Managing physical database like Oracle.
+
+To ovecome these above limitations we need to use Spring Boot.
+
+ex:
+		Developer
+		   |
+		   |
+		Spring Boot 
+		   |
+		   |
+		Spring Framework  
+
+Spring Boot 
+===========
+It is a java based application framework developed by Pivotal Team.
+
+It provides RAD (Rapid Application Development) features for spring based applications.
+
+It is standalone , production ready grade spring based applications with minimum configurations. 
+
+In short spring boot is a combination of 
+
+ex:
+	Spring Framework + Embedded Server + Embedded Database
+
+
+
+Advantages of Spring Boot 
+=========================
+1) It does not support xml configurations instead we will use annotations.
+
+2) We can develop standalone application which can be run by using java -jar.
+
+3) It provides optionate starters to simplify the maven development process.
+
+4) It provides production ready grade features like metrics, Healthcheck, externalized configurations and etc.
+
+5) It helps to test the web application by using HTTP servers like Tomcat, Jetty and Undertow.
+
+6) It gives in-memory databases like H2, HSQL and Derby.
+
+7) It contains CLI (Command Line Interface) tool for developing and testing spring boot application.
+
+
+Interview Questions 
+===================
+1) How many components are there in spring boot?
+
+We have four components in spring boot.
+
+1) Autoconfiguration 
+
+2) Starters 
+
+3) Actuators 
+
+4) CLI Tool 
+
+
+
+
+Q) What is dependency injection?
+
+It is a design pattern in which objects will recieve their dependencies from external source rather then creating them internally. 
+
+It promotes loose coupling, easy testing and better code maintainability.
+
+It is a programming technique which makes our class independent to it's dependencies.
+
+To perform dependency injection in spring boot we need to use @Autowired annotation.
+
+ex:
+	class Student 
+	{
+		@Autowired
+		Recording r;
+	}
+	class Recording 
+	{
+		- // some logic 
+	}
+
+Q) What is the difference between spring framework and spring boot?
+
+Spring Framework				Spring Boot
+---------------					------------
+It is a java based application framework which 	It is built-on top of spring framework
+is widely used to develop enterprise 		which is widely used to develop REST 
+applications.					API's. 
+
+The main feature of spring framework is		The main feature of spring boot is  
+dependency injection.				autoconfiguration.
+
+A programmer is responsible to add 		A spring boot component called starter
+dependencies manually.				is responsible to add dependencies.
+
+It supports xml configurations.			It does not support xml configurations.			
+To test web application a programmer is		It comes with embedded servers like  
+responsible to manage the servers. 		Tomcat, Jetty and Undertow.
+
+It does not provide in-memory databases.	It provides in-memory databases like 
+						H2, HSQL and Derby.
+
+It is used to develop loosely coupled		It is used to develop standalone  
+application.					application.
+
+
+
+Q) Ways to create spring boot application?
+
+There are two ways to create spring boot application.
+
+1) Using Spring Intializr 
+
+2) Using IDE's (Spring Tool Suit / Intellij) 
+
+
+Spring Intializr
+=================
+It is a web based tool for creating spring boot project structure.
+
+It creates spring boot project structure in a zip file.
+
+We need to extract that zip and must open in a IDE.
+
+To use spring initializr we need to use below link.
+ex:
+	https://start.spring.io
+	
+STS 
+======
+Environment		:	Java
+
+Format			:	Zip 
+
+Download link		:	https://spring.io/tools
+
+
+Steps to develop first spring boot application 
+==============================================
+
+Project Structure 
+-----------------
+FirstSB 
+|
+|---src/main/java
+	|
+	|---com.ihub.www (base pkg)
+		|	
+		|---FirstSbApplication.java
+ 
+|---src/main/resources
+	|
+	|---application.properties
+
+|---src/test/java
+|
+|---pom.xml 
+
+
+step1:
+------
+	Launch STS IDE by choosing workspace location.
+
+step2:
+------
+	Create a spring starter project i.e FirstSB.
+	ex:
+		File --> new --> Spring Starter Project --> 
+		Name : FirstSB
+		Type : Maven		packaging : jar 
+		Java Version : 17 	Language : Java 
+		Group : com.ihub.www
+		Artifact : FirstSB 
+		Description : Demo project for Spring Boot
+		package : com.ihub.www 
+		--> next --> next --> finish.
+	
+step3:
+-----
+	Write custom logic inside "FirstSbApplication.java" file.
+
+FirstSbApplication.java
+-----------------------
+package com.ihub.www;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class FirstSbApplication {
+
+	public static void main(String[] args) 
+	{
+		SpringApplication.run(FirstSbApplication.class, args);
+		
+		System.out.println("I Love Spring Boot");
+	}
+
+}
+
+step4:
+------
+	Run spring boot starter project.
+	ex:
+		Right click to FirstSB (project) --> run as --> spring boot app.
+
+  
+
+
+Q) What is @SpringBootApplication annotation?
+
+This annotation is used to mark the main class of a Spring Boot application. 
+
+It is a combination of three annotations.
+
+1) @EnableAutoConfiguration 
+--------------------------
+	It is used to enable auto configuration mechanism in spring boot.
+
+2) @ComponentScan 
+-------------
+	It is used to scan on packages in which our project is located.
+
+3) @Configuration 
+-----------------
+	It is used to add extra beans to context.
+	It is used to perform extra configurations.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

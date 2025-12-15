@@ -1,0 +1,942 @@
+Sublime Editor  
+===============
+Download link : https://www.sublimetext.com/download
+
+
+CSS Design1 
+===========
+Task1
+|
+|------css
+	|
+	|---mystyles.css
+
+|------images
+	|
+	|---rock.png
+|
+|------index.html 
+
+index.html 
+----------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<!-- add external css -->
+	<link rel="stylesheet" type="text/css" href="css/mystyles.css">
+</head>
+<body>
+	<div class="container">
+		<div class="box1">
+			<img src="images/rock.jpg"/>
+		</div>
+		<div class="box2">
+			<h2>Hollywood Actor</h2>
+			<p>
+				Dwayne Douglas Johnson (born May 2, 1972), also known by his ring name the Rock, is an American actor and professional wrestler. He is signed to WWE, where he performs on a part-time basis. Widely regarded as one of the greatest professional wrestlers of all time,[6][7] Johnson was integral to the development and success of the World Wrestling Federation (WWF, now WWE) during the Attitude Era. He wrestled for the WWF full-time for eight years before pursuing an acting career. His films have grossed over $14.9 billion worldwide,[8] making him one of the world's highest-grossing and highest-paid actors.
+			</p>
+		</div>
+	</div>
+
+</body>
+</html>
+
+mystyles.css
+------------
+
+*
+{
+	margin:0;
+	padding:0;
+}
+body
+{
+	background-color: #fad390;
+}
+.container
+{
+	width:800px;
+	height:400px;
+	margin: 100px auto;
+	background-color: #00FF00;
+
+}
+.container .box1
+{
+	width:400px;
+	height:400px;
+	background-color: #ffa502;
+	float:left;
+}
+.container .box1 img
+{
+	width:100%;
+	height:100%;
+}
+
+.container .box2
+{
+	width:400px;
+	height:400px;
+	background-color: #dfe6e9;
+	float:left;
+}
+.container .box2 h2
+{
+	text-align: center;
+	padding:20px;
+	text-decoration: underline;
+}
+.container .box2 p
+{
+	padding:20px;
+	text-align: justify;
+	font-size:18px;
+}
+
+
+
+CSS clear property 
+===================
+
+The clear property specifies on which side of an element floating elements are not allowed to float.
+
+value		Description
+-------		----------------
+none		Default allows floating elements to both the side.
+
+left		No floating elements allowed on the left side.
+
+right 		No floating elements allowed on the right side.
+
+both		No floating elements allowed on the both side.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style>
+		.box1
+		{
+			width:200px;
+			height:200px;
+			background-color:#d63031;
+			float:left;	
+		}
+		.box2
+		{	
+			width:200px;
+			height:200px;
+			background-color:#6c5ce7;	
+			float:right;
+		}
+		.box3
+		{
+			width:100%;
+			height:200px;
+			background-color:#ffeaa7;
+			clear:none;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1"></div>
+	<div class="box2"></div>
+	<div class="box3"></div>	
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style>
+		.box1
+		{
+			width:200px;
+			height:200px;
+			background-color:#d63031;
+			float:left;	
+		}
+		.box2
+		{	
+			width:200px;
+			height:200px;
+			background-color:#6c5ce7;	
+			float:right;
+		}
+		.box3
+		{
+			width:100%;
+			height:200px;
+			background-color:#ffeaa7;
+			clear:both;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1"></div>
+	<div class="box2"></div>
+	<div class="box3"></div>	
+</body>
+</html>
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style>
+		.box1
+		{
+			width:200px;
+			height:250px;
+			background-color:#d63031;
+			float:left;	
+		}
+		.box2
+		{	
+			width:200px;
+			height:200px;
+			background-color:#6c5ce7;	
+			float:right;
+		}
+		.box3
+		{
+			width:100%;
+			height:200px;
+			background-color:#ffeaa7;
+			clear:right;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1"></div>
+	<div class="box2"></div>
+	<div class="box3"></div>	
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style>
+		.box1
+		{
+			width:200px;
+			height:250px;
+			background-color:#d63031;
+			float:left;	
+		}
+		.box2
+		{	
+			width:200px;
+			height:200px;
+			background-color:#6c5ce7;	
+			float:right;
+		}
+		.box3
+		{
+			width:100%;
+			height:200px;
+			background-color:#ffeaa7;
+			clear:left;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1"></div>
+	<div class="box2"></div>
+	<div class="box3"></div>	
+</body>
+</html>
+
+
+CSS List 
+=========
+The CSS list properties allow you to:
+
+> Set different list item markers for ordered lists
+> Set different list item markers for unordered lists
+> Set an image as the list item marker
+> Add background colors to lists and list items
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style>
+		.myList
+		{
+			list-style-type: none;
+		}
+	</style>
+</head>
+<body>
+	Courses
+	<ol class="myList">
+		<li>Full Stack Java</li>
+		<li>Full Stack .Net</li>
+		<li>Full Stack Python</li>
+		<li>Testing Tools</li>
+		<li>Multi Cloud</li>
+	</ol>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style>
+		.myList
+		{
+			list-style-type: lower-alpha;
+		}
+	</style>
+</head>
+<body>
+	Courses
+	<ol class="myList">
+		<li>Full Stack Java</li>
+		<li>Full Stack .Net</li>
+		<li>Full Stack Python</li>
+		<li>Testing Tools</li>
+		<li>Multi Cloud</li>
+	</ol>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style>
+		.myList
+		{
+			list-style-type: upper-alpha;
+		}
+	</style>
+</head>
+<body>
+	Courses
+	<ol class="myList">
+		<li>Full Stack Java</li>
+		<li>Full Stack .Net</li>
+		<li>Full Stack Python</li>
+		<li>Testing Tools</li>
+		<li>Multi Cloud</li>
+	</ol>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style>
+		.myList
+		{
+			list-style-type: lower-roman;
+		}
+	</style>
+</head>
+<body>
+	Courses
+	<ol class="myList">
+		<li>Full Stack Java</li>
+		<li>Full Stack .Net</li>
+		<li>Full Stack Python</li>
+		<li>Testing Tools</li>
+		<li>Multi Cloud</li>
+	</ol>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style>
+		.myList
+		{
+			list-style-type: upper-roman;
+		}
+	</style>
+</head>
+<body>
+	Courses
+	<ol class="myList">
+		<li>Full Stack Java</li>
+		<li>Full Stack .Net</li>
+		<li>Full Stack Python</li>
+		<li>Testing Tools</li>
+		<li>Multi Cloud</li>
+	</ol>
+</body>
+</html>
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style>
+		.myList
+		{
+			list-style-type: disc;
+		}
+	</style>
+</head>
+<body>
+	Courses
+	<ul class="myList">
+		<li>Full Stack Java</li>
+		<li>Full Stack .Net</li>
+		<li>Full Stack Python</li>
+		<li>Testing Tools</li>
+		<li>Multi Cloud</li>
+	</ul>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style>
+		.myList
+		{
+			list-style-type: circle;
+		}
+	</style>
+</head>
+<body>
+	Courses
+	<ul class="myList">
+		<li>Full Stack Java</li>
+		<li>Full Stack .Net</li>
+		<li>Full Stack Python</li>
+		<li>Testing Tools</li>
+		<li>Multi Cloud</li>
+	</ul>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style>
+		.myList
+		{
+			list-style-type: square;
+		}
+	</style>
+</head>
+<body>
+	Courses
+	<ul class="myList">
+		<li>Full Stack Java</li>
+		<li>Full Stack .Net</li>
+		<li>Full Stack Python</li>
+		<li>Testing Tools</li>
+		<li>Multi Cloud</li>
+	</ul>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style>
+		.myList
+		{
+			list-style-image: url("images/arrow.png");
+		}
+	</style>
+</head>
+<body>
+	Courses
+	<ul class="myList">
+		<li>Full Stack Java</li>
+		<li>Full Stack .Net</li>
+		<li>Full Stack Python</li>
+		<li>Testing Tools</li>
+		<li>Multi Cloud</li>
+	</ul>
+</body>
+</html>
+
+CSS Tables 
+==========
+Table is used store the data in the form of rows and columns.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style>
+		table,tr,th,td
+		{
+			border:2px solid black;	
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>No</th>
+			<th>Name</th>
+			<th>Email</th>	
+		</tr>
+		<tr>
+			<td>101</td>
+			<td>Alan</td>
+			<td>alan@gmail.com</td>
+		</tr>
+		<tr>
+			<td>102</td>
+			<td>Jose</td>
+			<td>jose@yahoo.com</td>
+		</tr>
+		<tr>
+			<td>103</td>
+			<td>Nelson</td>
+			<td>nelson@zoho.com</td>
+		</tr>
+		<tr>
+			<td>104</td>
+			<td>Mark</td>
+			<td>mark@outline.com</td>
+		</tr>
+	</table>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style>
+		table
+		{
+			border-collapse: collapse;
+			width:100%;
+		}
+		tr,th,td
+		{
+			border:2px solid black;	
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>No</th>
+			<th>Name</th>
+			<th>Email</th>	
+		</tr>
+		<tr>
+			<td>101</td>
+			<td>Alan</td>
+			<td>alan@gmail.com</td>
+		</tr>
+		<tr>
+			<td>102</td>
+			<td>Jose</td>
+			<td>jose@yahoo.com</td>
+		</tr>
+		<tr>
+			<td>103</td>
+			<td>Nelson</td>
+			<td>nelson@zoho.com</td>
+		</tr>
+		<tr>
+			<td>104</td>
+			<td>Mark</td>
+			<td>mark@outline.com</td>
+		</tr>
+	</table>
+</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style>
+		table
+		{
+			border-collapse: collapse;
+			width:100%;
+		}
+		tr
+		{
+			border-bottom:2px solid black;	
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>No</th>
+			<th>Name</th>
+			<th>Email</th>	
+		</tr>
+		<tr>
+			<td>101</td>
+			<td>Alan</td>
+			<td>alan@gmail.com</td>
+		</tr>
+		<tr>
+			<td>102</td>
+			<td>Jose</td>
+			<td>jose@yahoo.com</td>
+		</tr>
+		<tr>
+			<td>103</td>
+			<td>Nelson</td>
+			<td>nelson@zoho.com</td>
+		</tr>
+		<tr>
+			<td>104</td>
+			<td>Mark</td>
+			<td>mark@outline.com</td>
+		</tr>
+	</table>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style>
+		table
+		{
+			border-collapse: collapse;
+			width:100%;
+		}
+		th,td
+		{
+			border:2px solid black;
+		}
+		tr:hover
+		{
+			background-color: #C2C2C2;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>No</th>
+			<th>Name</th>
+			<th>Email</th>	
+		</tr>
+		<tr>
+			<td>101</td>
+			<td>Alan</td>
+			<td>alan@gmail.com</td>
+		</tr>
+		<tr>
+			<td>102</td>
+			<td>Jose</td>
+			<td>jose@yahoo.com</td>
+		</tr>
+		<tr>
+			<td>103</td>
+			<td>Nelson</td>
+			<td>nelson@zoho.com</td>
+		</tr>
+		<tr>
+			<td>104</td>
+			<td>Mark</td>
+			<td>mark@outline.com</td>
+		</tr>
+	</table>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style>
+		table
+		{
+			border-collapse: collapse;
+			width:100%;
+		}
+		th,td
+		{
+			border:2px solid black;
+		}
+		tr:nth-child(even)
+		{
+			background-color: #C2C2C2;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>No</th>
+			<th>Name</th>
+			<th>Email</th>	
+		</tr>
+		<tr>
+			<td>101</td>
+			<td>Alan</td>
+			<td>alan@gmail.com</td>
+		</tr>
+		<tr>
+			<td>102</td>
+			<td>Jose</td>
+			<td>jose@yahoo.com</td>
+		</tr>
+		<tr>
+			<td>103</td>
+			<td>Nelson</td>
+			<td>nelson@zoho.com</td>
+		</tr>
+		<tr>
+			<td>104</td>
+			<td>Mark</td>
+			<td>mark@outline.com</td>
+		</tr>
+	</table>
+</body>
+</html>
+
+CSS display property 
+====================
+The display property spcifies the display behaviour of an element.
+
+syntax
+--------
+	display: value;
+
+value		description
+---------	-------------------
+none		The element is completely removed.
+
+inline 		displays an element as on inline element.
+		Any height and width properties will not effect.
+
+block		Displays an element as block element.
+		IT starts on a new line and takes up the whole width.
+
+inline-block	displays an element as an inline-level container.
+		The element itself is formatting  as an inline element.
+		but we can apply height and width values.
+
+inherit		Inherits this property from its parent element.
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style>
+		h1
+		{
+			display: none;
+		}
+		p
+		{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+		<h1> Heading Tag </h1>
+		<p> Paragraph Tag </p>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style>
+		span
+		{
+			display: block;
+			background-color: #00FF00;
+		}
+	</style>
+</head>
+<body>
+		<span> Span Tag 1 </span>
+		<span> Span Tag 2 </span>
+		<span> Span Tag 3 </span>
+		<span> Span Tag 4 </span>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style>
+		div
+		{
+			display: inline;
+		}
+	</style>
+</head>
+<body>
+		<div> Division Tag 1 </div>
+		<div> Division Tag 2 </div>
+		<div> Division Tag 3 </div>
+		<div> Division Tag 4 </div>
+</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style>
+		div
+		{
+			display: inline-block;
+			border:2px solid black;
+			width:200px;
+		}
+	</style>
+</head>
+<body>
+		<div> Division Tag 1 </div>
+		<div> Division Tag 2 </div>
+		<div> Division Tag 3 </div>
+		<div> Division Tag 4 </div>
+</body>
+</html>
+
+
+box-sizing  property
+=====================
+The box-sizing property defines how the width and height of an element are calculated: should they include padding and borders, or not.
+
+
+box-sizing:content-box
+----------------------------
+It will take seperate width,border and padding.But it will not take  margin.
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style>
+		div
+		{
+			height: 200px;
+			width:200px;
+			background-color: #FFFF00;
+			border:2px solid black;
+			padding: 10px;
+			box-sizing: content-box;
+		}
+	</style>
+</head>
+<body>
+		<div>  </div>
+</body>
+</html>
+
+
+box-sizing:border-box
+---------------------------
+It includes width,border and padding.But it will not include marging.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style>
+		div
+		{
+			height: 200px;
+			width:200px;
+			background-color: #FFFF00;
+			border:2px solid black;
+			padding: 10px;
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+		<div>  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

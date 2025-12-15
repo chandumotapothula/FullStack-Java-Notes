@@ -1,0 +1,727 @@
+JavaScript Recursion 
+====================
+Recursion is a programming technique in which a function call itself for many number of times to solve complex program by breaking down into small or subproblems.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		<script>
+			
+			function f1(i)
+			{
+				if(i<=10)
+				{
+					document.write(i+" ");
+					f1(i+1);
+				}
+			}
+
+			f1(1);
+			
+		</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		<script>
+			
+			var n = parseInt(prompt("Enter the number "));
+			function factorial(n)
+			{
+				if(n==0)
+					return 1;
+				return n * factorial(n-1);	
+			}
+			document.write(factorial(n));
+		</script>
+	</body>	
+</html>
+
+JavaScript Closure 
+==================
+JavaScript closure is a functions bundled together along with lexical scope.
+
+JavaScript closure is created whenever function is created.
+
+In JavaScript closure, inner function can access the data of outer function.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		<script>
+			
+			//lexical scope 
+
+			var a=10;
+			function f1()
+			{
+				var b=20;
+				function f2()
+				{
+					var c=30;
+					document.write(a+" "+b+" "+c);	
+				}
+				f2();
+			}
+			f1();
+			
+		</script>
+	</body>	
+</html>
+
+Types of functions in JavaScript 
+================================
+We have three types of functions in JavaScript.
+
+1) Named Function 
+
+2) Anonymous Function 
+
+3) Arrow Function 
+
+1) Named Function 
+-----------------
+It contains name at the time of declaration.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		<script>
+			
+			function f1()
+			{
+				document.writeln("Named Function");
+			}
+			f1();
+		</script>
+	</body>	
+</html>
+
+
+2) Anonymous Function
+----------------------
+It does not contains name at the time of declaration.
+Anonymous function is used by JavaScript dynamically.
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		<script>
+			
+			var f1=function()
+			{
+				document.writeln("Anonymous Function");
+			}
+			f1();
+		</script>
+	</body>	
+</html>
+
+
+3) Arrow Function 
+------------------
+According to ES6 standards it is recommanded to use arrow function.
+It is a concise ways to declare the functions in JavScript.
+Arrow functions are more secure when compare to named and anonymous function.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		<script>
+			
+			var f1=()=>
+			{
+				document.writeln("Arrow Function");
+			}
+			f1();
+		</script>
+	</body>	
+</html>
+
+JavaScript Object 
+=================
+JavaScript object is an entity having state and behaviours.
+
+In general, it is a collection of properties and functions.
+
+There are three ways to declare javascript functions.
+
+1) Using Object literal.
+
+2) By creating instance of an Object i.e using new operator 
+
+3) By creating Object constructor i.e using new operator  
+
+1) Using Object literal
+-----------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		<script>
+			
+			var emp = 
+			{
+				eid:101,
+				ename:"Alan",
+				esal:10000,
+				details	: function(){ return "My Details Function"}
+			}
+			document.write("Employee Id :"+emp.eid+"<br>");
+			document.write("Employee Name :"+emp.ename+"<br>");	
+			document.write("Employee Salary :"+emp.esal+"<br>");
+			document.write(emp.details()+"<br>");	
+		</script>
+	</body>	
+</html>
+
+2) By creating instance of an Object
+-------------------------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		<script>
+			
+			var emp = new Object();
+			emp.eid=201;
+			emp.ename="Jackline";
+			emp.esal=2000;
+			emp.details=function(){return "Details"}
+
+			document.write("Employee Id :"+emp.eid+"<br>");
+			document.write("Employee Name :"+emp.ename+"<br>");	
+			document.write("Employee Salary :"+emp.esal+"<br>");
+			document.write(emp.details()+"<br>");	
+		</script>
+	</body>	
+</html>
+
+3) By creating Object constructor 
+----------------------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		<script>
+			
+			function emp(eid,ename,esal,details)
+			{
+				this.eid=eid;
+				this.ename=ename;
+				this.esal=esal;
+				this.details=details;
+			}
+		var e = new emp(301,"Jose",3000, function(){return "My Function"});
+
+			document.write("Employee Id :"+e.eid+"<br>");
+			document.write("Employee Name :"+e.ename+"<br>");	
+			document.write("Employee Salary :"+e.esal+"<br>");
+			document.write(e.details());
+				
+		</script>
+	</body>	
+</html>
+
+JavaScript Arrays 
+==================
+JavaScript array is a collection of similar elements.'
+
+Array index always starts with zero because it is a logical process.
+
+In JavaScript, there are three ways to create JavaScript Arrays.
+
+1) By using Array literal.
+
+2) By creating instance of an Array i.e using new operator.
+
+3) By creating Array constructor i.e using new operator 
+
+1) By using Array literal
+--------------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		<script>
+			
+			var arr = [10,20,30];
+
+			for(var i in arr)
+			{
+				document.write(arr[i]+" ");
+			}				
+		</script>
+
+	</body>	
+</html>
+
+2) By creating instance of an Array
+----------------------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		<script>
+			
+			var arr = new Array();
+			arr[0]=10;
+			arr[1]=20;
+			arr[2]=30;
+			arr[3]=40;
+			
+			for(var i in arr)
+			{
+				document.write(arr[i]+" ");
+			}				
+		</script>
+
+	</body>	
+</html>
+
+3) By creating Array constructor
+---------------------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		<script>
+			
+			var arr = new Array(1,8,2,9);
+			
+			for(var i in arr)
+			{
+				document.write(arr[i]+" ");
+			}				
+		</script>
+
+	</body>	
+</html>
+
+Q) Write a javascript program to insert and remove array elements?
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		<script>
+			
+			var arr=[];
+			arr.push(10);
+			arr.push(20);
+			arr.push(30);
+
+			arr.pop();
+
+			for(var i in arr)
+			{
+				document.write(arr[i]+" ");
+			}
+
+		</script>
+
+	</body>	
+</html>
+
+Q) Write a javascript program to sort the array?
+
+input:
+	6 2 9 1 5
+output:
+	1 2 5 6 9 
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		<script>
+			
+			var arr = [6,2,9,1,5];
+			arr.sort();
+			for(var i in arr)
+			{
+				document.write(arr[i]+" ");
+			}
+
+		</script>
+
+	</body>	
+</html>
+
+Q) Write a javascript program to find out highest element from given array?
+
+
+input:
+	7 9 1 5 2 6 
+
+output:
+	9 
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		<script>
+			
+			var arr = [7,9,1,5,2,6];
+			
+			var result = Math.max(...arr);
+
+			document.write(result);
+
+		</script>
+
+	</body>	
+</html>
+
+JavaScript String 
+=================
+JavaScript String is an object and it is a collection of characters. 
+
+There are two ways to create JavaScript String.
+
+1) By using String literal
+
+2) By creating instance of a String i.e using new operator 
+
+1) By using String literal
+-------------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		<script>
+			
+			var str = "ihubtalent";
+			document.write(str);
+
+		</script>
+
+	</body>	
+</html>
+
+2) By creating instance of a String
+-----------------------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		<script>
+			
+			var str = new String("qualitythought");
+			document.write(str);
+
+		</script>
+
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		<script>
+			
+			var str = "ihub TALENT";
+			document.write(str.toUpperCase()+"<br>");
+			document.write(str.toLowerCase()+"<br>");
+			document.write(str.charAt(2)+"<br>");
+			document.write(str.length+"<br>");
+			document.write(str.replace("ihub","quality")+"<br>");
+		</script>
+
+	</body>	
+</html>
+
+
+Q) Write a javascript program to display reverse of a string?
+
+input:
+	hello 
+
+output:
+	olleh 
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		<script>
+			
+			var str = "hello";
+			var carr = str.split('');   
+
+			//reading reverse
+			var rev=""; 
+			for(var i = carr.length-1;i>=0;i--)
+			{
+				rev+=carr[i];
+			}
+			document.writeln(rev);
+		</script>
+
+	</body>	
+</html>
+
+Q) Write a javascript program to find out given string is palindrome or not?
+
+input:
+	racar 
+
+output :
+	It is a palindrome string 
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		<script>
+			
+			var str = "racar";
+			var carr = str.split('');   
+
+			//reading reverse
+			var rev=""; 
+			for(var i = carr.length-1;i>=0;i--)
+			{
+				rev+=carr[i];
+			}
+			if(str === rev)
+				document.write("It is a palindrome string");
+			else
+				document.writeln("It is not a palindrome string");
+		</script>
+
+	</body>	
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

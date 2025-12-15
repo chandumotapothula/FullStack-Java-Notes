@@ -1,0 +1,504 @@
+Q) Write a javascript program to sort array elements?
+
+input:
+	5 8 1 6 9 2 11
+output:
+	1 2 5 6 8 9 11
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		<script>
+			var arr = [5,8,1,6,9,2,11];
+
+			arr.sort(function(a,b){
+				return a-b;
+			});
+
+			for(var i in arr)
+			{
+				document.write(arr[i]+" ");
+			}
+		</script>
+
+	</body>	
+</html>
+
+
+BOM 
+=====
+BOM stands for Browser Object Model.
+
+It is a collection of objects that is used to interact with browser.
+
+Every browser contains one default object called window.
+
+We can call all the properties of window object directly or by using window.
+
+ex:
+	alert("Hello World");	
+	or 
+	window.alert("Hello World");	
+
+
+window object 
+===============
+It is a default object for a browser.
+
+It is used to perform window related programming.
+
+It is not a object of javascript.It is a object of browser.
+
+Javascript objects are Arrays, Strings, Date, RegEx and etc.
+
+Using window object we can perform following things.
+
+1) We can display dialog and pop-up boxes.
+
+2) We can create and close a window.
+
+3) We can move and scroll the window.
+
+4) We can find height and width of the window.
+
+5) We can get javascript history.
+
+and etc.
+
+alert()
+=======
+It is used to display alert box. It has message with ok button.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		<button onclick="f1()"> clickMe </button>	
+		<script>
+			function f1()
+			{
+				alert("You have clicked");
+			}
+		</script>
+
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		<button onclick="alert('Yahoo! you have clicked')"> 
+			clickMe 
+		</button>
+	</body>	
+</html>
+
+confirm()
+=========
+It is used to display confirm dialog box. It has message with ok and cancel button.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		<button onclick="f1()"> delete </button>
+		<script>
+			function f1()
+			{
+				var val = confirm("Are you sure ?");
+				if(val==true)
+				{
+					alert("ok");
+				}
+				else
+				{
+					alert("cancel");
+				}
+			}
+		</script>
+	</body>	
+</html>
+
+
+prompt() 
+========
+It is used to display prompt dialog box. It has message with textfield.
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		<button onclick="f1()"> Click for Input </button>
+		<script>
+			function f1()
+			{
+				var name = prompt("Enter the name ");
+				alert("Welcome :"+name);
+			}
+		</script>
+	</body>	
+</html>
+
+innerHeight and innerWidth 
+===========================
+It is used to find width and height of the window.
+
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+
+		<script>
+			var height = window.innerHeight;
+			var width = window.innerWidth;
+			document.writeln("Height :"+height+"<br>");
+			document.writeln("Width :"+width+"<br>");
+		</script>
+	</body>	
+</html>
+
+
+print() 
+=======
+The print() method prints the contents of the current window.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		<table align="center" width="100%" border="1">
+			<tr>
+				<th>No</th>
+				<th>Name</th>
+				<th>Address</th>
+			</tr>
+			<tr>
+				<td>101</td>
+				<td>Alan</td>
+				<td>Florida</td>
+			</tr>
+			<tr>
+				<td>102</td>
+				<td>Nelson</td>
+				<td>Chicago</td>
+			</tr>
+			<tr>
+				<td>103</td>
+				<td>Kelvin</td>
+				<td>Washington</td>
+			</tr>
+			<tr>
+				<td>104</td>
+				<td>Lara</td>
+				<td>Vegas</td>
+			</tr>
+		</table>
+		<center>
+			<button onclick="window.print()"> print </button>
+		</center>
+	</body>	
+</html>
+
+open()
+========
+The open() method opens a new browser window, or a new tab, depending on the parameter values.
+
+
+ex:1
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+			<button onclick="f1()"> Open </button>
+			<script>
+				function f1()
+				{
+					open("http://www.google.com");
+				}
+			</script>
+	</body>	
+</html>
+
+ex:2
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+			<button onclick="f1()"> Open </button>
+			<script>
+				function f1()
+				{
+			open("http://www.google.com","_blank","width=200,height=200");
+				}
+			</script>
+	</body>	
+</html>
+
+ex:3
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+			<button onclick="f1()"> Open </button>
+			<script>
+				function f1()
+				{
+			open("","_blank","width=200,height=200");
+				}
+			</script>
+	</body>	
+</html>
+
+
+close()
+========
+It is used to close the window.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+			<button onclick="f1()"> Open </button>
+			<button onclick="f2()"> Close </button>
+			<script>
+			var myId;
+			function f1()
+			{
+		myId=open("http://www.ihubtalent.com","_blank","width=200,height=200");
+			}
+			function f2()
+			{
+				myId.close();
+			}
+			</script>
+	</body>	
+</html>
+
+moveTo()
+---------
+It moves the window from absoluate position.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+			<button onclick="f1()"> Open </button>
+			<button onclick="f2()"> MoveTo </button>
+			<script>
+			var myId;
+			function f1()
+			{
+				myId = open("","_blank","width=100,height=100");
+			}
+			function f2()
+			{
+				myId.moveTo(100,100);
+			}
+			</script>
+	</body>	
+</html>
+
+
+moveBy() 
+---------
+It moves the window from relative position.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+			<button onclick="f1()"> Open </button>
+			<button onclick="f2()"> MoveTo </button>
+			<script>
+			var myId;
+			function f1()
+			{
+				myId = open("","_blank","width=100,height=100");
+			}
+			function f2()
+			{
+				myId.moveBy(100,100);
+			}
+			</script>
+	</body>	
+</html>
+
+
+
+setTimeout()
+============
+This function will execute only for one time.
+
+The setTimeout() method calls a function after a number of milliseconds. 
+
+
+ex:1
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+			Wait for 4 Seconds 
+			<script>
+				setTimeout(function(){
+					document.writeln("Yahoo! Result Came");
+				},4000);
+			</script>
+	</body>	
+</html>
+
+ex:2
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+			Wait for 5 Seconds 
+			<script>
+				setTimeout(f1,5000);
+
+				function f1()
+				{
+					alert("Yahoo! finally came");
+				}
+			</script>
+	</body>	
+</html>
+
+
+clearTimeout()
+==============
+The clearTimeout() method clears/removes a timer set with the setTimeout() method.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+			<button onclick="f1()"> start </button>
+			<button onclick="f2()"> stop </button>
+			<script>
+				var myId;
+				function f1()
+				{
+					myId=setTimeout(Anim,5000);
+				}
+				function Anim()
+				{
+					alert("You have started");
+				}
+				function f2()
+				{
+					clearTimeout(myId);
+				}
+			</script>
+	</body>	
+</html>
+
+JavaScript History 
+-------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			a 
+			{
+				text-decoration: none;
+				display: inline-block;
+				margin: 100px 150px;
+			}
+		</style>
+	</head>
+	<body>
+			<a href="javascript:history.back()"> Previous </a>
+			<a href="javascript:history.forward()"> Next </a>
+	</body>	
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,338 @@
+Spring Security 
+===============
+Spring security is a framework which deals with various security features to build a secure java enterprise application.
+
+It is a sub-project of spring framework which is developed in 2003, by Ben Alex.
+
+Later in 2004, it was released  under the licence of Apache with name spring 2.0.0.
+
+This framework targets two major areas application i.e authentication and autherization.
+
+
+Example1:
+---------
+Project Structure
+-----------------
+security1
+|
+|---src/main/java
+	|
+	|---com.ihub.www
+		|
+		|---Security1Application.java
+	|
+	|---com.ihub.www.controller
+		|
+		|---HomeController.java
+		
+|---src/main/resources
+	|
+	|---application.properties 
+|
+|---src/test/java
+|
+|---pom.xml 
+ 
+step1:
+-----
+	Create a spring starter project i.e security1.
+	ex:
+		Starters:
+				Spring Web 
+				Spring Security 
+
+step2:
+------
+	Create a "com.ihub.www.controller" package inside "src/main/java".
+
+step3:
+------
+	Create a "HomeController" inside "com.ihub.www.controller" pkg.
+
+HomeController.java
+-------------------
+package com.ihub.www.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class HomeController 
+{
+	@GetMapping("/msg")
+	public String  home()
+	{
+		return "I Love Spring Security";
+	}
+}
+
+step4:
+-----
+	Configure application name, server port, username and password 
+	inside application.properties.
+
+application.properties 
+------------------
+spring.application.name=security1
+server.port=9191
+spring.security.user.name=raja
+spring.security.user.password=rani
+	
+step5:
+------
+	Run spring boot starter project.
+	
+step6:
+-----
+	Test the application by using below request url.
+	ex:
+		http://localhost:9191/msg 
+
+
+Example2:
+---------
+security2
+|
+|---src/main/java
+	|
+	|---com.ihub.www
+		|
+		|---Security2Application.java
+
+	|---com.ihub.www.controller
+		|
+		|---DemoController.java
+	|
+	|---com.ihub.www.config
+		|
+		|---SecurityConfig.java	
+	
+|---src/main/resources
+	|
+	|---application.properties 
+|
+|---src/test/java
+|
+|---pom.xml 
+
+step1:
+-----
+	Create a spring starter project i.e security2.
+	ex:
+		spring starters:
+					Spring Web
+					Spring security 
+
+step2:
+------
+	Create a "com.ihub.www.controller" package inside "src/main/java" folder.
+
+step3:
+-----
+	Create a DemoController.java file inside "com.ihub.www.controller" package.
+
+DemoController.java
+-----------------
+package com.ihub.www.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class DemoController 
+{
+	@GetMapping("/public")
+	public String publicHandler()
+	{
+		return "This is Public Endpoint";
+	}
+	
+	@GetMapping("/user")
+	public String userHandler()
+	{
+		return "Hey! Welcome User";
+	}
+	
+	@GetMapping("/admin")
+	public String adminHandler()
+	{
+		return "Hey! Welcome Admin";
+	}
+}
+
+step4:
+------
+	Create a "com.ihub.www.config" package inside "src/main/java".
+
+step5:
+-----
+	Create a SecurityConfig.java file inside "com.ihub.www.config" package.
+
+SecurityConfig.java
+------------------
+package com.ihub.www.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.Customizer;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.web.SecurityFilterChain;
+
+@Configuration
+public class SecurityConfig
+{
+	@Bean
+	public UserDetailsService userDetailsService(PasswordEncoder encoder)
+	{
+		var UserDetailsManager = new InMemoryUserDetailsManager(); 
+		
+		var user = User.builder()
+				.username("user")
+				.password(encoder.encode("user123"))
+				.roles("USER")
+				.build();
+		
+		var admin = User.builder()
+				.username("admin")
+				.password(encoder.encode("admin123"))
+				.roles("ADMIN")
+				.build();
+		
+		UserDetailsManager.createUser(user);
+		UserDetailsManager.createUser(admin);
+		
+		
+		return UserDetailsManager;
+	}
+	
+	@Bean
+	public PasswordEncoder passwordEncoder()
+	{
+		return new BCryptPasswordEncoder();
+	}
+	
+	//defining security feature 
+	 @Bean
+	 public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception 
+	 {
+	        return http
+	                .csrf(csrf -> csrf.disable()) // Disable CSRF for simplicity
+	                .authorizeHttpRequests(auth -> auth
+	                        .requestMatchers("/public").permitAll()
+	                        .requestMatchers("/admin").hasRole("ADMIN")
+	                        .requestMatchers("/user").hasRole("USER")
+	                        .anyRequest().authenticated()
+	                )
+	                .httpBasic(Customizer.withDefaults()) // Enable basic authentication
+	                .build();
+	    }
+
+	
+}
+
+
+step6:
+-----
+	Configure application name and server port inside "application.properties" file.
+
+application.properties 
+-----------------------
+spring.application.name=security2
+server.port=9191
+
+
+step7:
+-----
+	Run spring boot starter project.
+
+step8:
+------
+	Test the application using postman tool.
+	ex:
+		HTTP MEthod		URL
+		----------		------
+		GET			http://localhost:9191/public 
+		
+
+		GET			http://localhost:9191/user 
+
+					Enter username : user 
+					Enter password : user123
+
+
+		GET			http://localhost:9191/admin
+
+					Enter username : admin 
+					Enter password : admin123
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

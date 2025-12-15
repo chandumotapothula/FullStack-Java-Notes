@@ -1,0 +1,608 @@
+2) Conditional operators 
+=========================
+We have following list of conditional operators.
+ex:
+	Operator	Description 
+	-------		-----------
+	>		Greater than 
+	<		Less than 
+	>=		Greater than Equals to 
+	<=		Less Than Equals to 
+	==		Equals to 
+	!= 		Not Equals to
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+				document.write((10>20)+"<br>"); // false 
+				document.write((10<20)+"<br>"); // true
+				document.write((10>=20)+"<br>"); // false 
+				document.write((10<=20)+"<br>"); // true  
+		</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+				document.write((10 == 20)+"<br>"); // false 
+				document.write((10 != 20)+"<br>"); // true
+				document.write((10 == 10)+"<br>"); // true
+				document.write((10 != 10)+"<br>"); // false
+		</script>
+	</body>	
+</html>
+
+Q) What is the difference between == and === ?
+
+==
+---
+It is used to check values are same or not.
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+				document.write((10 == 10)+"<br>"); // true
+				document.write((1 == true)+"<br>"); // true
+				document.write((false == 0)+"<br>"); // true
+				document.write((10 == "10")+"<br>"); // true
+		</script>
+	</body>	
+</html>
+
+===
+----
+It is used to check values and datatypes are same or not.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+				document.write((10 === 10)+"<br>"); // true
+				document.write((1 === true)+"<br>"); // false
+				document.write((false === 0)+"<br>"); // false
+				document.write((10 === "10")+"<br>"); // false
+		</script>
+	</body>	
+</html>
+
+3) Bitwise operators 
+===================
+We have following list of bitwise operators.
+ex:
+	Operator 	Description 
+	--------	-----------
+	&		Bitwise AND 
+	|		Bitwise OR 
+	^		Bitwise XOR 
+	~		Bitwise NOT 
+	>>		Right Shift 
+	<< 		Left Shift 
+
+Bitwise AND operator (&)
+------------------------
+It deals with binary numbers.
+
+Truth table 
+-----------
+T	T	= T
+T	F	= F 
+F	T	= F 
+F	F	= F 
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+				var a = 15, b= 10;
+				var c = a & b;
+				document.write(c);
+				/*
+					15 - 1111
+					10 - 1010
+					----------
+					&  - 1010 <----
+
+					0*1 + 1*2 + 0*4 + 1*8 
+					0 + 2 + 0 + 8 = 10
+				*/
+		</script>
+	</body>	
+</html>
+
+Bitwise OR operator (|)
+-----------------------
+It deals with binary numbers.
+
+Truth table 
+-----------
+T	T	= T
+T	F	= T
+F	T	= T 
+F	F	= F 
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+				var a = 15, b= 10;
+				var c = a | b;
+				document.write(c);
+				/*
+					15 - 1111
+					10 - 1010
+					----------
+					|  - 1111 <---
+
+					1*1 + 1*2 + 1*4 + 1*8 
+
+					1 + 2 + 5 + 8 = 15
+				*/
+		</script>
+	</body>	
+</html>
+
+
+Bitwise XOR operator (^)
+------------------------
+It deals with binary numbers.
+
+Truth table 
+-----------
+T	T	= F
+T	F	= T
+F	T	= T
+F	F	= F 
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+				var a = 15, b= 10;
+				var c = a ^ b;
+				document.write(c);
+				/*
+					15 - 1111
+					10 - 1010
+					----------
+					^  - 0101 <---
+
+					1*1 + 0*2 + 1*4 + 0*8
+					1 + 0 + 4 + 0 = 5 
+				*/
+		</script>
+	</body>	
+</html>
+
+Bitwise NOT operator (~)
+-------------------------
+syntax:
+-------
+	-(n+1)
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+				var a = ~10;
+				document.writeln(a); // -11
+		</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+				var a = ~21;
+				document.writeln(a); // -22
+		</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+				var a = ~(-18);
+				document.writeln(a); // 17
+		</script>
+	</body>	
+</html>
+
+Right Shift (>>)
+----------------
+10 >> 1 = 10/2 
+10 >> 2 = 10/4 (2*2)
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+				var a = 20 >> 3;
+				document.writeln(a); // 20/8 = 2 
+		</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+				var a = 10 >> 4;
+				document.writeln(a); //  10/16 = 0  
+		</script>
+	</body>	
+</html>
+
+Left Shift (<<)
+----------------
+10 << 1 = 10*2 
+10 << 2 = 10*4 (2*2)
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+				var a = 10 << 2;
+				document.writeln(a); //  10 * 4 = 40
+		</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+				var a = 10 << 3;
+				document.writeln(a); //  10 * 8 = 80
+		</script>
+	</body>	
+</html>
+
+4) Logical operators 
+===================
+We have following list of logical operators.
+ex:
+	Operator	Description 
+	-------		----------
+	&&		Logical AND 
+	||		Logical OR 
+	!		Logical NOT 
+
+Logical AND operator (&&)
+--------------------------
+It deals with boolean values either true or false.
+
+Truth table 
+-----------
+T	T	= T
+T	F	= F 
+F	T	= F 
+F	F	= F 
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+				var a = (5>2) && (6<10)
+				document.writeln(a); //  true
+		</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+				var a = (5 == 5) && ( 10 != 10);
+				document.writeln(a); //  false
+		</script>
+	</body>	
+</html>
+
+Logical OR operator (||)
+--------------------------
+It deals with boolean values either true or false.
+
+Truth table 
+-----------
+T	T	= T
+T	F	= T
+F	T	= T 
+F	F	= F 
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+				var a = (5>2) || (6>10);
+				document.writeln(a); //  true
+		</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+				var a = (5>20) || (6<1);
+				document.writeln(a); //  false
+		</script>
+	</body>	
+</html>
+
+Logical NOT operator (!)
+--------------------------
+It deals with boolean values either true or false.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+				var a = !(5>20);
+				document.writeln(a); //  true
+		</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+				var a = !(5>2);
+				document.writeln(a); //  false
+		</script>
+	</body>	
+</html>
+
+5) Assignment operators 
+========================
+We have following list of assignment operators.
+
+ex:
+	Operator	Description 	
+	--------	-----------
+	%=		Modules and Equals to 
+	/= 		Division and Equals to 
+	*=		Multiplication and Equals to 
+	+=		Addition and Equals to 
+	-=		Subtraction and Equals to 
+	
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+				var a =10;
+				a%=3;
+				document.writeln(a); //  1
+		</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+				var a =10;
+				a/=3;
+				document.writeln(a); //  3.3
+		</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+				var a =10;
+				a*=3;
+				document.writeln(a); //  30
+		</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+				var a =10;
+				a+=3;
+				document.writeln(a); //  13
+		</script>
+	</body>	
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script>
+				var a =10;
+				a-=3;
+				document.writeln(a); //  7
+		</script>
+	</body>	
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

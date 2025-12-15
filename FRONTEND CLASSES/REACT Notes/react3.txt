@@ -1,0 +1,615 @@
+React Component
+===============
+A component is a building block of react application.
+
+A component allow us to split our UI into reusable independent pieces.
+ex:
+	Header, Section, Footer, Table, List and etc.
+
+It is always recommanded to start a component name with uppercase letter.
+
+A component is a javascript function which accept arbitary inputs like props and return react elements. 
+
+There are two ways to declare react components.
+
+1) Function / Functional Component 
+
+2) Class Component 
+
+
+1) Function component 
+======================
+Function component is also known as stateless component.
+
+Function component takes props as an input and returns react elements.
+
+There are three ways to declare function component.
+
+ex:1 -  Named Function 
+----------------------
+function App()
+{
+	return ()
+}
+export default App;
+
+
+ex:2 -  Anonymous Function 
+---------------------------
+var App = function()
+{
+	return ()
+}
+export default App;
+
+
+ex:3 - Arrow Function 
+---------------------
+var App = ()=>{
+
+	return ()
+}
+export default App;
+
+Project Structure 
+-----------------
+myapp4
+|
+|----node_modules
+|
+|----public 
+|	|
+	|---index.html 
+	|---favicon.ico
+	|---manifest.json 
+
+|------src
+	|
+	|---index.js 
+	|---index.css
+	|
+	|---App.js 
+	|---App.css
+	|---App.test.js 
+
+|----package.json 
+|----README.md 
+
+step1:
+------
+	Create a react project i.e myapp4.
+	ex:
+		npx  create-react-app  myapp4
+
+step2:
+------
+	Open the VSC Editor.
+	ex:	
+		reactprojects> code  . 
+
+step3:
+------
+	Switch to the project.
+	ex:
+		cd  myapp4
+
+step4:
+------
+	Run react project.
+	ex:
+		npm start 
+
+step5:
+------	
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000
+
+step6:
+------
+	Goto App.js file and declare function component.
+
+App.js 
+------
+
+function App()
+{
+   return (
+      <h1> Named Function </h1>
+   )
+}
+export default App;
+
+or 
+
+
+var App = function()
+{
+   return (
+      <h1> Anonymous Function </h1>
+   )
+}
+export default App;
+
+or 
+
+
+var App = ()=>
+{
+   return (
+      <h1> Arrow Function </h1>
+   )
+}
+export default App;
+
+
+Function component with props 
+==============================
+We can display the values from props as follow.
+ex:
+	{props.roll}
+	{props.name}
+
+index.js 
+--------
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App roll="101" name="Alan"/>
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+
+App.js 
+-------
+
+function App(props)
+{
+  return (
+    <>
+      <h1> Roll No : {props.roll} </h1>
+      <h1> Name : {props.name} </h1>
+    </>
+  )
+}
+export default App;
+
+
+2) Class Component
+==================
+A class component is also known as statefull component.
+
+In class component our class must extends react Component class.
+
+A class component contains render() method which returns react elements.
+
+ex:
+---
+import {Component} from 'react';
+class App extends Component 
+{
+	render()
+	{
+		return ()
+	}
+}
+export default App;
+
+
+React project 
+=============
+myapp5
+|
+|-----node_modules
+|
+|-----public 
+	|
+	|---index.html 
+	|---manifest.json 
+	|---favicon.ico 
+
+|-----src
+	|
+	|---index.js 
+	|---index.css
+	|
+	|---App.js 
+	|---App.css
+	|---App.test.js 
+
+|-----package.json 
+|-----REAME.md 
+
+step1:
+-----
+	Create a react project i.e myapp5.
+	ex:
+		npx  create-react-app myapp5
+
+step2:
+------
+	Open the VSC Editor.
+	ex:	
+		reactprojects> code  . 
+
+step3:
+------
+	Switch to the project.
+	ex:
+		cd  myapp5
+
+step4:
+------
+	Run react project.
+	ex:
+		npm start 
+
+step5:
+------	
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000
+
+step6:
+------
+	Goto App.js file and declare class component.
+
+App.js 
+------
+import { Component } from "react";
+class App extends Component
+{
+  render()
+  {
+      return (
+        <h1> Class Component </h1>
+      )
+  }
+}
+export default App;
+
+
+Class component with props 
+==========================
+To read the properties from props we need to use below code.
+ex:
+	{this.props.roll}
+	{this.props.name}
+
+index.js 
+-----------
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App  roll={202} name={"Kelvin"}/>
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+
+App.js 
+-----
+import { Component } from "react";
+class App extends Component
+{
+  render()
+  {
+      return (
+        <>
+          <h1> Roll No : {this.props.roll} </h1>
+          <h1> Name : {this.props.name} </h1>
+        </>
+      )
+  }
+}
+export default App;
+
+
+
+CSS in React 
+============
+There are two ways to declare CSS in react.
+
+1) Inline styling 
+
+2) CSS stylesheet 
+
+1) Inline styling 
+------------------
+It is used to apply unique style on single element.
+
+Using "style" attribute we can achieve inline styling.
+
+
+
+React project 
+=============
+myapp6
+|
+|-----node_modules
+|
+|-----public 
+	|
+	|---index.html 
+	|---manifest.json 
+	|---favicon.ico 
+
+|-----src
+	|
+	|---index.js 
+	|---index.css
+	|
+	|---App.js 
+	|---App.css
+	|---App.test.js 
+
+|-----package.json 
+|-----REAME.md 
+
+step1:
+-----
+	Create a react project i.e myapp6.
+	ex:
+		npx  create-react-app myapp6
+
+step2:
+------
+	Open the VSC Editor.
+	ex:	
+		reactprojects> code  . 
+
+step3:
+------
+	Switch to the project.
+	ex:
+		cd  myapp6
+
+step4:
+------
+	Run react project.
+	ex:
+		npm start 
+
+step5:
+------	
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000
+
+step6:
+------
+	Goto App.js file and write below code.
+
+App.js 
+------
+
+function App()
+{
+    return (
+      <>
+          <h1 style={{color:"blue"}}> Heading Tag </h1>
+          <p style={{color:"blue",backgroundColor:"cyan",textAlign:"center"}}> Paragraph Tag </p>
+      </>
+    )
+}
+export default App;
+
+or 
+---
+
+function App()
+{
+    const paraStyle = 
+    {
+       fontSize : "50px",
+       color : "red",
+       backgroundColor : "yellow",
+       textAlign: "center"
+    }
+    return (
+      <>
+          <h1 style={{color:"blue"}}> Heading Tag </h1>
+          <p style={paraStyle}> Paragraph Tag </p>
+      </>
+    )
+}
+export default App;
+
+
+2) CSS stylesheet 
+=================
+In CSS shylesheet , we need to create .css file and we can import that file in any component.
+
+React project 
+=============
+myapp7
+|
+|-----node_modules
+|
+|-----public 
+	|
+	|---index.html 
+	|---manifest.json 
+	|---favicon.ico 
+
+|-----src
+	|
+	|---index.js 
+	|---index.css
+	|
+	|---App.js 
+	|---App.css
+	|---App.test.js 
+
+|-----package.json 
+|-----REAME.md 
+
+step1:
+-----
+	Create a react project i.e myapp7.
+	ex:
+		npx  create-react-app myapp7
+
+step2:
+------
+	Open the VSC Editor.
+	ex:	
+		reactprojects> code  . 
+
+step3:
+------
+	Switch to the project.
+	ex:
+		cd  myapp7
+
+step4:
+------
+	Run react project.
+	ex:
+		npm start 
+
+step5:
+------	
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000
+
+step6:
+------
+	Goto App.js file and write below code.
+
+App.js 
+------
+import './App.css';
+function App()
+{
+  return (
+      <>
+          <h1> Heading Tag </h1>
+          <p> Paragraph Tag </p>
+      </>
+  )
+}
+export default App;
+
+
+step7:
+------
+	Goto App.css file and write below code.
+
+App.css
+-------
+
+h1
+{
+   text-align: center;
+   color: blue;
+}
+p
+{
+   color : red;
+   text-align: center;
+   font-size: 50px;
+}
+
+OR 
+----
+App.js 
+------
+import './App.css';
+function App()
+{
+  return (
+      <>
+          <h1 id='headingStyle'> Heading Tag </h1>
+          <p className='paraStyle'> Paragraph Tag </p>
+      </>
+  )
+}
+export default App;
+
+
+App.css
+-------
+
+#headingStyle 
+{
+   text-align: center;
+   color: blue;
+}
+
+.paraStyle
+{
+   color : red;
+   text-align: center;
+   font-size: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+

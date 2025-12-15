@@ -1,0 +1,138 @@
+Elastic BeanStalk
+==================
+AWS Elastic Beanstalk is an AWS-managed service for web applications.
+
+Elastic Beanstalk is a Platform As A Service (PAAS) as it allows users to directly use a pre-configured server for their applications.
+
+First, create an application and select an environment, configure the environment, and deploy the application.
+
+
+
+Steps to deploy web application in a cloud server 
+================================================
+step1:
+------
+	Launch eclipse IDE by choosing workspace location.
+
+step2
+-----
+	Create a dynamic web project i.e MyAppProj.
+	
+Deployment Directory Structure 
+------------------------------
+MyAppProj
+|
+|---Java Resources
+|
+|---WebContent
+	|
+	|---index.jsp
+	|---WEB-INF
+		|
+		|------web.xml 
+		|------lib
+			|
+			|---servlet-api.jar
+Note:
+-----
+In above application we need to add "servlet-api.jar" file in project build path.	
+
+index.jsp
+---------
+<center>
+	<h1>
+		 Welcome to AWS Class
+	</h1>
+</center>
+
+web.xml
+-------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  
+  <welcome-file-list>
+  	<welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+
+step3:
+------
+	Convert dynamic project to war file.
+
+step4:
+------
+	Login to AWS account.
+	
+step5:
+-----
+	Goto IAM service and create a role.
+
+step6:
+------
+	Goto Elastic BeanStalk and create Application.
+
+
+step7:
+------
+	Delete the application.
+
+
+step8:
+-------
+	Later Terminate the environment.
+	
+
+
+
+Amazon S3
+============
+Amazon S3 (Simple Storage Service) provides object storage, which is built for storing and recovering any amount of information or data from anywhere over the internet. 
+
+In S3 service we need to create a bucket to upload or download a file.
+
+
+Steps to upload the files in a S3 storage
+-----------------------------------------
+step1:
+------
+	Keep project war file ready.
+
+
+step2:
+------
+	Goto S3 service and create a bucket.
+
+step3:
+------
+	Upload the war to S3 bucket.
+
+step4:
+------	
+	Delete the files from bucket.
+	
+step5:
+------
+	Delete the bucket.
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
